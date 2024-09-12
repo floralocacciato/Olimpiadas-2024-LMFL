@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+//componentes locales
 import { FooterComponent } from './components/footer/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar/navbar.component';
+
+//componentes importados de material
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+
+//rutas generales de todos los modulos
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -11,7 +22,20 @@ import { NavbarComponent } from './components/navbar/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
+    AppRoutingModule
+  ], 
+  exports: [
+    FooterComponent,
+    NavbarComponent,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
   ]
 })
 export class SharedModule { }
