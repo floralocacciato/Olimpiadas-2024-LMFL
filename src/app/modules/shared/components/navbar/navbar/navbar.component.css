@@ -1,0 +1,61 @@
+.custom-toolbar {
+    background-color: #f6f4f3; /* Un color cálido como el blanco antiguo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 80px; /* Espaciado lateral */
+    height: 130px;
+}
+
+.toolbar-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+    text-transform: uppercase;
+    padding: 0 50px;
+    color: #59350c; /* Color cálido para el texto */
+}
+
+.logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-image {
+    width: 500px; /* Ajusta el tamaño del logo */
+    height: 100px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar-icon {
+    color: #b09e8a; /* Color cálido para el icono */
+}
+
+/* Estilos para el botón del menú desplegable */
+.custom-menu-button {
+    background-color: #f2e9e9; /* Fondo coral cálido */
+    font-weight: 2500;
+    color: #86654b; /* Texto crema suave */
+    border-radius: 25px; /* Bordes redondeados */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 8px 0; /* Espaciado vertical entre los botones */
+}
+
+.custom-menu-button:hover {
+    background-color: #FF5C4C; /* Fondo coral más oscuro para el hover */
+    color: #FFF3E0; /* Texto crema más claro para el hover */
+}
+
+/* Estilo para el botón de icono */
+.mat-menu-trigger {
+    color: #FF6F61; /* Color del icono */
+}
+
+
