@@ -2,3 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*color del cuerpo*/
+body{
+    background-color: #f6f4f3;
+}
