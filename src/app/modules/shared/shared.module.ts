@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
 
 //rutas generales de todos los modulos
 import { AppRoutingModule } from 'src/app/app-routing.module';
@@ -27,7 +28,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDividerModule
   ], 
   exports: [
     FooterComponent,
@@ -36,6 +38,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
+    MatDividerModule
   ]
 })
 export class SharedModule { }
