@@ -5,10 +5,15 @@
     <!-- Menú desplegable: SECCIÓN DE PRODUCTOS -->
     <button id="menuProducto" mat-button [matMenuTriggerFor]="producto" class="toolbar-button">Categorías</button>
     <mat-menu #producto="matMenu">
-        <button mat-menu-item routerLink="/producto">General</button>
-        <button mat-menu-item routerLink="/indumentaria">Indumentaria</button>
-        <button mat-menu-item routerLink="/alimentacion">Alimentación</button>
-        <button mat-menu-item routerLink="/juguetes">Juguetes</button>
+        <button mat-menu-item routerLink="/producto">Kayak</button>
+        <button mat-menu-item routerLink="/indumentaria">Escalada</button>
+        <button mat-menu-item routerLink="/alimentacion">Pesca</button>
+        <button mat-menu-item routerLink="/juguetes">Ciclismo</button>
+        <button mat-menu-item routerLink="/juguetes">Esqui</button>
+        <button mat-menu-item routerLink="/juguetes">Buceo</button>
+        <button mat-menu-item routerLink="/juguetes">Tirolesa</button>
+        <button mat-menu-item routerLink="/juguetes">Paracaidismo</button>
+        <button mat-menu-item routerLink="/juguetes">Alpinismo</button>
     </mat-menu>
 
     <!-- Logo -->
@@ -21,7 +26,7 @@
     <span class="example-spacer"></span>
 
     <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
-    <button mat-icon-button [matMenuTriggerFor]="usuario" aria-label="Usuario">
+    <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="usuario" aria-label="Usuario">
         <mat-icon>person</mat-icon> <!-- Icono del user-->
     </button>
    
@@ -31,12 +36,18 @@
         </mat-menu>
     
 
-    
-
     <!-- Icono del carrito -->
     <button mat-icon-button class="toolbar-icon" aria-label="Carrito de compras">
         <mat-icon>shopping_cart</mat-icon>
     </button>
 
+
+    <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="usuario" aria-label="Favoritos">
+        <mat-icon>favorite</mat-icon> <!-- Icono de corazón -->
+    </button>
+    
     
 </mat-toolbar>
+
+<div style="height: 2px; background-color: #b09e8a; margin: 20px 0;"></div>
+

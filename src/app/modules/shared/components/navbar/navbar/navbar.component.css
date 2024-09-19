@@ -1,4 +1,10 @@
-.custom-toolbar {
+.separator {
+    height: 2px; /* Ajusta el grosor de la línea */
+    background-color: #b09e8a; /* Color de la línea */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+.custom-toolbar { /*fondo del navbar*/
     background-color: #f6f4f3; /* Un color cálido como el blanco antiguo */
     display: flex;
     align-items: center;
@@ -13,17 +19,18 @@
     text-transform: uppercase;
     padding: 0 50px;
     color: #59350c; /* Color cálido para el texto */
+    font-size: 21px;
 }
 
 .logo-container {
-    flex-grow: 1;
+    flex-grow: 2;
     display: flex;
     justify-content: center;
 }
 
 .logo-image {
     width: 500px; /* Ajusta el tamaño del logo */
-    height: 100px;
+    height: 110px;
 }
 
 .example-spacer {
@@ -32,6 +39,12 @@
 
 .toolbar-icon {
     color: #b09e8a; /* Color cálido para el icono */
+    transform: scale(1.5); /* Ajusta el tamaño */
+    display: inline-block; /* Asegúrate de que se aplique el tamaño correctamente */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    
 }
 
 /* Estilos para el botón del menú desplegable */
@@ -48,14 +61,6 @@
     margin: 8px 0; /* Espaciado vertical entre los botones */
 }
 
-.custom-menu-button:hover {
-    background-color: #FF5C4C; /* Fondo coral más oscuro para el hover */
-    color: #FFF3E0; /* Texto crema más claro para el hover */
-}
 
-/* Estilo para el botón de icono */
-.mat-menu-trigger {
-    color: #FF6F61; /* Color del icono */
-}
 
 
