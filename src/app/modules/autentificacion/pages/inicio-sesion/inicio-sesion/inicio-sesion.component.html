@@ -3,7 +3,7 @@
 <h1>Inicio sesion</h1>
 
 
-<!--Centro-->
+<!--Centro
 
 <div class="container">
     <div class="row">
@@ -25,8 +25,38 @@
         <button class="boton" mat-raised-button color="primary" (click)="iniciarSesion()">Iniciar Sesión</button>
     </div>
 </div>
+-->
+
+<!--segundo centro-->
+<div class="container"></div>
+    <div class="row">
+
+
+
+        <!-- Email de usuario -->
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese su email:</mat-label>
+            <input [(ngModel)]="usuarios.email" matInput placeholder="Ej: superpepe@gmail.com" required>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+ 
+        
+        <!-- Contraseña de usuario -->
+        <mat-form-field>
+            <mat-label>Ingrese su contraseña</mat-label>
+            <input [(ngModel)]="usuarios.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint text-align="start">Mínimo:6/{{input.value.length}}</mat-hint>
+        </mat-form-field>
+
+        <!-- Botón para enviar la información -->
+        <button mat-raised-button color="primary" class="boton" (click)="IniciarSesion()">Iniciar Sesion</button>
+    </div>
+
 
 <!--H1 de pregunta si no tiene cuenta-->
 
-<div><h1>No tienes cuenta?</h1> <button>Registrarte</button></div>
+<div><h1>No tienes cuenta? <div class="btn 1" >Registrarse</div>  </h1> </div>
 
