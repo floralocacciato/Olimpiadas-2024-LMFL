@@ -1,0 +1,22 @@
+/* Css del h1 del titulo
+*/
+h1{
+    text-align: center;
+
+}
+
+/* Css del contenedor del label
+*/
+.container{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Css del boton del label
+*/
+.boton{
+    width: 120px;
+    margin: auto;
+}

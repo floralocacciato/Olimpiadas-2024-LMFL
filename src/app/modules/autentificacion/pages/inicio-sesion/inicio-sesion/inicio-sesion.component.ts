@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./inicio-sesion.component.css']
 })
 export class InicioSesionComponent {
+usuarioIngresado: any;
+hide: any;
+iniciarSesion() {
+throw new Error('Method not implemented.');
+}
 
 }
