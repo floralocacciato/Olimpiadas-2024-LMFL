@@ -1,0 +1,20 @@
+html, body{
+    height: 100%; /* establece la altura al 100% y el padding y el margin en 0 para que ocupe toda la pantalla */
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1; /* permito que el elemento main ocupe el espacio disponible entre el navbar y el footer */
+}
+
+footer{
+    text-align: center;
+    padding: 1em 0;
+    height: 100px;
+}
