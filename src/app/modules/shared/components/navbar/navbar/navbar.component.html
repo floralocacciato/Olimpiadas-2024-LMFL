@@ -25,29 +25,30 @@
 
     <span class="example-spacer"></span>
 
-    <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
-    <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="usuario" aria-label="Usuario">
-        <mat-icon>person</mat-icon> <!-- Icono del user-->
-    </button>
-   
-        <mat-menu #usuario="matMenu" >
-            <button mat-menu-item *ngIf="logueado" routerLink="/registro" class="custom-menu-button">Registrarse</button>
-            <button mat-menu-item *ngIf="logueado" routerLink="/inicio-sesion" class="custom-menu-button">Iniciar sesión</button>
+    <!-- Botones del navbar -->
+    <div>
+        <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
+        <button class="btn" [matMenuTriggerFor]="usuario">
+            <mat-icon>person</mat-icon> <!-- Icono del user-->
+        </button>
+
+        <mat-menu #usuario="matMenu">
+            <button mat-menu-item *ngIf="logueado" routerLink="/registro"
+                class="custom-menu-button">Registrarse</button>
+            <button mat-menu-item *ngIf="logueado" routerLink="/inicio-sesion" class="custom-menu-button">Iniciar
+                sesión</button>
         </mat-menu>
-    
-
-    <!-- Icono del carrito -->
-    <button mat-icon-button class="toolbar-icon" aria-label="Carrito de compras">
-        <mat-icon>shopping_cart</mat-icon>
-    </button>
 
 
-    <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="usuario" aria-label="Favoritos">
-        <mat-icon>favorite</mat-icon> <!-- Icono de corazón -->
-    </button>
-    
-    
+        <!-- Icono del carrito -->
+        <button class="btn">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+
+
+        <button class="btn">
+            <mat-icon>favorite</mat-icon> <!-- Icono de corazón -->
+        </button>
+
+    </div>
 </mat-toolbar>
-
-<hr>
-

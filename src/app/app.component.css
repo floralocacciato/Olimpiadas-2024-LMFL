@@ -2,6 +2,7 @@ html, body{
     height: 100%; /* establece la altura al 100% y el padding y el margin en 0 para que ocupe toda la pantalla */
     margin: 0;
     padding: 0;
+    background-color: #f6f4f3;;
 }
 
 body{
