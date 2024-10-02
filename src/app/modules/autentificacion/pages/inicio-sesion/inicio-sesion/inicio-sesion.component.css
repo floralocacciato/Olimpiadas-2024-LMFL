@@ -12,21 +12,27 @@ h1{
     text-align: center;
     justify-content: center;
     flex-direction: column;   /* Alinea los elementos verticalmente */
-
+  
 }
 
 .label{
 
     margin-bottom: 20px;
-    border-radius: 50px; /* Esto hace que el botón tenga bordes redondeados */
     padding: 10px 20px;
 
     margin: auto;
-    color: #f2e9e9;
+   
  
-
+    border-radius: 10px;
+  
+    /* Reduce label size */
+    font-size: 12px;
+    
+    /* Add some padding to make it look nicer */
+    padding: 5px;
   
 }
+
 
 /* Css del boton del label
 */
