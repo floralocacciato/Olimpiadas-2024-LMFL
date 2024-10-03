@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactosComponent } from './contactos/contactos.component';
 import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
+import { ContactosComponent } from './contactos/contactos.component';
 
 const routes: Routes = [
-
   {
-    path:"contacto",component:ContactosComponent
+    path:"contactos",component:ContactosComponent
   },
   {
-    path:"sobrenosotros",component:SobrenosotrosComponent
+    path:"sobre-nosotros",component:SobrenosotrosComponent
   }
 ];
 
@@ -17,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class InformacionRoutingModule{ }
+export class InformacionRoutingModule { }  
