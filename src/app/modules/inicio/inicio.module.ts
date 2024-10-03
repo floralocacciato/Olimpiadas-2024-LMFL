@@ -14,8 +14,6 @@ import { MatCardModule } from '@angular/material/card';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 
-
-
 @NgModule({
   declarations: [
     CardComponent,
@@ -27,11 +25,13 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     CommonModule,
     InicioRoutingModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+  
   ],
   exports: [
     CardComponent,
-    InicioComponent
+    InicioComponent,
+
   ]
 })
 export class InicioModule { }
