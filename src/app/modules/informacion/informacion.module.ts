@@ -5,6 +5,9 @@ import { InformacionRoutingModule } from './informacion-routing.module';
 import { ContactosComponent } from './contactos/contactos.component';
 import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
 
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
 
 @NgModule({
   declarations: [
@@ -13,7 +16,11 @@ import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component'
   ],
   imports: [
     CommonModule,
-    InformacionRoutingModule
+    InformacionRoutingModule,
+    MatGridListModule
+  ],
+  exports: [
+    MatGridListModule
   ]
 })
 export class InformacionModule { }
