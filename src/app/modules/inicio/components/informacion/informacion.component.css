@@ -1,0 +1,30 @@
+.icon-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .icon-section i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+    font-size: 1.5em; /* Tamaño del icono */
+  }
+  
+  .example-button-row {
+    margin-top: 10px;
+  }
+  
+  button {
+    color: #b09e8a; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    cursor: not-allowed; /* Indicador de que el botón está deshabilitado */
+  }
+  
+section{
+    font-size: large;
+    color: #59350c;
+    font-weight: 600;
+}
+span{
+    color: #b09e8a;
+    font-weight: 400;
+}
