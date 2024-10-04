@@ -1,5 +1,53 @@
 /*estilos para las secciones del carousel*/
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+/*estilo del carrousel de las tarjetas*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+    background: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+  }
+  
+.container{
+    padding: 10px 40px;
+}
+.swiper {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.card{
+    border: 2px solid #b09e8a; /* Color marrón */
+    border-radius: 8px; /* Esquinas redondeadas (opcional) */
+    padding: 16px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+}
+.boton{
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    padding: 5px 25px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+    margin-top: 5%;
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .boton:hover {
+    background-color: #0056b3; /* Color azul más oscuro al pasar el ratón */
+  }
 
+  
 
 /*estilos para las secciones de la galería*/
 img {

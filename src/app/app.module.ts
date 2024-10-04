@@ -26,6 +26,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // Es p
     AngularFireAuthModule,
     AngularFireStorageModule,  // Es para la BD de archivos e imágenes
 
+
   ],
   providers: [],
   bootstrap: [AppComponent]
