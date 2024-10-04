@@ -19,6 +19,9 @@
             "polyfills": [
               "zone.js"
             ],
+            "allowedCommonJsDependencies": [
+              "crypto-js",
+              "sweetalert2" ], 
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",

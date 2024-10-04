@@ -1,6 +1,5 @@
 export const environment = {
     production: false, 
-
     firebaseConfig :{
   apiKey: "AIzaSyBifGmKAzJC2nBy8nJPMEePCwfBZ6A4AVQ",
   authDomain: "olimpiadas-2024-24c57.firebaseapp.com",

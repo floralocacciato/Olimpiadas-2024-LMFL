@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // IMPORTACIÓN A LAS VISTAS DEL MÓDULO AUTENTIFICACIÓN
 import { RegistroComponent } from './pages/registro/registro/registro.component';
-import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion/inicio-sesion.component';
+import {InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component'; 
 
 const routes: Routes = [
   {
