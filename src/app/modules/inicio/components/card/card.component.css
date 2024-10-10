@@ -39,7 +39,7 @@
 
 
 
-/*############################################################Estilos para el cuerpo del documento################################################*/
+/*############################################################ Estilos para el cuerpo del documento ################################################*/
 body {
     background: #eee;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -64,7 +64,6 @@ body {
     padding-left: 50px;
     padding-right: 50px;
 }
-
 
 
 /*###############################################################Estilos para las tarjetas  ########################################################*/
