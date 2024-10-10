@@ -2,33 +2,83 @@
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
+
+
 /*estilo del carrousel de las tarjetas*/
+/*##############################################selector universal####################################*/
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+/*###############################################estilos para el boton de corazon######################*/
+.corner-button {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+.heart-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.heart-button i {
+    font-size: 18px;
+    border: none; /*quita los bordes*/
+}
+
+
+
+.heart-button:hover{
+  font-size: 18px;
+  color: red; /* color de fondo mientras que este el pulsor encima */
+}
+
+
+
+/*############################################################Estilos para el cuerpo del documento################################################*/
 body {
     background: #eee;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #000;
   }
-  
+
+
+
+
+/*##########################################################estilos para el contenedor############################################################*/
 .container{
     padding: 10px 40px;
 }
+
+
+
+
+/*###############################################################estilo para el swiper########################################################*/
 .swiper {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
     padding-left: 50px;
     padding-right: 50px;
 }
+
+
+
+/*###############################################################Estilos para las tarjetas  ########################################################*/
 .card{
     border: 2px solid #b09e8a; /* Color marrón */
     border-radius: 8px; /* Esquinas redondeadas (opcional) */
     padding: 16px; /* Espaciado interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+    padding-top: 1.7%;
 }
+
+
+
+/*##################################################################estilos para el boton de la card################################################*/
 .boton{
     background-color: #007BFF; /* Color de fondo azul */
     color: white; /* Color del texto */
@@ -56,4 +106,5 @@ img {
     display: block !important;
     object-fit: scale-down;
     padding: 0px;
+  
 }
