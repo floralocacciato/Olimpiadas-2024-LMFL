@@ -1,1 +1,15 @@
-<p>componentes-favorito works!</p>
+<div class="container">
+    <div class="row">
+        <h1>Lista de Favoritos</h1>
+    <ul>
+        <li>
+            {{favoritos}}
+        </li>
+    </ul>
+
+    <input type="text" *[ngModel]="nuevoFavorito" placeholder="Agregar nuevo favorito">
+    <button (click)="agregarFavorito()">Agregar</button>
+
+    </div>
+</div>
+    

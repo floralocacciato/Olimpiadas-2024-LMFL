@@ -98,7 +98,7 @@ body {
 
   
 
-/*estilos para las secciones de la galería*/
+/*#################################################################estilos para las secciones de la galería########################################*/
 img {
     border-radius: var(--bs-border-radius) !important;
     width: 100% !important;
@@ -106,4 +106,18 @@ img {
     object-fit: scale-down;
     padding: 0px;
   
+}
+
+/*estilo para el corazon*/
+.bi{
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bi:hover{
+  color: red;
 }

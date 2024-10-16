@@ -7,6 +7,8 @@ import { FavoritoRoutingModule } from './favorito-routing.module';
 import { ComponentesFavoritoComponent } from './componentes-favorito/componentes-favorito.component';
 import { PagesFavoritoComponent } from './pages-favorito/pages-favorito.component';
 
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,12 @@ import { PagesFavoritoComponent } from './pages-favorito/pages-favorito.componen
   ],
   imports: [
     CommonModule,
-    FavoritoRoutingModule
+    FavoritoRoutingModule,
+    FormsModule
+  ],
+  exports:[
+    ComponentesFavoritoComponent,
+    PagesFavoritoComponent
   ]
 })
 export class FavoritoModule { }

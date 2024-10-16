@@ -29,7 +29,8 @@ import { SwiperModule } from 'swiper/angular';
     InicioRoutingModule,
     MatButtonModule,
     MatCardModule,
-    SwiperModule //componente de swiper
+    //componente de swiper
+    SwiperModule
   ],
   exports: [
     CardComponent,

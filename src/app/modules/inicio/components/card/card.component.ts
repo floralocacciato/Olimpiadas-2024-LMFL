@@ -12,5 +12,13 @@ SwiperCore.use([Navigation, Pagination]);
   encapsulation: ViewEncapsulation.None
 })
 export class CardComponent  {
+  favoritos = ['Artículo 1', 'Artículo 2', 'Artículo 3'];
+  nuevoFavorito = '';
 
+  agregarFavorito() {
+    if (this.nuevoFavorito) {
+      this.favoritos.push(this.nuevoFavorito);
+      this.nuevoFavorito = ''; // Limpiar el campo de entrada
+    }
+  }
 }
