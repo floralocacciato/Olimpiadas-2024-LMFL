@@ -26,6 +26,13 @@ const routes: Routes = [
   },
   {
     path:"",loadChildren:()=>import('./modules/informacion/informacion.module').then(m=>m.InformacionModule)
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/favorito/favorito.module').then(m=>m.FavoritoModule)
+  }
+  ,
+  {
+    path:"",loadChildren:()=>import('./modules/carrito/carrito.module').then(m=>m.CarritoModule)
   }
 ];
 
