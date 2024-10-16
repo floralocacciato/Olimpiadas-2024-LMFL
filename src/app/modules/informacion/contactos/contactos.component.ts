@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-contactos',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./contactos.component.css']
 })
 export class ContactosComponent {
+
 
 }

@@ -1,0 +1,13 @@
+.mb-3{
+    color: black;
+}
+.form-control{
+    background-color: #d1c8c1;
+    border-radius: 10px;
+    width: 600px;
+}
+.btn-success{
+    border-radius: 55px;
+    width: 150px;
+
+}
