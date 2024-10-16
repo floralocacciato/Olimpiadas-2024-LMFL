@@ -52,6 +52,7 @@ IniciarSesion(email: string, password: string){
   return this.auth.signInWithEmailAndPassword(email, password );
       
 
+
 }
   // Función para CERRAR SESIÓN
   cerrarSesion(){

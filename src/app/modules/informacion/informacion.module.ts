@@ -22,5 +22,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
   exports: [
     MatGridListModule
   ]
+
 })
 export class InformacionModule { }
