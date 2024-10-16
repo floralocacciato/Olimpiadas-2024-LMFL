@@ -1,0 +1,53 @@
+<mat-toolbar class="custom-toolbar">
+    <!-- Menú de inicio -->
+    <button id="menuInicio" mat-button routerLink="/inicio" class="toolbar-button">Inicio</button>
+
+    <!-- Menú desplegable: SECCIÓN DE PRODUCTOS -->
+    <button id="menuProducto" mat-button [matMenuTriggerFor]="producto" class="toolbar-button">Categorías</button>
+    <mat-menu #producto="matMenu">
+        <button mat-menu-item routerLink="/producto">Kayak</button>
+        <button mat-menu-item routerLink="/indumentaria">Escalada</button>
+        <button mat-menu-item routerLink="/alimentacion">Pesca</button>
+        <button mat-menu-item routerLink="/juguetes">Ciclismo</button>
+        <button mat-menu-item routerLink="/juguetes">Esqui</button>
+        <button mat-menu-item routerLink="/juguetes">Buceo</button>
+        <button mat-menu-item routerLink="/juguetes">Tirolesa</button>
+        <button mat-menu-item routerLink="/juguetes">Paracaidismo</button>
+        <button mat-menu-item routerLink="/juguetes">Alpinismo</button>
+    </mat-menu>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../../../assets/logo.jpg" alt="Logo" class="logo-image">
+        </a>
+    </div>
+
+    <span class="example-spacer"></span>
+
+    <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
+    <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="usuario" aria-label="Usuario">
+        <mat-icon>person</mat-icon> <!-- Icono del user-->
+    </button>
+   
+        <mat-menu #usuario="matMenu" >
+            <button mat-menu-item *ngIf="logueado" routerLink="/registro" class="custom-menu-button">Registrarse</button>
+            <button mat-menu-item *ngIf="logueado" routerLink="/inicio-sesion" class="custom-menu-button">Iniciar sesión</button>
+        </mat-menu>
+    
+
+    <!-- Icono del carrito -->
+    <button mat-icon-button class="toolbar-icon" aria-label="Carrito de compras">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+
+    <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="usuario" aria-label="Favoritos">
+        <mat-icon>favorite</mat-icon> <!-- Icono de corazón -->
+    </button>
+    
+    
+</mat-toolbar>
+
+<div style="height: 2px; background-color: #b09e8a; margin: 20px 0;"></div>
+

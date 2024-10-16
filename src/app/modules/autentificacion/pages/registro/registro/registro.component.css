@@ -1,0 +1,76 @@
+/* Css del h1 del titulo
+*/
+h1{
+    text-align: center;
+}
+
+input{
+    border-radius: 500px;
+}
+
+/* Css del contenedor del label
+*/
+.container{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;   /* Alinea los elementos verticalmente */
+
+}
+
+.label{
+
+    margin-bottom: 20px;
+    border-radius: 500px; /* Esto hace que el botón tenga bordes redondeados */
+    padding: 10px 20px;
+
+    margin: auto;
+    color: #f2e9e9;
+ 
+    border-radius: 10px;
+  
+    /* Reduce label size */
+    font-size: 12px;
+    
+    /* Add some padding to make it look nicer */
+    padding: 5px;
+  
+}
+
+
+/* Css del boton del label
+*/
+.boton{
+    width: 120px;
+    margin: auto;
+}
+/* Css del link de registrarte
+*/
+.btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    color: #1893f8;
+}
+.boton_piola{
+    border-radius: 500px; /* Esto hace que el botón tenga bordes redondeados */
+    padding: 10px 20px;
+    width: 250px;
+    margin: auto;
+    color: white;
+    background-color: #1893f8;
+}
+
+#Registrarse{
+    margin-top: 2%;
+}
+
+#uno{
+    margin-top: 3%;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 3%;
+}
