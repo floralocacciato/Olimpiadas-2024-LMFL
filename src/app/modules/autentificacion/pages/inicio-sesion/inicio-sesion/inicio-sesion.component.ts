@@ -20,58 +20,60 @@ export class InicioSesionComponent {
 
 
   //Defino la variable hide
-  hide= true
-usuarioIngresado: any;
-// Constructor que declara las variables provenientes de los componentes AuthService,FirestoreService y Router y las declara como publicas
-      constructor( 
-        public servicioAuth:AuthService,
-      public servicioFirestore:FirestoreService,
-    public servicioRutas: Router 
-  ){}
-       
-      
+  hide = true
+  
+  // Constructor que declara las variables provenientes de los componentes AuthService,FirestoreService y Router y las declara como publicas
+  constructor(
+    public servicioAuth: AuthService,
+    public servicioFirestore: FirestoreService,
+    public servicioRutas: Router
+  ) { }
+
+
 
   //declaro variables que va a usar el usuario
-  usuarios: Usuario  ={
+  usuarios: Usuario = {
 
     uid: '', // atributos tipo '' = reciben valores indefinidos,
     nombre: '',
-    apellido:'',
+    apellido: '',
     email: '',
     rol: '',
     password: ''
   }
 
-    //CREAR UNA COLECCION QUE SOLO RECIBE OBJETOS DEL TIPO USUARIOS
-    coleccionUsuarios: Usuario[] =[];
+  //CREAR UNA COLECCION QUE SOLO RECIBE OBJETOS DEL TIPO USUARIOS
+  coleccionUsuarios: Usuario[] = [];
   //creo la funcion de inicio de sesion que va a utilizar 
 
   //Declaro la funcion y le asigno el tipo async
 
 
 
-  async IniciarSesion(){
+  async IniciarSesion() {
 
-      //declaro una constante llamada "credenciales" que viene de la colección de usuarios
-    const credenciales ={
+    //declaro una constante llamada "credenciales" que viene de la colección de usuarios
+    const credenciales = {
       email: this.usuarios.email,
       password: this.usuarios.password
     }
 
-    try{
+    try {
       //Obtenemos el usuario desde la BD -> Cloud FireStore
       const usuarioBD = await this.servicioAuth.obtenerUsuario(credenciales.email);
       //! -> si es diferente
       // empty -> metodo de firebase para marcar algo si s vacio 
-      if(!usuarioBD || usuarioBD.empty){
+      if (!usuarioBD || usuarioBD.empty) {
 
         alert('Correo electronico no esta registrado')
-      this.LimpiarInputs();
-      return
-      }
-/*Primer documento (registro) en la coleccion de usuarios que se obtiene desde la base de datos
 
-*/
+
+        this.LimpiarInputs();
+        return
+      }
+      /*Primer documento (registro) en la coleccion de usuarios que se obtiene desde la base de datos
+      
+      */
       const usuarioDoc = usuarioBD.docs[0];
       /**
        * Extraer los datos del documento en forma de un objeto y se especifica como de tipo
@@ -83,38 +85,40 @@ usuarioIngresado: any;
       //hash de la contraseña ingresada por el usuario
       const hashPassword = CryptoJS.SHA256(credenciales.password).toString();
 
-      if(hashPassword !== usuarioData.password){
+      if (hashPassword !== usuarioData.password) {
         alert('contraseña incorrecta')
-      this.usuarios.password = '';
-      return;
+        this.usuarios.password = '';
+
+        return;
       }
 
-    const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
-    .then(res=> {
-      alert('Se a logueado con exito');
-      this.servicioRutas.navigate(['/Inicio'])
-    })
-    .catch (err => {
-      alert('Hubo un problema al iniciar sesion '+ err);
-      this.LimpiarInputs();
+      const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
+        .then(res => {
+          alert('Se a logueado con exito');
+          this.servicioRutas.navigate(['/inicio'])
+        })
+        .catch(err => {
+          alert('Hubo un problema al iniciar sesion ' + err);
 
-    })
-    
+          this.LimpiarInputs();
+
+        })
+
     }
-    catch(error){
+    catch (error) {
       this.LimpiarInputs
     }
 
   }
 
-  LimpiarInputs(){
+  LimpiarInputs() {
     const inputs = {
       uid: this.usuarios.uid = '',
       nombre: this.usuarios.nombre = '',
       apellido: this.usuarios.apellido = '',
       password: this.usuarios.password = '',
       rol: this.usuarios.rol = '',
-      email: this.usuarios.email=''
+      email: this.usuarios.email = ''
     }
   }
 }
