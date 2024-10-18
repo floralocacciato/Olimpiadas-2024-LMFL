@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    height: 60vh; /* Altura completa de la ventana para centrar verticalmente */
+  }
+
+  .titulo{
+    font-size: 2.3rem;
+    color: #333;
+    margin-bottom: 60px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se alineen en una columna */
+    align-items: center; /* Opcional: centra los elementos horizontalmente */
+    margin-bottom: 15px; /* Espacio entre cada fila */
+}
+
+  input{
+    width: 500px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid #836c53;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  label{
+    color: #b09e8a;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    margin-left: 10px;
+
+  }
+
+.boton{
+    background-color: #1893f8;
+    border-radius: 70px;
+    border: none;
+    color: #f4f3f6;
+    font-size: 20px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.container-registrarse{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h2{
+  font-weight: normal;
+}
+.btn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: #1893f8;
+  margin-left: 2px;
+}
+
