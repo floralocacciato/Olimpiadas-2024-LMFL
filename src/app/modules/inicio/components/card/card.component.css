@@ -117,7 +117,10 @@ img {
   position: absolute;
   top: 0;
   right: 0;
+  transition: transform 0.2s; /* Añade una transición suave */
 }
 .bi:hover{
-  color: red;
+color: red;
+  transform: scale(1.1); /* Aumenta el tamaño del corazón al pasar el mouse */
+
 }

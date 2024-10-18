@@ -25,7 +25,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // Es p
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,  // Es para la BD de archivos e imágenes
-
+  
 
   ],
   providers: [],

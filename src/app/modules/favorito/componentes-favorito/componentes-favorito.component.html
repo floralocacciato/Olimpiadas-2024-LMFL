@@ -1,15 +1,24 @@
-<div class="container">
-    <div class="row">
-        <h1>Lista de Favoritos</h1>
-    <ul>
-        <li>
-            {{favoritos}}
-        </li>
-    </ul>
-
-    <input type="text" *[ngModel]="nuevoFavorito" placeholder="Agregar nuevo favorito">
-    <button (click)="agregarFavorito()">Agregar</button>
-
-    </div>
-</div>
-    
+<h2>Favoritos</h2>
+<div class="contenedorcard" >
+    <mat-card class="card"  *ngFor="let producto of productoservicio.ProductosFavoritos" >
+      <mat-card-header class="card-header">
+        <mat-card-title>{{producto.nombre}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="card-img" [src]="producto.img"  alt="...">
+      <mat-card-content class="card-descripcion">
+        <!-- <p>
+          {{producto.descripcion}}
+        </p> -->
+        <p>
+          Precio: € {{producto.precio}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="card-botones">
+        <button (click)="subirFavorito(producto)" mat-icon-button color="primary">
+          <mat-icon *ngIf="producto.favoritos===true">favorite</mat-icon>
+          <mat-icon *ngIf="producto.favoritos===false">favorite_border</mat-icon>
+        </button>
+        <button mat-flat-button color="accent" >Agregar al carrito de compra <mat-icon>add_shopping_cart</mat-icon></button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

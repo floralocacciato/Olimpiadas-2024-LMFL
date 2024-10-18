@@ -6,5 +6,5 @@ export interface Producto {
     categoria: string;
     imagen: string;
     alt: string;
-    favorito:boolean;
+    favoritos:boolean;
 } 

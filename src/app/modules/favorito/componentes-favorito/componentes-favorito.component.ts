@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { ProductoService } from '../producto.service';
+import { Producto } from 'src/app/models/producto';
 
 @Component({
   selector: 'app-componentes-favorito',
@@ -6,13 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./componentes-favorito.component.css']
 })
 export class ComponentesFavoritoComponent {
-  favoritos = ['Artículo 1', 'Artículo 2', 'Artículo 3'];
-  nuevoFavorito = '';
 
-  agregarFavorito() {
-    if (this.nuevoFavorito) {
-      this.favoritos.push(this.nuevoFavorito);
-      this.nuevoFavorito = ''; // Limpiar el campo de entrada
-    }
+
+  constructor(public productoservicio: ProductoService) {}
+
+
+  subirFavorito(producto:Producto){
+    producto.favoritos=!producto.favoritos
+
+    this.productoservicio.ProductosFavoritos()
+    this.productoservicio.ProductosFavoritos()
   }
+  
 }

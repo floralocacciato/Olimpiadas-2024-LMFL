@@ -8,8 +8,10 @@ import { ComponentesFavoritoComponent } from './componentes-favorito/componentes
 import { PagesFavoritoComponent } from './pages-favorito/pages-favorito.component';
 
 import { FormsModule } from '@angular/forms';
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+ 
 @NgModule({
   declarations: [
     ComponentesFavoritoComponent,
@@ -18,11 +20,17 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FavoritoRoutingModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
   ],
   exports:[
     ComponentesFavoritoComponent,
-    PagesFavoritoComponent
+    PagesFavoritoComponent,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
   ]
 })
 export class FavoritoModule { }
