@@ -5,13 +5,23 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
+
+// Observará los cambios
+import { Observable } from 'rxjs';
+// Itera la colección leyendo su información actual
+import { map } from 'rxjs/operators';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  enviarRolUsuario(rol: string) {
-    throw new Error('Method not implemented.');
-  }
+
+
+
+   // Propiedad privada para manejo del rol del usuario
+   private rolUsuario: string | null = null;
+
 
   constructor(
     private auth: AngularFireAuth,
@@ -41,6 +51,24 @@ export class AuthService {
 
   }
 
+  // FUNCIÓN PARA RECUPERAR ROL DE USUARIO
+  obtenerRol(uid: string): Observable <string | null> {
+    /*
+      Retornamos del servicio de Firestore la colección de usuarios, buscando por UID
+      Observamos cambios en valores, mapeamos al documento de 'usuario' e identificamos
+      el atributo de rol (aún si este es nulo)
+    */
+    return this.servicioFireStore.collection('usuarios').doc(uid).valueChanges()
+    .pipe(map((usuario: any) => usuario ? usuario.rol : null));
+  }
+  // Obtiene el rol de la primera función y lo asigna a la propiedad privada local
+  enviarRolUsuario(rol: string){
+    this.rolUsuario = rol;
+  }
+  // Obtiene el rol y lo retorna (ya sean alfanumericos o nulos)
+  obtenerRolUsuario(): string | null {
+    return this.rolUsuario;
+  }
 
   //Funcion para registro
   registrar(email: string, password: string) {
