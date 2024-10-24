@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductoService {
+  
   productos: any[] = []; 
   constructor() { }
 // Metodo para contar productos favoritos
@@ -19,6 +20,7 @@ contarProductosFavoritos() {
   this.cantidadProductosFavoritos = this.productos.filter(producto => producto.favoritos === true).length;
   // this.cantidadProductosFavoritos= this.cursosFavoritos.length
 }
+
 
 
 }

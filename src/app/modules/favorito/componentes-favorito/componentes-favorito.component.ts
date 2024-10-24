@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { ProductoService } from '../producto.service';
+
+
 @Component({
   selector: 'app-componentes-favorito',
   templateUrl: './componentes-favorito.component.html',
@@ -8,7 +10,7 @@ import { ProductoService } from '../producto.service';
 export class ComponentesFavoritoComponent {
   constructor (public productoservicio: ProductoService){}
 
- 
+
 
   subirFavorito(producto:any){
     producto.favoritos=!producto.favoritos
@@ -16,5 +18,4 @@ export class ComponentesFavoritoComponent {
     this.productoservicio.getProductosFavoritos()
     this.productoservicio.contarProductosFavoritos()
    }
-
 }
