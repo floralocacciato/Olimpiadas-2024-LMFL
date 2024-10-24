@@ -15,14 +15,19 @@ SwiperCore.use([Navigation, Pagination]);
   encapsulation: ViewEncapsulation.None
 })
 export class CardComponent {
-
-
+  productos: Producto[] = [];
+producto: any;
   constructor (public productoservicio: ProductoService){}
 
-  subirFavorito(producto: Producto){
-    producto.favoritos=!producto.favoritos
+  
 
-   }
+ subirFavorito(producto:any){
+  producto.favoritos=!producto.favoritos
+
+  this.productoservicio.getProductosFavoritos()
+  this.productoservicio.contarProductosFavoritos()
+ }
+
 }
 
 
