@@ -16,18 +16,21 @@ import { MatIconModule } from '@angular/material/icon';
 // Paqueterías de formularios y formularios reactivos de ANGULAR
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+//servicio
+import { CrudService } from './services/crud.service';
+
 
 @NgModule({
   declarations: [
     TableComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, //agregamos el servicio al modulo
   ],
   exports: [
     TableComponent,

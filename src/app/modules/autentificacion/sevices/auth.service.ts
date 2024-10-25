@@ -47,7 +47,7 @@ registrar (email: string, password: string){
 
 }
 //Funcion para Inicio de sesion
-IniciarSesion(email: string, password: string){
+iniciarSesion(email: string, password: string){
   //Validar el email y contraseña
   return this.auth.signInWithEmailAndPassword(email, password );
       
