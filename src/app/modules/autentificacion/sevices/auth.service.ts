@@ -53,7 +53,6 @@ export class AuthService {
     return this.auth.signInWithEmailAndPassword(email, password);
 
 
-  }
   // Función para CERRAR SESIÓN
   cerrarSesion() {
     // Devolver una promesa vacía
