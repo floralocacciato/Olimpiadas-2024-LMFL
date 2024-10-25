@@ -1,11 +1,11 @@
 <!--##############################################carousel de cards###############################################################-->
-<swiper [slidesPerView]="5" [spaceBetween]="20" [navigation]="true" [pagination]="{ clickable: true }">
+<swiper [slidesPerView]="6" [spaceBetween]="20" [navigation]="true" [pagination]="{ clickable: true }">
 
   <ng-template swiperSlide class="card" *ngFor="let producto of coleccionProductos">
 
     <!--boton de favoritos-->
     <mat-card-actions class="card-botones">
-      <button (click)="subirFavorito(producto)" mat-icon-button color="primary">
+      <button (click)="subirFavorito(producto)" class="boton-fav" mat-icon-button color="danger">
         <mat-icon *ngIf="producto.favoritos===true">favorite</mat-icon>
         <mat-icon *ngIf="producto.favoritos===false">favorite_border</mat-icon>
       </button>
@@ -19,10 +19,10 @@
     <!--nombre del producto-->
     <mat-card-title>{{producto.nombre}}</mat-card-title>
     <div class="texto">
-      {{producto.precio}}
+      {{producto.precio | currency}}
     </div>
     <div class="link">
-      <button class="boton" routerLink="/producto">ver mas</button>
+      <button class="boton" routerLink="/producto">Agregar al carrito</button>
     </div>
   </ng-template>
 

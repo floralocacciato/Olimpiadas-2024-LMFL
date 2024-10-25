@@ -18,6 +18,7 @@ SwiperCore.use([Navigation, Pagination]);
 export class CardComponent {
   productos: Producto[] = [];
 producto: any;
+coleccionProductos:Producto[]=[];
   constructor (public productoservicio: ProductoService, public servicioCrud:CrudService){}
 
  
@@ -29,7 +30,6 @@ producto: any;
   this.productoservicio.contarProductosFavoritos()
  }
  
- coleccionProductos:Producto[]=[];
  
 
  ngOnInit(): void {
@@ -38,8 +38,10 @@ producto: any;
    
     // guarda la información recibida como un nuevo "producto" a la colección
     this.coleccionProductos = producto;
+    
   })
 }
+
 }
 
 
