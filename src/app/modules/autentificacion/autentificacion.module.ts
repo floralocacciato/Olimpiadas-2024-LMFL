@@ -6,7 +6,7 @@ import { AutentificacionRoutingModule } from './autentificacion-routing.module';
 //componentes del modulo autentificacion 
 import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './pages/registro/registro/registro.component';
-
+//hola
 //componentes de material
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
