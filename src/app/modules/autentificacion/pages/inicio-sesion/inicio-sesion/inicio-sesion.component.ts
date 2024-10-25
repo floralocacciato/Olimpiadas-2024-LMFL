@@ -12,43 +12,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./inicio-sesion.component.css']
 })
 export class InicioSesionComponent {
-  hide = true;
-
-  /* ####################################### LOCAL
-  // Definimos la propiedad local para que guarde la colección
-
-  // COLECCIÓN LOCAL DE usuarioIngresado CON INFORMACIÓN
-  public coleccionusuarioIngresadoLocal: Usuario[];
-  
-  constructor(){
-    this.coleccionusuarioIngresadoLocal = [
-      {
-        uid: '',
-        nombre: 'Leandro',
-        apellido: 'Soto',
-        email: 'leandrosoto@gmail.com',
-        rol: 'admin',
-        password: '123456'
-      },
-      {
-        uid: '',
-        nombre: 'Pepe',
-        apellido: 'Novita',
-        email: 'pepenovita@gmail.com',
-        rol: 'vis',
-        password: 'abc123'
-      },
-      {
-        uid: '',
-        nombre: 'Tomas',
-        apellido: 'Loyola',
-        email: 'tomasloyola@gmail.com',
-        rol: 'admin',
-        password: 'abcdef'
-      }
-    ]
-  }*/
-  // ####################################### FIN LOCAL
 
   constructor(
     public servicioAuth: AuthService,
@@ -56,10 +19,7 @@ export class InicioSesionComponent {
     public servicioRutas: Router
   ) { }
 
-  // ####################################### INGRESADO
-  // Importamos la interfaz de usuario e inicializamos vacío
-  usuarioIngresado: Usuario = {
-    uid: '',
+
     nombre: '',
     apellido: '',
     email: '',
@@ -67,19 +27,7 @@ export class InicioSesionComponent {
     password: ''
   }
 
-  // Función para el inicio de sesión
-  async iniciarSesion() {
-    // ############################################# LOCAL
-    // Las credenciales reciben la información que se envía desde la web
-    /*
-    const credenciales = {
-      uid: this.usuarioIngresado.uid,
-      nombre: this.usuarioIngresado.nombre,
-      apellido: this.usuarioIngresado.apellido,
-      email: this.usuarioIngresado.email,
-      rol: this.usuarioIngresado.rol,
-      password: this.usuarioIngresado.password
-    }
+
 
     // Repetitiva para recorrer la colección local
     for(let i = 0; i < this.coleccionusuarioIngresadoLocal.length; i++){
@@ -105,30 +53,7 @@ export class InicioSesionComponent {
       }
     }*/
 
-    // ############################################# FIN LOCAL
 
-    const credenciales = {
-      email: this.usuarioIngresado.email,
-      password: this.usuarioIngresado.password
-    }
-
-    try{
-      // Obtenemos el usuario desde la BD -> Cloud Firestore
-      const usuarioBD = await this.servicioAuth.obtenerUsuario(credenciales.email);
-
-      // ! -> si es diferente
-      // .empy -> método de Firebase para marcar si algo es vacío
-      if(!usuarioBD || usuarioBD.empty){
-        Swal.fire({
-          text: "Correo electrónico no registrado",
-          icon: "error"
-        })
-        this.limpiarInputs();
-        return;
-      }
-      
-      /* Primer documento (registro) en la colección de usuarios que se obtiene desde la 
-        consulta.
       */
       const usuarioDoc = usuarioBD.docs[0];
 
@@ -147,37 +72,7 @@ export class InicioSesionComponent {
           icon: "error"
         })
 
-        this.usuarioIngresado.password = '';
-        return;
-      }
 
-      const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password)
-      .then(res => {
-        Swal.fire({
-          text: "¡Se ha logueado con éxito! :D",
-          icon: "success"
-        });
-
-        this.servicioRutas.navigate(['/inicio']);
-      })
-      .catch(err => {
-        Swal.fire({
-          text: "Hubo un problema al iniciar sesión :(" + err,
-          icon: "error"
-        })
-
-        this.limpiarInputs();
-      })
-    }catch(error){
-      this.limpiarInputs();
-    }
-  }
-
-  // Función para vaciar el formulario
-  limpiarInputs() {
-    const inputs = {
-      email: this.usuarioIngresado.email = '',
-      password: this.usuarioIngresado.password = ''
     }
   }
 }
