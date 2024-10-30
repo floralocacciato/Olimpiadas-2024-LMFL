@@ -69,10 +69,9 @@ export class InicioSesionComponent {
       if (!usuarioBD || usuarioBD.empty) {
 
         Swal.fire({
-          icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
-          footer: '<a href="#">Why do I have this issue?</a>'
+          text: "Ocurrió un problema con su correo electrónico",
+          icon: "error"
         });
         this.LimpiarInputs();
         return
@@ -93,10 +92,9 @@ export class InicioSesionComponent {
 
       if (hashPassword !== usuarioData.password) {
        Swal.fire({
-            icon: "error",
             title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
+            text: "Ocurrió un problema con su contraseña",
+            icon: "error"
           });
         this.usuarios.password = '';
         return;
@@ -106,17 +104,16 @@ export class InicioSesionComponent {
         .then(res => {
           Swal.fire({
             title: "¡Buen trabajo!",
-            text: "¡Se pudo registrar con éxito! :)",
+            text: "¡Pudo iniciar sesión con éxito!",
             icon: "success"
           });
           this.servicioRutas.navigate(['/inicio-sesion'])
         })
         .catch(err => {
           Swal.fire({
-            icon: "error",
             title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
+            text: "",
+            icon: "error"
           });
           this.LimpiarInputs();
 

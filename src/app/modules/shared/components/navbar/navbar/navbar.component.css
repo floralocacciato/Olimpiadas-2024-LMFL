@@ -30,7 +30,7 @@
 }
 
 .logo-container {
-    flex-grow: 10;
+    flex-grow: 5;
     display: flex;
     justify-content: center;
 }
@@ -77,3 +77,16 @@ mat-icon{
     width: 40px;
     height: 40px;
 }
+
+.divider-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente el logo y los divisores */
+    flex-grow: 1; /* Para que ocupe el espacio disponible */
+}
+
+.divisor {
+    flex: 1; /* Permite que el divisor ocupe el espacio disponible */
+    margin: 0 250px; /* Espaciado entre el divisor y el logo */
+    background-color: #31241e; /* Color del divisor */
+}
+

@@ -8,6 +8,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* altura del cuerpo de la pàgina mìnima */
+    background-color: #f6f4f3;
+
+
 }
 
 main {
