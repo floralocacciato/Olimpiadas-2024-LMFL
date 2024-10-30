@@ -56,13 +56,11 @@ crearProducto(producto: Producto, url: string){
 
 // OBTENER productos
 obtenerProducto(){
-  // snapshotChanges -> toma una captura del estado de los datos
-  // pipe -> funciona como una tubería que retorna el nuevo arreglo de datos
-  // map -> "mapea" o recorre esa nueva información
-  // a -> resguarda la nueva información y la envía
   return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
 }
-
+obtenerProductosCarrito(p0: string){
+  return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
+}
 // EDITAR productos
 modificarProducto(idProducto: string, nuevaData: Producto){
   // accedemos a la colección, buscamos por ID y actualizamos información

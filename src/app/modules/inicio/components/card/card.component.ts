@@ -5,6 +5,7 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
 
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { Carrito } from 'src/app/models/carrito';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
@@ -16,31 +17,55 @@ SwiperCore.use([Navigation, Pagination]);
   encapsulation: ViewEncapsulation.None
 })
 export class CardComponent {
-  productos: Producto[] = [];
-producto: any;
-coleccionProductos:Producto[]=[];
-  constructor (public productoservicio: ProductoService, public servicioCrud:CrudService){}
 
- 
 
- subirFavorito(producto:any){
-  producto.favoritos=!producto.favoritos
+//carrito
+  productosCarrito: Carrito[] = [];
+  producto: any;
+  coleccionProductosCarrito: Carrito[] = [];
+  contadorCarrito: number = 0;
+//favorito contador
+  contadorFavoritos: number = 0;
 
-  this.productoservicio.getProductosFavoritos()
-  this.productoservicio.contarProductosFavoritos()
- }
- 
- 
+  // productos
+  productosFavoritos: Producto[] = [];
+  coleccionFavoritos: Producto[] = [];
+  constructor(public productoservicio: ProductoService, public servicioCrud: CrudService) { }
 
- ngOnInit(): void {
-  // subscribe -> notifica constantemente los cambios actuales del sistema
-  this.servicioCrud.obtenerProducto().subscribe(producto => {
-   
+
+
+  subirFavorito(producto: any) {
+    producto.favoritos = !producto.favoritos
+
+    this.productoservicio.getProductosFavoritos()
+    this.productoservicio.contarProductosFavoritos()
+  }
+
+  agregarProducto(producto:any) {
+    this.productoservicio.getProductosCarrito()
+     producto
+  }
+
+
+
+
+  ngOnInit(): void {
+    // subscribe -> notifica constantemente los cambios actuales del sistema
+    this.servicioCrud.obtenerProducto().subscribe(producto => {
+
+      // guarda la información recibida como un nuevo "producto" a la colección
+      this.coleccionFavoritos = producto;
+
+    })
+     // subscribe -> notifica constantemente los cambios actuales del sistema
+   this.servicioCrud.obtenerProducto().subscribe((producto: any) => {
+
     // guarda la información recibida como un nuevo "producto" a la colección
-    this.coleccionProductos = producto;
-    
+    this.coleccionProductosCarrito = producto;
+
   })
-}
+  }
+  
 
 }
 

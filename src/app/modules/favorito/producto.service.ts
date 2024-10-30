@@ -6,9 +6,22 @@ import { Injectable } from '@angular/core';
 export class ProductoService {
   
   productos: any[] = []; 
-  constructor() { }
+  constructor( ) { }
 // Metodo para contar productos favoritos
 productosFavoritos: any[] = [];
+productosCarrito: any[] = [];
+
+producto:any[]=[];
+getProductosCarrito(){
+  this.productosCarrito = this.productos.filter(producto => producto.carrito === true);
+}
+// Metodo para contar productos Carrito
+cantidadProductosCarrito: number = 0;
+contarCarrito() {
+  this.cantidadProductosCarrito = this.productos.filter(producto => producto.carrito === true).length;
+}
+
+
 getProductosFavoritos() {
   this.productosFavoritos = this.productos.filter(producto => producto.favoritos === true);
 

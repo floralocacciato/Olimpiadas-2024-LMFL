@@ -1,0 +1,7 @@
+<div class="card" *ngFor="let cart of cantidadProductosCarrito" >
+    <p class="nombre">{{cart.nombre}}</p>
+    <p class="precio">{{cart.precio | currency}} </p>
+    <p class="descripcion">{{cart.descripcion}} </p>
+    <img src="{{cart.imagen}}" alt="" class="imagen">
+    <button class="boton" routerLink="/carrito">Agregar al carrito</button>
+</div>

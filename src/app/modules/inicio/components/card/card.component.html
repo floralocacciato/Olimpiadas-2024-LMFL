@@ -1,7 +1,7 @@
 <!--##############################################carousel de cards###############################################################-->
 <swiper [slidesPerView]="6" [spaceBetween]="20" [navigation]="true" [pagination]="{ clickable: true }">
 
-  <ng-template swiperSlide class="card" *ngFor="let producto of coleccionProductos">
+  <ng-template swiperSlide class="card" *ngFor="let producto of coleccionProductosCarrito">
 
     <!--boton de favoritos-->
     <mat-card-actions class="card-botones">
@@ -22,7 +22,7 @@
       {{producto.precio | currency}}
     </div>
     <div class="link">
-      <button class="boton" routerLink="/producto">Agregar al carrito</button>
+      <button class="boton" (click)="agregarProducto(producto)" >Agregar al carrito</button>
     </div>
   </ng-template>
 
