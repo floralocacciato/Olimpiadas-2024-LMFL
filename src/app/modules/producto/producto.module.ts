@@ -20,6 +20,7 @@ import { CardEsquiComponent } from './components/card-esqui/card-esqui.component
 import { CardParacaidismoComponent } from './components/card-paracaidismo/card-paracaidismo.component';
 import { CardPescaComponent } from './components/card-pesca/card-pesca.component';
 import { CardTirolesaComponent } from './components/card-tirolesa/card-tirolesa.component';
+import { CardInicioComponent } from './components/card-inicio/card-inicio.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { CardTirolesaComponent } from './components/card-tirolesa/card-tirolesa.
     CardEsquiComponent,
     CardParacaidismoComponent,
     CardPescaComponent,
-    CardTirolesaComponent
+    CardTirolesaComponent,
+    CardInicioComponent
   ],
   imports: [
     CommonModule,
