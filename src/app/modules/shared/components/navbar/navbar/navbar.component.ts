@@ -15,4 +15,9 @@ export class NavbarComponent {
     this.logueado = false;
     this.deslogueado = true;
   }
+  menuOpen = false; // Controla el estado del menú
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen; // Alterna el estado del menú
+  }
 }
