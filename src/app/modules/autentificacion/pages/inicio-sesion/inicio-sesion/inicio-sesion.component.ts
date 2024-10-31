@@ -12,54 +12,23 @@ import Swal from 'sweetalert2';
   styleUrls: ['./inicio-sesion.component.css']
 })
 export class InicioSesionComponent {
-  hide = true;
 
-  /* ####################################### LOCAL
-  // Definimos la propiedad local para que guarde la colección
+  //Defino la variable hide
+  hide= true
+usuarioIngresado: any;
+// Constructor que declara las variables provenientes de los componentes AuthService,FirestoreService y Router y las declara como publicas
+      constructor( 
+        public servicioAuth:AuthService,
+      public servicioFirestore:FirestoreService,
+    public servicioRutas: Router 
+  ){}
+       
+      
 
-  // COLECCIÓN LOCAL DE usuarioIngresado CON INFORMACIÓN
-  public coleccionusuarioIngresadoLocal: Usuario[];
-  
-  constructor(){
-    this.coleccionusuarioIngresadoLocal = [
-      {
-        uid: '',
-        nombre: 'Leandro',
-        apellido: 'Soto',
-        email: 'leandrosoto@gmail.com',
-        rol: 'admin',
-        password: '123456'
-      },
-      {
-        uid: '',
-        nombre: 'Pepe',
-        apellido: 'Novita',
-        email: 'pepenovita@gmail.com',
-        rol: 'vis',
-        password: 'abc123'
-      },
-      {
-        uid: '',
-        nombre: 'Tomas',
-        apellido: 'Loyola',
-        email: 'tomasloyola@gmail.com',
-        rol: 'admin',
-        password: 'abcdef'
-      }
-    ]
-  }*/
-  // ####################################### FIN LOCAL
+  //declaro variables que va a usar el usuario
+  usuarios: Usuario  ={
 
-  constructor(
-    public servicioAuth: AuthService,
-    public servicioFirestore: FirestoreService,
-    public servicioRutas: Router
-  ) { }
-
-  // ####################################### INGRESADO
-  // Importamos la interfaz de usuario e inicializamos vacío
-  usuarioIngresado: Usuario = {
-    uid: '',
+    uid: '', // atributos tipo '' = reciben valores indefinidos,
     nombre: '',
     apellido: '',
     email: '',
@@ -67,69 +36,36 @@ export class InicioSesionComponent {
     password: ''
   }
 
-  // Función para el inicio de sesión
-  async iniciarSesion() {
-    // ############################################# LOCAL
-    // Las credenciales reciben la información que se envía desde la web
-    /*
-    const credenciales = {
-      uid: this.usuarioIngresado.uid,
-      nombre: this.usuarioIngresado.nombre,
-      apellido: this.usuarioIngresado.apellido,
-      email: this.usuarioIngresado.email,
-      rol: this.usuarioIngresado.rol,
-      password: this.usuarioIngresado.password
-    }
+    //CREAR UNA COLECCION QUE SOLO RECIBE OBJETOS DEL TIPO USUARIOS
+    coleccionUsuarios: Usuario[] =[];
+  //creo la funcion de inicio de sesion que va a utilizar 
 
-    // Repetitiva para recorrer la colección local
-    for(let i = 0; i < this.coleccionusuarioIngresadoLocal.length; i++){
-      // Constante que guarde la información de la posición actual de los objetos
-      const usuarioLocal = this.coleccionusuarioIngresadoLocal[i];
+  //Declaro la funcion y le asigno el tipo async
 
-      
-      Comparando uno por uno los atributos del objeto local con el que ingresa el 
-      usuario 
-      if(usuarioLocal.nombre === credenciales.nombre && 
-        usuarioLocal.apellido === credenciales.apellido && 
-        usuarioLocal.email === credenciales.email && 
-        usuarioLocal.rol === credenciales.rol && 
-        usuarioLocal.password === credenciales.password
-      ){
-        // Notificamos al usuario su correcto ingreso
-        alert("Iniciaste sesión correctamente :)");
-        // Paramos la función
-        break;
-      } else {
-        alert("No se pudo iniciar sesión :(");
-        break;
-      }
-    }*/
 
-    // ############################################# FIN LOCAL
 
-    const credenciales = {
-      email: this.usuarioIngresado.email,
-      password: this.usuarioIngresado.password
+  async IniciarSesion(){
+
+      //declaro una constante llamada "credenciales" que viene de la colección de usuarios
+    const credenciales ={
+      email: this.usuarios.email,
+      password: this.usuarios.password
     }
 
     try{
-      // Obtenemos el usuario desde la BD -> Cloud Firestore
+      //Obtenemos el usuario desde la BD -> Cloud FireStore
       const usuarioBD = await this.servicioAuth.obtenerUsuario(credenciales.email);
-
-      // ! -> si es diferente
-      // .empy -> método de Firebase para marcar si algo es vacío
+      //! -> si es diferente
+      // empty -> metodo de firebase para marcar algo si s vacio 
       if(!usuarioBD || usuarioBD.empty){
-        Swal.fire({
-          text: "Correo electrónico no registrado",
-          icon: "error"
-        })
-        this.limpiarInputs();
-        return;
+
+        alert('Correo electronico no esta registrado')
+      this.LimpiarInputs();
+      return
       }
-      
-      /* Primer documento (registro) en la colección de usuarios que se obtiene desde la 
-        consulta.
-      */
+/*Primer documento (registro) en la coleccion de usuarios que se obtiene desde la base de datos
+
+*/
       const usuarioDoc = usuarioBD.docs[0];
 
       /**
@@ -139,45 +75,40 @@ export class InicioSesionComponent {
       const usuarioData = usuarioDoc.data() as Usuario;
 
       // Hash de la contraseña ingresada por el usuario
-      const hashedPassword = CryptoJS.SHA256(credenciales.password).toString();
+      const hashPassword = CryptoJS.SHA256(credenciales.password).toString();
 
-      if(hashedPassword !== usuarioData.password){
-        Swal.fire({
-          text: "Contraseña incorrecta",
-          icon: "error"
-        })
-
-        this.usuarioIngresado.password = '';
-        return;
+      if(hashPassword !== usuarioData.password){
+        alert('contraseña incorrecta')
+      this.usuarios.password = '';
+      return;
       }
 
-      const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password)
-      .then(res => {
-        Swal.fire({
-          text: "¡Se ha logueado con éxito! :D",
-          icon: "success"
-        });
+    const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
+    .then(res=> {
+      alert('Se a logueado con exito');
+      this.servicioRutas.navigate(['/Inicio'])
+    })
+    .catch (err => {
+      alert('Hubo un problema al iniciar sesion '+ err);
+      this.LimpiarInputs();
 
-        this.servicioRutas.navigate(['/inicio']);
-      })
-      .catch(err => {
-        Swal.fire({
-          text: "Hubo un problema al iniciar sesión :(" + err,
-          icon: "error"
-        })
-
-        this.limpiarInputs();
-      })
-    }catch(error){
-      this.limpiarInputs();
+    })
+    
+    }
+    catch(error){
+      alert('Hubo un problema al iniciar sesion '+ error);
+      this.LimpiarInputs
     }
   }
 
-  // Función para vaciar el formulario
-  limpiarInputs() {
+  LimpiarInputs(){
     const inputs = {
-      email: this.usuarioIngresado.email = '',
-      password: this.usuarioIngresado.password = ''
+      uid: this.usuarios.uid = '',
+      nombre: this.usuarios.nombre = '',
+      apellido: this.usuarios.apellido = '',
+      password: this.usuarios.password = '',
+      rol: this.usuarios.rol = '',
+      email: this.usuarios.email=''
     }
   }
 }
