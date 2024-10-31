@@ -58,7 +58,7 @@ crearProducto(producto: Producto, url: string){
 obtenerProducto(){
   return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
 }
-obtenerProductosCarrito(p0: string){
+obtenerProductosCarrito(){
   return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
 }
 // EDITAR productos

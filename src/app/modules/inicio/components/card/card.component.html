@@ -22,7 +22,10 @@
       {{producto.precio | currency}}
     </div>
     <div class="link">
-      <button class="boton" (click)="agregarProducto(producto)" >Agregar al carrito</button>
+      <button (click)="agregarProducto(producto)">
+        <mat-icon >shopping_cart</mat-icon>
+        
+      </button>
     </div>
   </ng-template>
 

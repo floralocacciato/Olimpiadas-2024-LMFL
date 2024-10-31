@@ -60,7 +60,8 @@ async agregarProducto() {
       // imagen ahora toma la URL generada desde Storage
       imagen: '',
       alt: this.producto.value.alt!,
-      favoritos: false
+      favoritos: false,
+      carrito: false,
     }
 
     // Enviamos nombre y url de la imagen; definimos carpeta de imágenes como "productos"
@@ -135,7 +136,8 @@ editarProducto() {
     /* Imagen toma información desde el servicio, no del formulario */
     imagen: this.productoSeleccionado.imagen,
     alt: this.producto.value.alt!,
-    favoritos: false
+    favoritos: false,
+    carrito: false,
   }
 
   // Verificamos que el usuario ingrese una nueva imagen o no

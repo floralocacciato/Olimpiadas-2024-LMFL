@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Producto } from 'src/app/models/producto';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,12 @@ export class ProductoService {
   constructor( ) { }
 // Metodo para contar productos favoritos
 productosFavoritos: any[] = [];
-productosCarrito: any[] = [];
+productosCarrito: Producto[] = [];
 
-producto:any[]=[];
-getProductosCarrito(){
-  this.productosCarrito = this.productos.filter(producto => producto.carrito === true);
+getProductosCarrito(product:Producto){
+  const productoEncontrado = this.productos.find(prod => prod.idProducto === product.idProducto);
+
+  return productoEncontrado.carrito = true;
 }
 // Metodo para contar productos Carrito
 cantidadProductosCarrito: number = 0;

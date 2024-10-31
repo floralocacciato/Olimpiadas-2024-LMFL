@@ -68,28 +68,35 @@ body {
 
 /*###############################################################Estilos para las tarjetas  ########################################################*/
 .card{
-    border: 2px solid #b09e8a; /* Color marrón */
-    border-radius: 8px; /* Esquinas redondeadas (opcional) */
-    padding: 16px; /* Espaciado interno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
-    padding-top: 1.7%;
+  width: 200px; /* Ancho fijo para todas las tarjetas */
+  height: 380px; /* Alto fijo para todas las tarjetas */
+  border: 2px solid #b09e8a; /* Color marrón */
+  border-radius: 8px; /* Esquinas redondeadas (opcional) */
+  padding: 16px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+  display: flex;
+  flex-direction: column; /* Alinea el contenido verticalmente */
 }
-
+.card img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 250px; /* Alto fijo para todas las imágenes */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
 
 
 /*##################################################################estilos para el boton de la card################################################*/
 .boton{
-    background-color: #007BFF; /* Color de fondo azul */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Esquinas redondeadas */
-    padding: 5px 25px; /* Espaciado interno */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    transition: background-color 0.3s; /* Transición suave para el hover */
-    margin-top: 5%;
-    display: flex;
-    margin-left: 20%;
-    margin-right: 20%;
+  background-color: #007BFF; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  padding: 5px 25px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  transition: background-color 0.3s; /* Transición suave para el hover */
+  position: absolute; /* Posiciona el botón de forma absoluta */
+  bottom: 16px; /* Coloca el botón a 16px del fondo de la tarjeta */
+  left: 50%; /* Centra el botón horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición del botón para centrarlo */
   }
   
   .boton:hover {
@@ -112,8 +119,8 @@ img {
 /*estilo para el corazon*/
 .boton-fav{
   cursor: pointer;
-  margin-top: 5px;
-  margin-right: 5px;
+  margin-top: 2px;
+  margin-right: 4.5px;
   text-align: right;
   position: absolute;
   top: 0;

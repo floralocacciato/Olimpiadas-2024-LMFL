@@ -7,4 +7,5 @@ export interface Carrito {
     imagen: string;
     alt: string;
     favoritos:boolean;
+    carrito:boolean;
 }

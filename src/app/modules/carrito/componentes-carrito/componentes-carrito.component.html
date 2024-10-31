@@ -1,7 +1,67 @@
-<div class="card" *ngFor="let cart of cantidadProductosCarrito" >
-    <p class="nombre">{{cart.nombre}}</p>
-    <p class="precio">{{cart.precio | currency}} </p>
-    <p class="descripcion">{{cart.descripcion}} </p>
-    <img src="{{cart.imagen}}" alt="" class="imagen">
-    <button class="boton" routerLink="/carrito">Agregar al carrito</button>
-</div>
+<div class="container overflow-hidden text-center">
+    <div class="row gx-5">
+      <div class="col">
+       <div class="p-3"> <table class="table">
+        <tbody>
+               <tr *ngFor="let producto of cantidadProductosCarrito">
+       
+                   <td>
+                       <img src="{{producto.imagen}}" alt="{{producto.alt}}" width="100px">
+                   </td>
+                   <td>{{producto.nombre}}</td>
+       
+                   <td>{{producto.precio |currency}}</td>
+       
+                   <!-- ACCIONES -->
+               
+       
+                   <!-- ELIMINAR -->
+                   <td>
+                       <!-- mostrarBorrar() recibe como parametro el producto seleccionado o iterado en esa fila -->
+                       <button id="btn-delete" title="Eliminar" type="button" class="btn btn-outline-danger"
+                           data-bs-toggle="modal" data-bs-target="#eliminarProducto" (click)="mostrarBorrar(producto)">
+                           <mat-icon>delete</mat-icon>
+                       </button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+       
+       
+       
+       
+       
+       <!-- MODAL PARA ELIMINAR PRODUCTO -->
+       <div class="modal fade" *ngIf="modalVisibleProducto" id="eliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <!-- ENCABEZADO -->
+                   <div class="modal-header">
+                       <h1 class="modal-title fs-5" id="exampleModalLabel">¿Está seguro de eliminar el producto?</h1>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+       
+                   <!-- CUERPO DEL MODAL -->
+                   <div class="modal-body">
+                       <!-- Mostramos al usuario información del producto que quiere eliminar -->
+                        
+                       {{productoSeleccionado.nombre}}
+       
+                       <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}" width="100px">
+                   </div>
+                   
+                   <!-- ACCIONES DEL MODAL -->
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" (click)="borrarProducto()">Eliminar</button>
+                       <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+      </div>
+      <div class="col">
+        <div class="p-3">Custom column padding</div>
+      </div>
+    </div>
+  </div>

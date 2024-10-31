@@ -5,6 +5,7 @@ import { CarritoRoutingModule } from './carrito-routing.module';
 import { ComponentesCarritoComponent } from './componentes-carrito/componentes-carrito.component';
 import { PagesCarritoComponent } from './pages-carrito/pages-carrito.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
   imports: [
     CommonModule,
     CarritoRoutingModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   exports: [ComponentesCarritoComponent,
      PagesCarritoComponent,

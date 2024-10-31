@@ -20,7 +20,6 @@ export class CardComponent {
 
 
 //carrito
-  productosCarrito: Carrito[] = [];
   producto: any;
   coleccionProductosCarrito: Carrito[] = [];
   contadorCarrito: number = 0;
@@ -41,9 +40,8 @@ export class CardComponent {
     this.productoservicio.contarProductosFavoritos()
   }
 
-  agregarProducto(producto:any) {
-    this.productoservicio.getProductosCarrito()
-     producto
+  agregarProducto(producto:Producto) {
+    this.productoservicio.getProductosCarrito(producto)
   }
 
 
