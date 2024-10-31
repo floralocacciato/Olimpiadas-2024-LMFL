@@ -5,6 +5,6 @@ export interface Usuario {
     nombre: string;
     apellido: string;
     email: string;
-    rolUsuario: string;
+    rol: string;
     password: string | any;
 }

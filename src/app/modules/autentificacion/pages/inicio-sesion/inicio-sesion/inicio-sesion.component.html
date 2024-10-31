@@ -1,23 +1,35 @@
 
 
+<div class="container">
+
+    <h1 class="titulo">Iniciar Sesión</h1>
 
     <div class="row">
+
+        <!-- Email -->
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="usuarios.email">
+            <label for="floatingInput">Correo Electrónico</label>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="usuarios.password">
+            <label for="floatingPassword">Contraseña</label>
+        </div>
 
         <!-- Botón para iniciar sesión -->
         <button class="boton" (click)="iniciarSesion()">Iniciar Sesión</button>
 
         <!-- Ir a registrarse -->
         <div id="Registrarse" class="container-registrarse">
-        <h2>
-            ¿Ya tienes cuenta? <div class="btn"  routerLink="/registro"> Registrarse</div>
-        </h2>
+            <h2>
+                ¿Ya tienes cuenta? <div class="btn" routerLink="/registro"> Registrarse</div>
+            </h2>
         </div>
 
 
     </div>
 
-    <button mat-raised-button  class="boton" class="boton_piola" (click)="iniciarSesion()">Iniciar Sesion</button>
-
 <!--H1 de pregunta si no tiene cuenta-->
 
-<div id="Registrarse" ><h1>No tienes cuenta? <div class="btn 1"  routerLink="/registro">Registrarse</div>  </h1> </div>
