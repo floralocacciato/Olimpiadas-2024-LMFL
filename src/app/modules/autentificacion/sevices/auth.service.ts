@@ -16,12 +16,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-
-
-
-  // Propiedad privada para manejo del rol del usuario
-  private rolUsuario: string | null = null;
-
+  
 
   constructor(
     private auth: AngularFireAuth,
@@ -29,6 +24,7 @@ export class AuthService {
   ) { }
 
   //funcion para tomar UID
+  rolUsuario: string;
   async obtenerUid() {
     //Genera una promesa, y la constante la va a capturar
     const user = await this.auth.currentUser;
@@ -44,10 +40,9 @@ export class AuthService {
   }
   //funcion para obtener ID
 
-  //funcion que busca un usuario en la coleccionde 'usuarios' cuyo correo electronico coincida con el valor proporcionado
-  async obtenerUsuario(email: string) {
-
-    return this.servicioFireStore.collection("usuarios", ref => ref.where("email", '==', email)).get().toPromise()
+//funcion que busca un usuario en la coleccionde 'usuarios' cuyo correo electronico coincida con el valor proporcionado
+ async obtenerUsuario(email:string){
+return this.servicioFireStore.collection("usuarios", ref => ref.where("email,", '==', email)).get().toPromise()
 
   }
 
@@ -85,14 +80,7 @@ export class AuthService {
 
 
 
-    //retoma nueva info de email y contraseña
-    return this.auth.createUserWithEmailAndPassword(email, password);
-
-  }
- 
-
-
-
+}
   // Función para CERRAR SESIÓN
   cerrarSesion() {
     // Devolver una promesa vacía
