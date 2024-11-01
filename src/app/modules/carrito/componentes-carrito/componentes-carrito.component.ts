@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductoService } from '../../favorito/producto.service';
+import { CarritosService } from '../carritos.service';
 import { CrudService } from '../../admin/services/crud.service';
 import { Carrito } from 'src/app/models/carrito';
 import { Producto } from 'src/app/models/producto';
@@ -22,10 +22,10 @@ productoSeleccionado!: Producto; // <- recibe valores vacíos
 
 modalVisibleProducto: boolean = false;
 
-  constructor(public productoservicio: ProductoService, public servicioCrud:CrudService){}
+  constructor(public productoservicio: CarritosService, public servicioCrud:CrudService){}
  
   ngOnInit(): void {
-    this.servicioCrud.obtenerProductosCarrito().subscribe(carrito => this.coleccionProductos = carrito);
+    this.productoservicio.obtenerProductosCarrito().subscribe(carrito => this.coleccionProductos = carrito);
   }
 
   obtenerCarrito(){

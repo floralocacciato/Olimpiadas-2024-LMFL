@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/modules/favorito/producto.service';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
+import { CarritosService } from 'src/app/modules/carrito/carritos.service';
 
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination } from 'swiper';
@@ -23,13 +24,14 @@ export class CardComponent {
   producto: any;
   coleccionProductosCarrito: Carrito[] = [];
   contadorCarrito: number = 0;
+
 //favorito contador
   contadorFavoritos: number = 0;
 
   // productos
   productosFavoritos: Producto[] = [];
   coleccionFavoritos: Producto[] = [];
-  constructor(public productoservicio: ProductoService, public servicioCrud: CrudService) { }
+  constructor(public productoservicio: ProductoService, public servicioCrud: CrudService, public servicioCarrito:CarritosService) { }
 
 
 
@@ -41,13 +43,10 @@ export class CardComponent {
   }
 
   agregarProducto(producto:Producto) {
-    this.productoservicio.getProductosCarrito(producto)
+  this.servicioCarrito.getProductosCarrito(producto)
+    
   }
-
-
-
-
-  ngOnInit(): void {
+ ngOnInit(): void {
     // subscribe -> notifica constantemente los cambios actuales del sistema
     this.servicioCrud.obtenerProducto().subscribe(producto => {
 
@@ -56,7 +55,7 @@ export class CardComponent {
 
     })
      // subscribe -> notifica constantemente los cambios actuales del sistema
-   this.servicioCrud.obtenerProducto().subscribe((producto: any) => {
+   this.servicioCrud.obtenerProducto().subscribe((producto) => {
 
     // guarda la información recibida como un nuevo "producto" a la colección
     this.coleccionProductosCarrito = producto;

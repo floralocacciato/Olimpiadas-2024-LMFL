@@ -76,6 +76,9 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
   display: flex;
   flex-direction: column; /* Alinea el contenido verticalmente */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  padding-top: 40px;
+  padding-bottom: 49px;
 }
 .card img {
   width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
@@ -90,7 +93,10 @@ body {
   color: white; /* Color del texto */
   border: none; /* Sin borde */
   border-radius: 5px; /* Esquinas redondeadas */
-  padding: 5px 25px; /* Espaciado interno */
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   cursor: pointer; /* Cambia el cursor al pasar el ratón */
   transition: background-color 0.3s; /* Transición suave para el hover */
   position: absolute; /* Posiciona el botón de forma absoluta */
