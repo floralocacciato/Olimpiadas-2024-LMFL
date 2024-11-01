@@ -51,7 +51,11 @@ export class InicioSesionComponent {
 
   //Declaro la funcion y le asigno el tipo async
 
+  isButtonEnabled = false;
 
+  checkInputs() {
+      this.isButtonEnabled = this.usuarios.email.trim() !== '' && this.usuarios.password.trim() !== '';
+  }
 
   async IniciarSesion() {
 
@@ -109,7 +113,7 @@ export class InicioSesionComponent {
             text: "¡Se pudo registrar con éxito! :)",
             icon: "success"
           });
-          this.servicioRutas.navigate(['/inicio-sesion'])
+          this.servicioRutas.navigate(['/admin'])
         })
         .catch(err => {
           Swal.fire({
