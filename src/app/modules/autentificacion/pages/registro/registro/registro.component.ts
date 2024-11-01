@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
+
   // Este "hide" es para el input de contraseña
   hide = true;
 

@@ -30,7 +30,7 @@ const routes: Routes = [
     // Y espera un rol de tipo "admin"
     canActivate: [ rutaProtegidaGuard ], data: { role: 'admin' }
 
-}
+},
 
 
   {

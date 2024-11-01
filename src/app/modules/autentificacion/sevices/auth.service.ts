@@ -18,7 +18,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  enviarRolUsuario: any;
+
+  
 
   constructor(
     private auth: AngularFireAuth,
@@ -57,45 +58,14 @@ export class AuthService {
 
   }
   //Funcion para Inicio de sesion
-  IniciarSesion(email: string, password: string) {
-    //Validar el email y contraseña
-    return this.auth.signInWithEmailAndPassword(email, password);
-
-
-
-
 
    // Propiedad privada para manejo del rol del usuario
    private rolUsuario: string | null = null;
 
 
-  constructor(
-    private auth: AngularFireAuth,
-    private servicioFireStore: AngularFirestore
-  ) { }
-
-  //funcion para tomar UID
-  async obtenerUid() {
-    //Genera una promesa, y la constante la va a capturar
-    const user = await this.auth.currentUser;
-    //si el usuario no respeta la estructura de la interfaz,
-    //Si tuvo problemas para el registro- ej: mal internet
-    if (user == null) {
-      return null;
-    }
-    else {
-      return user.uid
-    }
-
-  }
   //funcion para obtener ID
 
-  //funcion que busca un usuario en la coleccionde 'usuarios' cuyo correo electronico coincida con el valor proporcionado
-  async obtenerUsuario(email: string) {
-    
-    return this.servicioFireStore.collection("usuarios", ref => ref.where("email", '==', email)).get().toPromise()
 
-  }
 
   // FUNCIÓN PARA RECUPERAR ROL DE USUARIO
   obtenerRol(uid: string): Observable <string | null> {
@@ -116,14 +86,6 @@ export class AuthService {
     return this.rolUsuario;
   }
 
-  //Funcion para registro
-  registrar(email: string, password: string) {
-
-
-    //retoma nueva info de email y contraseña
-    return this.auth.createUserWithEmailAndPassword(email, password);
-
-  }
   //Funcion para Inicio de sesion
   IniciarSesion(email: string, password: string) {
     //Validar el email y contraseña
@@ -138,3 +100,4 @@ export class AuthService {
     return this.auth.signOut();
   }
 
+  }
