@@ -2,13 +2,11 @@
     margin: 20px;
     color: #b09e8a;
 }
-
 .divisor{
     margin-left: 100px;
     margin-right: 100px;
     background-color: #31241e;
 }
-
 .btn {
     border: none;
     background-color: transparent;
@@ -17,17 +15,14 @@
     cursor: pointer;
     color: #b09e8a;
 }
-
 .container{
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     margin-top: 20px;
 }
-
 .container-2{
     color: #836c53;
     margin-top: 10px;
     font-weight: bold;
-
 }

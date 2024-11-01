@@ -1,4 +1,3 @@
-
 /* Centrar el carrusel */
 .carousel {
     display: flex;
@@ -8,7 +7,6 @@
     margin: auto; /* Centra horizontalmente en la página */
     padding: 60px;
 }
-
 /* Establecer un tamaño específico para las imágenes */
 .carousel-item img {
     width: 100%; /* Ajusta para que ocupe el ancho del contenedor */
@@ -16,7 +14,6 @@
     max-height: 600px; /* Ajusta la altura máxima según sea necesario */
     object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
 }
-
 .container {
     margin-top: 20px;
     text-align: center;
@@ -25,35 +22,3 @@
     
   
   }
-  
-  .icon-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .icon-section i {
-    margin-right: 10px; /* Espacio entre el icono y el texto */
-    font-size: 1.5em; /* Tamaño del icono */
-  }
-  
-  .example-button-row {
-    margin-top: 10px;
-  }
-  
-  button {
-    color: #b09e8a; /* Color del texto del botón */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    cursor: not-allowed; /* Indicador de que el botón está deshabilitado */
-  }
-  
-section{
-    font-size: large;
-    color: #59350c;
-    font-weight: 600;
-}
-
-span{
-    color: #b09e8a;
-    font-weight: 400;
-}

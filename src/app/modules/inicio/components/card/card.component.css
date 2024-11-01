@@ -1,0 +1,11 @@
+/*estilos para las secciones del carousel*/
+
+
+/*estilos para las secciones de la galería*/
+img {
+    border-radius: var(--bs-border-radius) !important;
+    width: 100% !important;
+    display: block !important;
+    object-fit: scale-down;
+    padding: 0px;
+}
