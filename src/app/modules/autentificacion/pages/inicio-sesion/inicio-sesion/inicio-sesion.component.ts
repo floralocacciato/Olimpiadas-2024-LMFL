@@ -80,7 +80,7 @@ export class InicioSesionComponent {
       
       */
       const usuarioDoc = usuarioBD.docs[0];
-      /**
+      /*
        * Extraer los datos del documento en forma de un objeto y se especifica como de tipo
        * 'Usuario' -> haciendo referencia a nuestra interfaz de usuario
        */
@@ -103,8 +103,8 @@ export class InicioSesionComponent {
       const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
         .then(res => {
           Swal.fire({
-            title: "¡Buen trabajo!",
-            text: "¡Pudo iniciar sesión con éxito!",
+            title: `¡Bienvenido, ${usuarioData.nombre}!`, // use templates para tomar el nombre de usuario desde la base de datos
+            text: "Inicio de sesion exitoso",
             icon: "success"
           });
           this.servicioRutas.navigate(['/inicio-sesion'])

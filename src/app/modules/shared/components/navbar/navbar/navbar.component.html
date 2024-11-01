@@ -27,11 +27,12 @@
 
     <!-- Botones del navbar -->
     <div>
-        <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
+         <!-- Icono del user-->
         <button class="btn" [matMenuTriggerFor]="usuario">
-            <mat-icon>person</mat-icon> <!-- Icono del user-->
+            <mat-icon>person</mat-icon> 
         </button>
 
+        <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
         <mat-menu #usuario="matMenu">
             <button mat-menu-item *ngIf="logueado" routerLink="/registro"
                 class="custom-menu-button">Registrarse</button>
@@ -45,14 +46,15 @@
             <mat-icon>shopping_cart</mat-icon>
         </button>
 
-
+        <!-- Icono de corazón -->
         <button class="btn">
-            <mat-icon>favorite</mat-icon> <!-- Icono de corazón -->
+            <mat-icon>favorite</mat-icon> 
         </button>
 
     </div>
 </mat-toolbar>
 
+<!-- Linea de separación -->
 <div class="divider-container">
 <mat-divider class="divisor"></mat-divider>
 
