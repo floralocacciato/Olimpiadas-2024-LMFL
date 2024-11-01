@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 
 import * as CryptoJS from 'crypto-js';
 
-import Swal from 'sweetalert2';
 
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -24,7 +24,9 @@ export class InicioSesionComponent {
 
   //Defino la variable hide
   hide = true
+
   usuarioIngresado: any;
+
   // Constructor que declara las variables provenientes de los componentes AuthService,FirestoreService y Router y las declara como publicas
   constructor(
     public servicioAuth: AuthService,
@@ -51,11 +53,13 @@ export class InicioSesionComponent {
 
   //Declaro la funcion y le asigno el tipo async
 
+
   isButtonEnabled = false;
 
   checkInputs() {
       this.isButtonEnabled = this.usuarios.email.trim() !== '' && this.usuarios.password.trim() !== '';
   }
+
 
   async IniciarSesion() {
 
@@ -72,12 +76,14 @@ export class InicioSesionComponent {
       // empty -> metodo de firebase para marcar algo si s vacio 
       if (!usuarioBD || usuarioBD.empty) {
 
+
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "Something went wrong!",
           footer: '<a href="#">Why do I have this issue?</a>'
         });
+
         this.LimpiarInputs();
         return
       }
@@ -96,6 +102,7 @@ export class InicioSesionComponent {
       const hashPassword = CryptoJS.SHA256(credenciales.password).toString();
 
       if (hashPassword !== usuarioData.password) {
+
        Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -103,11 +110,39 @@ export class InicioSesionComponent {
             footer: '<a href="#">Why do I have this issue?</a>'
           });
         this.usuarios.password = '';
+
         return;
       }
 
       const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
         .then(res => {
+
+          alert('Se a logueado con exito');
+
+
+          //almacena el rol del usuario en el servicio de autentificacion
+          this.servicioAuth.enviarRolUsuario(usuarioData.rol);
+
+          if (usuarioData.rol === "admin") {
+            console.log('inicio de sesion de usuario de admin')
+            //si es admin redirecciona a la vista de admin
+            this.servicioRutas.navigate(['/admin'])
+          } else {
+            console.log('inicio de sesion de usuario de visitante');
+            //si es visitante lo redirecciona a la vista de 'inicio'
+            this.servicioRutas.navigate(['/inicio'])
+          }
+        })
+
+
+
+
+
+
+        .catch(err => {
+          alert('Hubo un problema al iniciar sesion ' + err);
+
+
           Swal.fire({
             title: "¡Buen trabajo!",
             text: "¡Se pudo registrar con éxito! :)",
@@ -122,6 +157,7 @@ export class InicioSesionComponent {
             text: "Something went wrong!",
             footer: '<a href="#">Why do I have this issue?</a>'
           });
+
           this.LimpiarInputs();
 
         })
@@ -144,3 +180,4 @@ export class InicioSesionComponent {
     }
   }
 }
+
