@@ -57,7 +57,7 @@ export class InicioSesionComponent {
   isButtonEnabled = false;
 
   checkInputs() {
-      this.isButtonEnabled = this.usuarios.email.trim() !== '' && this.usuarios.password.trim() !== '';
+    this.isButtonEnabled = this.usuarios.email.trim() !== '' && this.usuarios.password.trim() !== '';
   }
 
 
@@ -103,12 +103,12 @@ export class InicioSesionComponent {
 
       if (hashPassword !== usuarioData.password) {
 
-       Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
-          });
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: '<a href="#">Why do I have this issue?</a>'
+        });
         this.usuarios.password = '';
 
         return;
@@ -116,8 +116,11 @@ export class InicioSesionComponent {
 
       const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
         .then(res => {
-
-          alert('Se a logueado con exito');
+          Swal.fire({
+            title: "¡Buen trabajo!",
+            text: "¡Se pudo ingresar con éxito! :)",
+            icon: "success"
+          });
 
 
           //almacena el rol del usuario en el servicio de autentificacion
@@ -132,23 +135,6 @@ export class InicioSesionComponent {
             //si es visitante lo redirecciona a la vista de 'inicio'
             this.servicioRutas.navigate(['/inicio'])
           }
-        })
-
-
-
-
-
-
-        .catch(err => {
-          alert('Hubo un problema al iniciar sesion ' + err);
-
-
-          Swal.fire({
-            title: "¡Buen trabajo!",
-            text: "¡Se pudo registrar con éxito! :)",
-            icon: "success"
-          });
-          this.servicioRutas.navigate(['/admin'])
         })
         .catch(err => {
           Swal.fire({
