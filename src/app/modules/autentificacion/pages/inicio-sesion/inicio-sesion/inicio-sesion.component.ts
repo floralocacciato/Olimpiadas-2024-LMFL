@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 
 import * as CryptoJS from 'crypto-js';
 
-import Swal from 'sweetalert2';
 
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -24,7 +24,9 @@ export class InicioSesionComponent {
 
   //Defino la variable hide
   hide = true
+
   usuarioIngresado: any;
+
   // Constructor que declara las variables provenientes de los componentes AuthService,FirestoreService y Router y las declara como publicas
   constructor(
     public servicioAuth: AuthService,
@@ -52,6 +54,12 @@ export class InicioSesionComponent {
   //Declaro la funcion y le asigno el tipo async
 
 
+  isButtonEnabled = false;
+
+  checkInputs() {
+    this.isButtonEnabled = this.usuarios.email.trim() !== '' && this.usuarios.password.trim() !== '';
+  }
+
 
   async IniciarSesion() {
 
@@ -68,11 +76,14 @@ export class InicioSesionComponent {
       // empty -> metodo de firebase para marcar algo si s vacio 
       if (!usuarioBD || usuarioBD.empty) {
 
+
         Swal.fire({
+          icon: "error",
           title: "Oops...",
-          text: "Ocurrió un problema con su correo electrónico",
-          icon: "error"
+          text: "Something went wrong!",
+          footer: '<a href="#">Why do I have this issue?</a>'
         });
+
         this.LimpiarInputs();
         return
       }
@@ -80,7 +91,7 @@ export class InicioSesionComponent {
       
       */
       const usuarioDoc = usuarioBD.docs[0];
-      /*
+      /**
        * Extraer los datos del documento en forma de un objeto y se especifica como de tipo
        * 'Usuario' -> haciendo referencia a nuestra interfaz de usuario
        */
@@ -91,44 +102,48 @@ export class InicioSesionComponent {
       const hashPassword = CryptoJS.SHA256(credenciales.password).toString();
 
       if (hashPassword !== usuarioData.password) {
-       Swal.fire({
-            title: "Oops...",
-            text: "Ocurrió un problema con su contraseña",
-            icon: "error"
-          });
+
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: '<a href="#">Why do I have this issue?</a>'
+        });
         this.usuarios.password = '';
+
         return;
       }
 
       const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
         .then(res => {
-          // Swal.fire({
-          //   title: `¡Bienvenido, ${usuarioData.nombre}!`, // use templates para tomar el nombre de usuario desde la base de datos
-          //   text: "Inicio de sesion exitoso",
-          //   icon: "success"
-          // });
-
           Swal.fire({
-            title: `¡Bienvenido, ${usuarioData.nombre}!`,
-            width: 600,
-            padding: "3em",
-            color: "#716add",
-            background: "#fff url(/images/trees.png)",
-            backdrop: `
-              rgba(0,0,123,0.4)
-              url("/images/nyan-cat.gif")
-              left top
-              no-repeat
-            `
+            title: "¡Buen trabajo!",
+            text: "¡Se pudo ingresar con éxito! :)",
+            icon: "success"
           });
-          this.servicioRutas.navigate(['/inicio-sesion'])
+
+
+          //almacena el rol del usuario en el servicio de autentificacion
+          this.servicioAuth.enviarRolUsuario(usuarioData.rol);
+
+          if (usuarioData.rol === "admin") {
+            console.log('inicio de sesion de usuario de admin')
+            //si es admin redirecciona a la vista de admin
+            this.servicioRutas.navigate(['/admin'])
+          } else {
+            console.log('inicio de sesion de usuario de visitante');
+            //si es visitante lo redirecciona a la vista de 'inicio'
+            this.servicioRutas.navigate(['/inicio'])
+          }
         })
         .catch(err => {
           Swal.fire({
+            icon: "error",
             title: "Oops...",
-            text: "",
-            icon: "error"
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
           });
+
           this.LimpiarInputs();
 
         })
@@ -151,3 +166,4 @@ export class InicioSesionComponent {
     }
   }
 }
+
