@@ -1,24 +1,26 @@
 <mat-toolbar class="custom-toolbar">
-    <!-- Botón de menú (hamburguesa) -->
-    <button class="hamburger-button" (click)="toggleMenu()" aria-label="Toggle menu">
+    <!-- Botón de menú -->
+    <button class="buttonmenu" (click)="toggleMenu()" aria-label="Toggle menu">
         <mat-icon>menu</mat-icon>
     </button>
 
-    <!-- Menú de inicio y categorías -->
-    <div class="nav-left">
-        <button id="menuInicio" mat-button routerLink="/inicio" class="toolbar-button">Inicio</button>
-        <button id="menuProducto" mat-button [matMenuTriggerFor]="producto" class="toolbar-button">Categorías</button>
-        <mat-menu #producto="matMenu">
-            <button mat-menu-item routerLink="/kayak">Kayak</button>
-            <button mat-menu-item routerLink="/escalada">Escalada</button>
-            <button mat-menu-item routerLink="/pesca">Pesca</button>
-            <button mat-menu-item routerLink="/ciclismo">Ciclismo</button>
-            <button mat-menu-item routerLink="/esqui">Esqui</button>
-            <button mat-menu-item routerLink="/buceo">Buceo</button>
-            <button mat-menu-item routerLink="/tirolesa">Tirolesa</button>
-            <button mat-menu-item routerLink="/paracaidismo">Paracaidismo</button>
-            <button mat-menu-item routerLink="/alpinismo">Alpinismo</button>
-            <button mat-menu-item routerLink="/todos">VER TODOS LOS PRODUCTOS</button>
+     <!-- Menú de inicio y categorías -->
+     <div class="nav-left">
+        <button id="menuInicio" class="botoninicio" mat-button routerLink="/inicio">Inicio</button>
+        <button id="menuProducto" class="botoncategorias" mat-button [matMenuTriggerFor]="producto">Categorías</button>
+        <mat-menu class="matmenupanel" #producto="matMenu">
+            <div class="categoriasbotones"> 
+            <button class="menuitembutton" mat-menu-item routerLink="/kayak">Kayak</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/escalada">Escalada</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/pesca">Pesca</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/ciclismo">Ciclismo</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/esqui">Esqui</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/buceo">Buceo</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/tirolesa">Tirolesa</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/paracaidismo">Paracaidismo</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/alpinismo">Alpinismo</button>
+        </div>
+            <button class="menuitembutton ver-todos-button" mat-menu-item routerLink="/todos">VER TODOS LOS PRODUCTOS</button>
         </mat-menu>
     </div>
 

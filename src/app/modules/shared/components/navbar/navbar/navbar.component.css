@@ -19,13 +19,114 @@
     margin-right: auto; /* Empuja el logo al centro */
 }
 
+.mat-icon{
+    color:#b09e8a !important;
+}
+
+::ng-deep .mat-icon:hover {
+    color: #59350c !important; /* Color del texto al pasar el mouse */
+}
+
+.botoncategorias {
+    color: #b09e8a !important; 
+}
+
+::ng-deep .botoncategorias:hover {
+    color: #59350c !important;
+}
+
+.botoninicio {
+    color: #59350c !important;
+}
+
+
+/* Contenedor del menú con bordes redondeados */
+::ng-deep .mat-mdc-menu-panel {
+    background-color: transparent !important; /* Fondo del contenedor del menú */
+     /* Borde redondeado para el contenedor */
+    padding: 5px 0; /* Ajuste de espaciado interno para el contenedor */
+    box-shadow: none !important;
+    margin: 0 !important;
+    overflow: hidden !important; 
+}
+
+::ng-deep .categoriasbotones{
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #d1c8c1; /* Fondo de los botones de categorías */
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Opciones de menú individuales sin borde redondeado */
+.menuitembutton {
+    color: black ;
+    font-size: 15px;
+    background-color: #d1c8c1; /* Fondo transparente para cada opción */
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    box-shadow: none;
+    margin: 0;
+}
+
+/* Cambiar color en hover */
+::ng-deep .menuitembutton:hover {
+    background-color: #d1c8c1!important; /* Color de fondo en hover */
+    color: #8c7563!important; /* Color del texto al pasar el mouse */
+} 
+
+
+
+/* Estilo específico para "VER TODOS LOS PRODUCTOS" */
+.menuitembutton[routerLink="/todos"] {
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    background-color: #59350c;
+    padding: 8px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 50px;
+    margin: 0;
+}
+
+/* Hover específico para "VER TODOS LOS PRODUCTOS" */
+::ng-deep .ver-todos-button:hover {
+    background-color:  #8c7563!important; /* Color de fondo en hover */
+    color: black!important; /* Color del texto al pasar el mouse */
+}
+
+
+.custom-menu-button {
+    color: #836c53; /* Color del texto de cada opción */
+    font-size: 15px;
+    background-color: #f2e9e9; /* Fondo inicial */
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center; /* Alineación central */
+    justify-content: center; /* Centramos el contenido */
+    box-shadow: none; /* Elimina sombra */
+    border: 3px solid #86654b;
+    border-radius: 50px;
+    margin: 5px 0; /* Añade espacio entre las opciones */
+    padding: 8px 16px; /* Espaciado para cada opción */
+}
+
+/* Cambiar color en hover */
+::ng-deep .custom-menu-button:hover {
+    background-color: #59350c!important; /* Color de fondo en hover */
+    color: white !important; /* Color del texto al pasar el mouse */
+}
+
+
 /* Aseguramos que el contenedor del logo ocupe el espacio adecuado */
 .logo-container {
     flex-grow: 5;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1; /* Permite que ocupe el espacio necesario */
 }
 
 /* Ajuste para centrar el logo */
@@ -41,7 +142,7 @@
 }
 
 /* Estilos para el botón de menú */
-.hamburger-button {
+.buttonmenu {
     display: none; /* Oculta el botón en pantallas grandes */
 }
 
@@ -65,10 +166,9 @@
     display: flex; /* Muestra el menú */
 }
 
-
 /* Ajustes para pantallas grandes */
 @media (max-width: 768px) {
-    .hamburger-button {
+    .buttonmenu {
         display: inline-flex; /* Muestra el botón de menú */
     }
 
@@ -91,4 +191,3 @@
         width: 200px; /* Ajusta el tamaño del logo */
     }
 }
-

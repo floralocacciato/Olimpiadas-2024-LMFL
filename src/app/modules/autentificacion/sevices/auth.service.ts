@@ -16,7 +16,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
 
   constructor(
     private auth: AngularFireAuth,
@@ -24,7 +24,7 @@ export class AuthService {
   ) { }
 
   //funcion para tomar UID
- // rolUsuario: string;
+  // rolUsuario: string;
   async obtenerUid() {
     //Genera una promesa, y la constante la va a capturar
     const user = await this.auth.currentUser;
@@ -40,9 +40,9 @@ export class AuthService {
   }
   //funcion para obtener ID
 
-//funcion que busca un usuario en la coleccionde 'usuarios' cuyo correo electronico coincida con el valor proporcionado
- async obtenerUsuario(email:string){
-return this.servicioFireStore.collection("usuarios", ref => ref.where("email,", '==', email)).get().toPromise()
+  //funcion que busca un usuario en la coleccionde 'usuarios' cuyo correo electronico coincida con el valor proporcionado
+  async obtenerUsuario(email: string) {
+    return this.servicioFireStore.collection("usuarios", ref => ref.where("email", '==', email)).get().toPromise()
 
   }
 
@@ -58,12 +58,12 @@ return this.servicioFireStore.collection("usuarios", ref => ref.where("email,", 
   }
   // Obtiene el rol de la primera función y lo asigna a la propiedad privada local
   enviarRolUsuario(rol: string) {
-   // this.rolUsuario = rol;
+    // this.rolUsuario = rol;
   }
   // Obtiene el rol y lo retorna (ya sean alfanumericos o nulos)
- // obtenerRolUsuario(): string | null {
-    // return this.rolUsuario;
- // }
+  // obtenerRolUsuario(): string | null {
+  // return this.rolUsuario;
+  // }
 
   //Funcion para registro
   registrar(email: string, password: string) {
@@ -77,10 +77,7 @@ return this.servicioFireStore.collection("usuarios", ref => ref.where("email,", 
   IniciarSesion(email: string, password: string) {
     //Validar el email y contraseña
     return this.auth.signInWithEmailAndPassword(email, password);
-
-
-
-}
+  }
   // Función para CERRAR SESIÓN
   cerrarSesion() {
     // Devolver una promesa vacía

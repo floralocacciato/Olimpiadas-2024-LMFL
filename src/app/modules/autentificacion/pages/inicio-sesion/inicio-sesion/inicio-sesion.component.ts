@@ -102,10 +102,24 @@ export class InicioSesionComponent {
 
       const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
         .then(res => {
+          // Swal.fire({
+          //   title: `¡Bienvenido, ${usuarioData.nombre}!`, // use templates para tomar el nombre de usuario desde la base de datos
+          //   text: "Inicio de sesion exitoso",
+          //   icon: "success"
+          // });
+
           Swal.fire({
-            title: `¡Bienvenido, ${usuarioData.nombre}!`, // use templates para tomar el nombre de usuario desde la base de datos
-            text: "Inicio de sesion exitoso",
-            icon: "success"
+            title: `¡Bienvenido, ${usuarioData.nombre}!`,
+            width: 600,
+            padding: "3em",
+            color: "#716add",
+            background: "#fff url(/images/trees.png)",
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
           });
           this.servicioRutas.navigate(['/inicio-sesion'])
         })

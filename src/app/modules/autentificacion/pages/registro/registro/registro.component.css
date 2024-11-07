@@ -1,65 +1,90 @@
+/* Contenedor principal */
 .container {
-    display: flex;
-    flex-direction: column; /* Alinea los elementos en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos verticalmente */
-    height: 70vh; /* Altura completa de la ventana para centrar verticalmente */
-  }
-
-  .titulo{
-    font-size: 2.3rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 60px;
-  }
-
-  .row {
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se alineen en una columna */
-    align-items: center; /* Opcional: centra los elementos horizontalmente */
-    margin-bottom: 15px; /* Espacio entre cada fila */
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  height: 70vh; /* Altura completa de la ventana para centrar verticalmente */
 }
 
-  input{
-    width: 500px;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    border: 2px solid #836c53;
-    font-size: 16px;
-    padding: 0;
-  }
-
-  label{
-    color: #b09e8a;
-    font-size: 16px;
-    margin-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-    margin-left: 10px;
-    margin-left: 25px;
-  }
-
-.boton{
-    background-color: #1893f8;
-    border-radius: 70px;
-    border: none;
-    color: #f4f3f6;
-    font-size: 20px;
-    width: 200px;
-    margin: 0 auto;
-    margin-top: 40px;
-    height: 40px;
+/* Titulo */
+.titulo {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px; /* Ajustamos el margen */
 }
 
-.container-pregunta{
+/* Estilo del formulario */
+.row {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se alineen en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+  max-width: 500px; /* Limita el tamaño máximo de los elementos */
+}
+
+.form-floating {
+  position: relative; /* Necesario para posicionar el ícono dentro del campo */
+  margin-bottom: 20px;
+}
+
+/* Estilo de los inputs */
+input {
+  width: 100%; /* Hace que los inputs ocupen el 100% del ancho disponible */
+  border-radius: 25px;
+  border: 2px solid #836c53;
+  font-size: 16px;
+  padding: 12px 20px; /* Añadimos más relleno */
+  padding-right: 40px; /* Espacio para el ícono dentro del input */
+}
+
+label {
+  color: #b09e8a;
+  font-size: 16px;
+  margin-left: 25px; /* Alineación del label */
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+/* Estilo de los íconos dentro de los campos de texto */
+.icon-container {
+  position: absolute;
+  right: 20px; /* Ajustamos la posición a la derecha */
+  top: 50%; /* Centra el ícono verticalmente */
+  transform: translateY(-50%); /* Alinea perfectamente */
+  pointer-events: none; /* Evita que el clic sobre el ícono interfiera con el input */
+}
+
+/* Estilo del botón de registrarse */
+.boton {
+  background-color: #b09e8a;
+  border-radius: 70px;
+  border: none;
+  color: #f4f3f6;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  margin-top: 40px; /* Separa el botón del formulario */
+  text-align: center;
+}
+
+.boton:hover {
+  background-color: #836c53;
+}
+
+/* Estilo para la sección de la pregunta de login */
+.container-pregunta {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-h2{
+h2 {
   font-weight: normal;
 }
+
+/* Estilo del enlace a iniciar sesión */
 .btn {
   border: none;
   background-color: transparent;
@@ -68,12 +93,4 @@ h2{
   color: #1893f8;
   margin-left: 2px;
   font-size: 18px;
-}
-
-.icon-container {
-  position: absolute;
-  right: 30px; /* Ajusta según sea necesario */
-  top: 38%;
-  transform: translateY(-50%);
-  pointer-events: none; /* Para que el clic pase al input */
 }

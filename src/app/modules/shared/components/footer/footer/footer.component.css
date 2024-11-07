@@ -15,6 +15,10 @@
     cursor: pointer;
     color: #b09e8a;
 }
+
+.btn:hover {
+    color: #59350c;
+}
 .container{
     display: flex;
     justify-content: center;

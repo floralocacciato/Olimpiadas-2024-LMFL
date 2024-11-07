@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PescaComponent } from './pesca.component';
+import { PescaComponent } from '../tirolesa/pesca.component';
 
 describe('PescaComponent', () => {
   let component: PescaComponent;
