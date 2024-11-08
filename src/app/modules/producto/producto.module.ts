@@ -23,6 +23,8 @@ import { CardTirolesaComponent } from './components/card-tirolesa/card-tirolesa.
 import { CardInicioComponent } from './components/card-inicio/card-inicio.component';
 import { BuceoComponent } from './pages/buceo/buceo.component';
 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +51,25 @@ import { BuceoComponent } from './pages/buceo/buceo.component';
   ],
   imports: [
     CommonModule,
-    ProductoRoutingModule
+    ProductoRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    CardComponent,
+    CardSeccionComponent,
+    KayakComponent,
+    EscaladaComponent,
+    PescaComponent,
+    CiclismoComponent,
+    EsquiComponent,
+    TirolesaComponent,
+    ParacaidismoComponent,
+    TodosComponent,
+    CarruselComponent,
+    BuceoComponent,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductoModule { }
