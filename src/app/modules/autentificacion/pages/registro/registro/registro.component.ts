@@ -17,7 +17,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
-
   // Este "hide" es para el input de contraseña
   hide = true;
 
@@ -27,9 +26,7 @@ export class RegistroComponent {
     nombre: '',
     apellido: '',
     email: '',
-
-    rol: 'vis',// -> designamos un rol por defecto para los usuarios que se registren
-
+    rol: '',
     password: ''
   }
 
@@ -45,7 +42,6 @@ export class RegistroComponent {
 
   // FUNCIÓN ASINCRONICA PARA EL REGISTRO
   async registrar(){
-
     // CREDENCIALES = información que ingrese el usuario
     //################################ LOCAL
     /*
@@ -65,7 +61,6 @@ export class RegistroComponent {
     // alert("Te registraste con éxito :)");
     // ############################### FIN LOCAL
 
-
     const credenciales = {
       email: this.usuarios.email,
       password: this.usuarios.password
@@ -83,9 +78,7 @@ export class RegistroComponent {
 
       // Accedemos al servicio de rutas -> método navigate
       // método NAVIGATE = permite dirigirnos a diferentes vistas
-
       this.servicioRutas.navigate(['/inicio-sesion']);
-
     })
     // El método CATCH toma una falla y la vuelve un ERROR
     .catch(error => {
@@ -134,9 +127,7 @@ export class RegistroComponent {
       nombre: this.usuarios.nombre = '',
       apellido: this.usuarios.apellido = '',
       email: this.usuarios.email = '',
-
-      rol: this.usuarios.rol = 'vis',
-
+      rol: this.usuarios.rol = '',
       password: this.usuarios.password = ''
     }
   }

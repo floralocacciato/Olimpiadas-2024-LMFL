@@ -15,4 +15,10 @@ export class NavbarComponent {
     this.logueado = false;
     this.deslogueado = true;
   }
+  menuOpen: boolean = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen; // Alterna el estado del menú
+  }
+
 }
