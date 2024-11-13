@@ -1,0 +1,21 @@
+.titulo{
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 60px;
+  }
+
+  .card {
+    display: flex;
+}
+
+.card img {
+    width: 100px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    margin-right: 15px;
+}
+
+.card-body {
+    display: flex; 
+    align-items: center;
+}

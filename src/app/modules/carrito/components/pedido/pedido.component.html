@@ -1,5 +1,6 @@
-<div class="container">
-    <h2>Carrito de compras</h2>
+<!-- 
+ <div class="container">
+    <h2>Mi carrito</h2>
     <div class="row" >
             <div class="col-lg-4">
                 <ul class="list-group">
@@ -11,4 +12,20 @@
                 </ul>
             </div>
     </div>
-</div>
+</div> 
+-->
+
+<div class="container">
+
+        <h1 class="titulo">Mi carrito</h1>
+
+        <div class="card" *ngFor="let pedido of productos">
+            <div class="card-body">
+                <img src="{{pedido.producto.imagen}}" alt="{{pedido.producto.alt}}">
+                <h5 class="card-title">{{ pedido.cantidad }} {{ pedido.producto.nombre }}</h5>
+                <p class="card-text">Precio: ${{ pedido.total }}</p>
+                <button class="btn btn-danger" (click)="quitarPedido(pedido)"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+
+</div> 
