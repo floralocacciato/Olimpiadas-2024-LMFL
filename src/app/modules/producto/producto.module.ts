@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { ProductoRoutingModule } from './producto-routing.module';
 import { CardComponent } from './components/card/card.component';
@@ -23,7 +24,7 @@ import { CardTirolesaComponent } from './components/card-tirolesa/card-tirolesa.
 import { CardInicioComponent } from './components/card-inicio/card-inicio.component';
 import { BuceoComponent } from './pages/buceo/buceo.component';
 
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({

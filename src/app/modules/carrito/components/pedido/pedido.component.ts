@@ -28,13 +28,17 @@ export class PedidoComponent {
             this.servicioCarrito.obtenerCarrito().subscribe(producto=> 
               this.productos = producto 
             ); 
+          } else {
+            console.error("No se detecto el rol del usuario")
           }
         })
       }
     }) 
   }
 
-  
+  quitarPedido(pedido:Pedido){
+    this.servicioCarrito.borrarPedido(pedido)
+  }
 
 
 }

@@ -12,6 +12,7 @@ import * as CryptoJS from 'crypto-js';
 
 
 import Swal from 'sweetalert2';
+import { CarritoService } from 'src/app/modules/carrito/services/carrito.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -31,7 +32,8 @@ export class InicioSesionComponent {
   constructor(
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
-    public servicioRutas: Router
+    public servicioRutas: Router,
+    public servicioCarrito: CarritoService
   ) { }
 
 
@@ -134,6 +136,8 @@ export class InicioSesionComponent {
             console.log('inicio de sesion de usuario de visitante');
             //si es visitante lo redirecciona a la vista de 'inicio'
             this.servicioRutas.navigate(['/inicio'])
+
+            this.servicioCarrito.iniciarCart();
           }
         })
         .catch(err => {
