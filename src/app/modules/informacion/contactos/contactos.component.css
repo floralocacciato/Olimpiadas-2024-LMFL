@@ -54,7 +54,7 @@ mat-grid-tile {
     border-radius: 55px;
     width: 150px;
     padding: 10px;
-    background-color: #b09e8a !important ;
+    background-color: #b09e8a !important;
     color: white;
     border: none;
     cursor: pointer;
@@ -64,4 +64,77 @@ mat-grid-tile {
 
 .btn-success:hover {
     background-color: #836c53 !important;
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas pequeñas (smartphones) */
+@media (max-width: 768px) {
+    .container-principal {
+        flex-direction: column; /* Coloca los tiles en una columna */
+        height: auto; /* Ajusta el alto para que no se recorte contenido */
+    }
+
+    mat-grid-list {
+        grid-template-columns: 1fr; /* Usa una sola columna */
+        width: 100%;
+    }
+
+    mat-grid-tile {
+        padding: 20px; /* Añade más padding a los tiles para mejor visualización */
+    }
+
+    .container {
+        max-width: 100%; /* Deja que ocupe todo el ancho disponible */
+        padding: 15px; /* Ajusta el padding */
+    }
+
+    .btn-success {
+        width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
+        align-self: center; /* Centra el botón */
+    }
+
+    .form-control {
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+    }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    .container-principal {
+        flex-direction: row; /* Mantiene los tiles en una fila */
+    }
+
+    mat-grid-list {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+    }
+
+    .container {
+        max-width: 400px; /* Reduzca el tamaño máximo del formulario */
+        padding: 20px;
+    }
+
+    .btn-success {
+        width: 120px; /* Ajusta el ancho del botón */
+    }
+}
+
+/* Pantallas grandes (desktops y superiores) */
+@media (min-width: 1025px) {
+    .container-principal {
+        flex-direction: row; /* Mantiene los tiles en una fila */
+    }
+
+    mat-grid-list {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+    }
+
+    .container {
+        max-width: 500px; /* Mantiene el ancho máximo del formulario */
+        padding: 20px;
+    }
+
+    .btn-success {
+        width: 150px; /* Mantiene el ancho del botón */
+    }
 }

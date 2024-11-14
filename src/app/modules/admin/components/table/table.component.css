@@ -1,117 +1,136 @@
-.modal-footer{
-    text-align: center;
-    justify-content: center;
+/* Para pantallas pequeñas */
+
+/* Centramos el botón en su contenedor */
+.btn-outline-primary {
+  display: block;
+  margin: 20px auto;  /* Auto para centrar el botón horizontalmente */
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  width: auto;  /* El ancho se ajustará según el contenido */
 }
-/* Estilo general */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #d1c8c1;
-    color: #333;
-    margin: 0;
-    padding: 0;
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .btn-outline-primary {
+      width: 100%;  /* Hacer que el botón ocupe el 100% del ancho disponible en móviles */
+      font-size: 1rem;  /* Mantener el tamaño de la fuente adecuado */
   }
-  
-  /* Estilo de la tabla */
+}
+
+
+
+
+@media (max-width: 768px) {
   .table {
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 1px solid #d1c8c1;
-    background-color: #d1c8c1;
-    border-radius: 8px;
-    overflow: hidden;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
   }
-  
-  .table thead {
-    background-color: #d1c8c1;
-    color: #d1c8c1;
-    text-align: center;
+
+  .table thead, .table tbody, .table th, .table td {
+      display: block;
+      text-align: left;
   }
-  
-  .table th,
+
+  .table th, .table td {
+      padding: 8px;
+  }
+
+  /* Estilo de la descripción para que sea responsiva */
   .table td {
-    padding: 10px;
-    text-align: center;
-    vertical-align: middle;
+      word-wrap: break-word; /* Permite que las palabras largas se rompan y ajusten */
+      overflow-wrap: break-word; /* Alternativa para la compatibilidad con más navegadores */
+      white-space: normal; /* Asegura que el texto no se desborde */
   }
-  
-  .table th {
-    font-weight: bold;
+
+  .table td .descripcion {
+      font-size: 0.9rem; /* Reducimos el tamaño de la fuente para móviles */
   }
-  
-  .table img {
-    border-radius: 8px;
-  }
-  
+
+  /* Botones de acción (Editar y Eliminar) */
   .table td button {
-    margin: 0 5px;
+      margin: 5px 5px; /* Espaciado entre los botones */
   }
-  
-  /* Estilo para los botones */
-  .btn-outline-primary,
-  .btn-outline-success,
-  .btn-outline-warning,
-  .btn-outline-danger,
-  .btn-outline-secondary {
-    border-radius: 20px;
-    font-weight: bold;
-  }
-  
-  #btn-edit {
-    color: #ffc107;
-  }
-  
-  #btn-delete {
-    color: #dc3545;
-  }
-  
-  /* Estilo para los modales */
-  .modal-header {
-    background-color: #d1c8c1;
-    color: #ddd;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  
+
+  /* Estilo de los modales */
   .modal-header h1 {
-    font-size: 1.5rem;
+      font-size: 1.3rem;
   }
-  
+
   .modal-body {
-    padding: 1.5rem;
+      padding: 1rem;
   }
-  
-  .modal-footer {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .modal-footer button {
-    padding: 0.5rem 1.5rem;
-  }
-  
+
   /* Botón "Agregar un nuevo producto" */
   .btn-outline-primary {
-    padding-left: 40px;
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1rem;
+      width: 100%;
+      font-size: 1rem;
   }
-  
-  /* Inputs y selects dentro de los modales */
+
+  /* Inputs y selects en el modal */
   .modal-body .form-control,
   .modal-body .form-select {
-    border-radius: 8px;
-    padding: 10px;
-    margin-top: 10px;
+      padding: 8px;
   }
-  
-  /* Espaciado entre opciones en el modal */
-  .mb-3 {
-    margin-bottom: 1rem;
+
+  /* Alinear los botones de editar y eliminar horizontalmente */
+  .table td .btn-group {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
   }
-  
+
+  .table td .btn-group button {
+      flex: 1;
+      margin: 0 5px; /* Añadir margen entre los botones */
+  }
+}
+
+/* Para pantallas extra pequeñas (celulares en vertical) */
+@media (max-width: 480px) {
+  .table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+
+  .btn-outline-primary {
+      width: 100%;
+      font-size: 0.9rem;
+  }
+
+  /* Ajuste de los inputs y selects dentro de los modales */
+  .modal-body .form-control,
+  .modal-body .form-select {
+      padding: 6px;
+      font-size: 0.9rem;
+  }
+
+  /* Ajuste de los botones */
+  .modal-footer button {
+      padding: 0.5rem 1rem;
+  }
+
+  /* Modificar la cabecera del modal */
+  .modal-header h1 {
+      font-size: 1.2rem;
+  }
+
+  /* Alinear los botones de editar y eliminar horizontalmente */
+  .table td .btn-group {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+  }
+
+  .table td .btn-group button {
+      flex: 1;
+      margin: 0 5px; /* Añadir margen entre los botones */
+  }
+
+  /* Descripción */
+  .table td {
+      font-size: 0.85rem; /* Ajustar tamaño de texto en pantallas muy pequeñas */
+  }
+}
