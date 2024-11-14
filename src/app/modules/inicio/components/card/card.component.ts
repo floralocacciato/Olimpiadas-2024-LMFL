@@ -19,7 +19,17 @@ SwiperCore.use([Navigation, Pagination]);
 })
 export class CardComponent {
 
-
+  detalle:Producto= {
+    idProducto: '',
+    nombre: '',
+    precio: 0,
+    descripcion: '',
+    categoria: '',
+    imagen: '',
+    alt: '',
+    favoritos: false,
+    carrito: false
+  };
 //carrito
   producto: any;
   coleccionProductosCarrito: Carrito[] = [];
@@ -31,6 +41,10 @@ export class CardComponent {
   // productos
   productosFavoritos: Producto[] = [];
   coleccionFavoritos: Producto[] = [];
+
+
+
+
   constructor(public productoservicio: ProductoService, public servicioCrud: CrudService, public servicioCarrito:CarritosService) { }
 
 
@@ -59,8 +73,13 @@ export class CardComponent {
 
     // guarda la información recibida como un nuevo "producto" a la colección
     this.coleccionProductosCarrito = producto;
+    
 
   })
+  }
+
+  mostrarProducto(producto:Producto){
+    this.detalle = producto
   }
   
 

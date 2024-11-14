@@ -6,7 +6,8 @@ import { CardComponent } from './components/card/card.component';
 const routes: Routes = [
   {
     path:"producto",component:CardComponent
-  }
+  },
+
 ];
 
 @NgModule({

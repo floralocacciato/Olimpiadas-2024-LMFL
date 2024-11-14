@@ -21,95 +21,52 @@
     <div class="texto">
       {{producto.precio | currency}}
     </div>
-    <div class="boton" (click)="agregarProducto(producto)">
-      <mat-icon   >add_shopping_cart</mat-icon>
-
-    
+    <div   (click)="agregarProducto(producto)">
+      <!-- Button trigger modal -->
     </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    (click)="mostrarProducto(producto)">
+      Ver más
+    </button>
   </ng-template>
-
-  <!-- 
-  <ng-template swiperSlide class="card"> 
-      <img
-        src="https://th.bing.com/th/id/OIP.ba8TxHogmbqKWJprO69OOAHaEo?rs=1&pid=ImgDetMain"
-        alt=""
-        class="imagen"
-      />
-      <div class="descripcion"></div>
-      <div class="titulo"><h4>descripcion</h4></div>
-      <div class="texto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente
-        voluptates rem ipsum.
-      </div>
-      <div class="link">
-        <button class="boton" routerLink="/vermas">ver mas</button>
-      </div>
-  </ng-template>
-
-  <ng-template swiperSlide class="card">
-      <img
-        src="https://th.bing.com/th/id/OIP.ba8TxHogmbqKWJprO69OOAHaEo?rs=1&pid=ImgDetMain"
-        alt=""
-        class="imagen"
-      />
-      <div class="descripcion"></div>
-      <div class="titulo"><h4>descripcion</h4></div>
-      <div class="texto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente
-        voluptates rem ipsum.
-      </div>
-      <div class="link">
-        <button class="boton" routerLink="/vermas">ver mas</button>
-      </div>
-  </ng-template>
-
-  <ng-template swiperSlide class="card">
-      <img
-        src="https://th.bing.com/th/id/OIP.ba8TxHogmbqKWJprO69OOAHaEo?rs=1&pid=ImgDetMain"
-        alt=""
-        class="imagen"
-      />
-      <div class="descripcion"></div>
-      <div class="titulo"><h4>descripcion</h4></div>
-      <div class="texto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente
-        voluptates rem ipsum.
-      </div>
-      <div class="link">
-        <button class="boton" routerLink="/vermas">ver mas</button>
-      </div>
-  </ng-template>
-
-  <ng-template swiperSlide class="card">
-      <img
-        src="https://th.bing.com/th/id/OIP.ba8TxHogmbqKWJprO69OOAHaEo?rs=1&pid=ImgDetMain"
-        alt=""
-        class="imagen"
-      />
-      <div class="descripcion"></div>
-      <div class="titulo"><h4>descripcion</h4></div>
-      <div class="texto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente
-        voluptates rem ipsum.
-      </div>
-      <div class="link">
-        <button class="boton" routerLink="/vermas">ver mas</button>
-      </div>
-  </ng-template>
-  <ng-template swiperSlide class="card">
-      <img
-        src="https://th.bing.com/th/id/OIP.ba8TxHogmbqKWJprO69OOAHaEo?rs=1&pid=ImgDetMain"
-        alt=""
-        class="imagen"
-      />
-      <div class="descripcion"></div>
-      <div class="titulo"><h4>descripcion</h4></div>
-      <div class="texto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente
-        voluptates rem ipsum.
-      </div>
-      <div class="link">
-        <button class="boton" routerLink="/vermas">ver mas</button>
-      </div>
-  </ng-template> -->
 </swiper>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     <!-- contenido-->
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <!-- contenido con la imagen-->
+           <div class="imagen"> 
+            <img [src]="detalle.imagen" alt="" class="imagen-modal" />
+          </div>
+          </div>
+          <div class="col">
+            <!-- contenido con la información-->
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">{{detalle.nombre}}</h1>
+               <div class="modal-body">
+              <p>{{detalle.descripcion }}</p>
+              <p>{{ detalle.precio | currency }}</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <!-- contenido con el botón-->
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atras</button>
+              <button (click)="agregarProducto(producto)" class="btn btn-primary">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ 
+

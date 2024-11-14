@@ -138,3 +138,94 @@ img {
 
 }
 
+
+
+/*css para el modal */
+
+/* Sección del producto */
+/* Estilos de la imagen del producto */
+.imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del encabezado del modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6C5B5B;
+}
+
+/* Botón de cierre */
+.btn-close {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  
+}
+
+/* Cuerpo del modal */
+.modal-body {
+  font-size: 16px;
+  color: #4B4B4B;
+  padding: 10px 0;
+}
+
+.modal-body p {
+  margin: 5px 0;
+}
+
+/* Precio del producto */
+.modal-body p:last-child {
+  font-size: 20px;
+  color: #27AE60;
+  font-weight: bold;
+}
+
+/* Botones del pie del modal */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: none;
+  padding-top: 10px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #BDBDBD;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #A5A5A5;
+}
+
+.modal-footer .btn-primary {
+  background-color: #3498DB;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #2980B9;
+}
