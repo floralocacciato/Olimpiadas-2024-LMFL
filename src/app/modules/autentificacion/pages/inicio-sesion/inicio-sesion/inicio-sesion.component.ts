@@ -60,6 +60,12 @@ export class InicioSesionComponent {
     this.isButtonEnabled = this.usuarios.email.trim() !== '' && this.usuarios.password.trim() !== '';
   }
 
+  passwordVisible: boolean = false;
+
+    togglePasswordVisibility() {
+        this.passwordVisible = !this.passwordVisible;
+    }
+
 
   async IniciarSesion() {
 
@@ -79,9 +85,8 @@ export class InicioSesionComponent {
 
         Swal.fire({
           icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-          footer: '<a href="#">Why do I have this issue?</a>'
+          title: "No has llenado el formulario con exito o los valores estan vacios",
+          text: "ASDASDAS",
         });
 
         this.LimpiarInputs();
@@ -106,8 +111,8 @@ export class InicioSesionComponent {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
-          footer: '<a href="#">Why do I have this issue?</a>'
+          text: "Datos incorrectos",
+   
         });
         this.usuarios.password = '';
 
@@ -140,8 +145,7 @@ export class InicioSesionComponent {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
+            text: "algo salió mal ",
           });
 
           this.LimpiarInputs();

@@ -1,96 +1,169 @@
 /* Contenedor principal */
 .container {
-    display: flex;
-    flex-direction: column; /* Alinea los elementos en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos verticalmente */
-    height: 70vh; /* Altura completa de la ventana para centrar verticalmente */
-  }
-  
-  /* Titulo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 10px;
+}
+
+/* Titulo */
+.titulo {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Estilo del formulario */
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  gap: 20px;
+  padding: 15px;
+}
+
+/* Estilo de los inputs */
+.form-floating {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Estilo de los inputs */
+input {
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid #836c53;
+  font-size: 16px;
+  padding: 12px 20px;
+  padding-left: 35px; /* Reduce el espacio a la izquierda para el icono */
+  box-sizing: border-box;
+}
+
+/* Estilo del label */
+label {
+  color: #b09e8a;
+  font-size: 16px;
+  margin-left: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+/* Estilo de los íconos dentro de los campos de texto */
+.icon-container {
+  position: absolute;
+  right: 15px; /* Mueve el icono un poco más a la izquierda */
+  top: 50%;
+  transform: translateY(-50%); /* Alinea el ícono verticalmente */
+  pointer-events: none;
+  font-size: 18px; /* Reduce el tamaño del ícono */
+}
+
+/* Estilo del botón de registrarse */
+.boton {
+  background-color: #b09e8a;
+  border-radius: 70px;
+  border: none;
+  color: #f4f3f6;
+  font-size: 18px;
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.boton:hover {
+  background-color: #836c53;
+}
+
+/* Estilo para la sección de la pregunta de login */
+.container-pregunta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Estilo del enlace a iniciar sesión */
+.btn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: #1893f8;
+  font-size: 16px;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
   .titulo {
-    font-size: 2.3rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 40px; /* Ajustamos el margen */
+      font-size: 1.8rem;
+      margin-bottom: 20px;
   }
-  
-  /* Estilo del formulario */
+
   .row {
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se alineen en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
-    max-width: 500px; /* Limita el tamaño máximo de los elementos */
+      max-width: 90%;
+      gap: 20px;
   }
-  
-  .form-floating {
-    position: relative; /* Necesario para posicionar el ícono dentro del campo */
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo de los inputs */
+
   input {
-    width: 100%; /* Hace que los inputs ocupen el 100% del ancho disponible */
-    border-radius: 25px;
-    border: 2px solid #836c53;
-    font-size: 16px;
-    padding: 12px 20px; /* Añadimos más relleno */
-    padding-right: 40px; /* Espacio para el ícono dentro del input */
+      font-size: 14px;
   }
-  
-  label {
-    color: #b09e8a;
-    font-size: 16px;
-    margin-left: 25px; /* Alineación del label */
-    font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-  }
-  
-  /* Estilo de los íconos dentro de los campos de texto */
-  .icon-container {
-    position: absolute;
-    right: 20px; /* Ajustamos la posición a la derecha */
-    top: 50%; /* Centra el ícono verticalmente */
-    transform: translateY(-50%); /* Alinea perfectamente */
-    pointer-events: none; /* Evita que el clic sobre el ícono interfiera con el input */
-  }
-  
-  /* Estilo del botón de registrarse */
+
   .boton {
-    background-color: #b09e8a;
-    border-radius: 70px;
-    border: none;
-    color: #f4f3f6;
-    font-size: 20px;
-    width: 200px;
-    height: 40px;
-    margin-top: 40px; /* Separa el botón del formulario */
-    text-align: center;
+      width: 100%;
+      font-size: 18px;
   }
-  
-  .boton:hover {
-    background-color: #836c53;
+
+  .icon-container {
+      right: 15px; /* Ajuste del icono para pantallas pequeñas */
   }
-  
-  /* Estilo para la sección de la pregunta de login */
-  .container-pregunta {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  h2 {
-    font-weight: normal;
-  }
-  
-  /* Estilo del enlace a iniciar sesión */
+
   .btn {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
-    color: #1893f8;
-    margin-left: 2px;
-    font-size: 18px;
+      font-size: 16px;
   }
+}
+
+/* Media Query para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .titulo {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+  }
+
+  .row {
+      max-width: 90%;
+      gap: 25px;
+  }
+
+  input {
+      font-size: 13px;
+      padding: 12px 18px;
+  }
+
+  .boton {
+      font-size: 16px;
+      height: 50px;
+      padding: 0 20px;
+  }
+
+  .icon-container {
+      right: 20px; /* Ajuste para el icono a la derecha */
+  }
+
+  .btn {
+      font-size: 14px;
+  }
+}

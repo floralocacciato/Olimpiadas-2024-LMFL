@@ -1,12 +1,12 @@
 .container {
   display: flex;
-  flex-direction: column; /* Alinea los elementos en una columna */
-  align-items: center; /* Centra los elementos horizontalmente */
-  justify-content: center; /* Centra los elementos verticalmente */
-  height: 70vh; /* Altura completa de la ventana para centrar verticalmente */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
 }
 
-.titulo{
+.titulo {
   font-size: 2.3rem;
   font-weight: bold;
   color: #333;
@@ -15,74 +15,104 @@
 
 .row {
   display: flex;
-  flex-direction: column; /* Asegura que los elementos se alineen en una columna */
-  align-items: center; /* Opcional: centra los elementos horizontalmente */
-  margin-bottom: 15px; /* Espacio entre cada fila */
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-input{
+.form-floating {
+  position: relative;
   width: 500px;
-  border-radius: 25px;
   margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  border-radius: 25px;
   border: 2px solid #836c53;
   font-size: 16px;
-  padding: 0;
 }
 
-label{
+label {
   color: #b09e8a;
   font-size: 16px;
-  margin-bottom: 5px;
   font-family: 'Montserrat', sans-serif;
   font-style: italic;
-  margin-left: 10px;
   margin-left: 25px;
 }
 
-.boton{
-  background-color:  #b09e8a ;
+.boton {
+  background-color: #b09e8a;
   border-radius: 70px;
   border: none;
   color: #f4f3f6;
   font-size: 20px;
   width: 200px;
-  margin: 0 auto;
   margin-top: 40px;
   height: 40px;
 }
 
 body {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.boton:hover{
+.boton:hover {
   background-color: #967b68;
 }
 
-.container-pregunta{
-display: flex;
-justify-content: center;
-margin-top: 20px;
+.container-pregunta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-h2{
-font-weight: normal;
+h2 {
+  font-weight: normal;
 }
 
 .btn {
-border: none;
-background-color: transparent;
-padding: 0;
-cursor: pointer;
-color:   #1893f8;
-margin-left: 2px;
-font-size: 18px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #1893f8;
+  margin-left: 2px;
+  font-size: 18px;
 }
 
 .icon-container {
-position: absolute;
-right: 30px; /* Ajusta según sea necesario */
-top: 38%;
-transform: translateY(-50%);
-pointer-events: none; /* Para que el clic pase al input */
+  position: absolute;
+  right: 25px; /* Ajustado para acercar el icono un poco más al centro */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .form-floating {
+    width: 90%;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  .boton {
+    width: 150px;
+    font-size: 18px;
+  }
+
+  .icon-container {
+    right: 20px; /* Acercado un poco más al centro en pantallas pequeñas */
+  }
+
+  .btn {
+    font-size: 16px;
+  }
 }
