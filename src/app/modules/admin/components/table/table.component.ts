@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-table',
@@ -10,6 +12,88 @@ import Swal from 'sweetalert2';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
+  descripcion: this.producto.value.descripcion!,
+    categoria: this.producto.value.categoria!,
+    /* Imagen toma información desde el servicio, no del formulario */
+    imagen: this.productoSeleccionado.imagen,
+    alt: this.producto.value.alt!,
+    favoritos: false,
+    carrito: false,
+  }
+
+  // Verificamos que el usuario ingrese una nueva imagen o no
+  if(this.imagen){
+    this.servicioCrud.subirImagen(this.nombreImagen, this.imagen, "productos")
+    .then(resp => {
+      this.servicioCrud.obtenerUrlImagen(resp)
+      .then(url => {
+        // Actualizamos URL de la imagen en los datos del formulario
+        datos.imagen = url;
+
+        // Actualizamos los datos desde el formulario de edición
+        this.actualizarProducto(datos);
+
+        // Vaciamos casillas del formulario
+        this.producto.reset();
+      })
+      .catch(error => {
+        alert ("Hubo un problema al subir la imagen :( \n"+error);
+
+        this.producto.reset();
+      })
+    })
+  }else{
+    /*
+      Actualizamos formulario con los datos recibidos del usuario, pero sin modificar la
+      imagen ya existente en Firestore y Storage
+    */
+    this.actualizarProducto(datos);
+  }
+}
+
+// ACTUALIZA la información ya existente de los productos
+actualizarProducto(datos: Producto){
+  this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
+    .then(producto => {
+      alert("El producto fue modificado con éxito.");
+    })
+    .catch(error => {
+      alert("Hubo un problema al modificar el producto.");
+    })
+}
+
+// Método para CARGAR IMÁGENES
+cargarImagen(event: any){
+  // Variable para obtener el archivo subido desde el input del HTML
+  let archivo = event.target.files[0];
+
+  // Variable para crear un nuevo objeto de tipo "archivo" o "file" y poder leerlo
+  let reader = new FileReader();
+
+  if (archivo != undefined){
+    /*
+      Llamamos a método readAsDataUrl para leer toda la información recibida.
+      Enviamos como parámetro el archivo porque será el encargado de tener la info. 
+      ingresada por el usuario
+    */
+    reader.readAsDataURL(archivo);
+
+    // Definimos qué haremos con la información mediante función flecha
+    reader.onloadend = () => {
+      let url = reader.result;
+
+      // Verificamos que la URL sea existente y diferente a "nula"
+      if(url != null){
+        // Definimos nombre de la imagen con atributo "name" del input
+        this.nombreImagen = archivo.name;
+
+        // Definimos ruta de la imagen según URL recibida en formato cadena (string)
+        this.imagen = url.toString();
+      }
+    }
+  }
+}
+
   // Crear colección de productos del tipo producto -> lo definimos como un array
   coleccionProductos: Producto[] = [];
 
@@ -237,4 +321,5 @@ export class TableComponent {
       }
     }
   }
+
 }

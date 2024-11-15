@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class ContactosComponent {
 
+
   EnviarFormulario() {
 
     // Aquí debería ir el código para enviar el formulario
@@ -46,4 +47,5 @@ export class ContactosComponent {
     });
     
   }
+
 }

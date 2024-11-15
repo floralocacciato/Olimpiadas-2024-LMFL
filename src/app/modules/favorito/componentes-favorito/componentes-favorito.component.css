@@ -1,0 +1,42 @@
+.card {
+    width: 250px;
+    height: 350px;
+    margin: 10px;
+  }
+  
+  
+  
+  .contenedorcard{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+   
+  
+  .card-header{
+    width: 200px;
+    height: 250px;
+    text-align: center;
+  }
+  
+  .card-img{
+    width: 250px;
+    height: 200px;
+  }
+  
+  .card-descripcion{
+    width: 200px;
+    height: 300px;
+    text-align: center;
+  }
+  
+  .card-botones{
+    width: 250px;
+    height: 150px;
+  }
+
+  h2{
+    text-align: center;
+  }

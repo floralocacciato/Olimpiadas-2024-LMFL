@@ -1,11 +1,231 @@
 /*estilos para las secciones del carousel*/
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 
-/*estilos para las secciones de la galería*/
+/*estilo del carrousel de las tarjetas*/
+/*##############################################selector universal####################################*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*###############################################estilos para el boton de corazon######################*/
+.corner-button {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+.heart-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.heart-button i {
+    font-size: 18px;
+    border: none; /*quita los bordes*/
+}
+
+
+
+.heart-button:hover{
+  font-size: 18px;
+  color: red; /* color de fondo mientras que este el pulsor encima */
+}
+
+
+
+/*############################################################ Estilos para el cuerpo del documento ################################################*/
+body {
+    background: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+  }
+
+
+
+
+/*##########################################################estilos para el contenedor############################################################*/
+.container{
+    padding: 10px 40px;
+}
+
+
+
+
+/*###############################################################estilo para el swiper########################################################*/
+.swiper {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+/*###############################################################Estilos para las tarjetas  ########################################################*/
+.card{
+  width: 200px; /* Ancho fijo para todas las tarjetas */
+  height: 380px; /* Alto fijo para todas las tarjetas */
+  border: 2px solid #b09e8a; /* Color marrón */
+  border-radius: 8px; /* Esquinas redondeadas (opcional) */
+  padding: 16px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+  display: flex;
+  flex-direction: column; /* Alinea el contenido verticalmente */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  padding-top: 40px;
+  padding-bottom: 49px;
+}
+.card img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 250px; /* Alto fijo para todas las imágenes */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+
+/*##################################################################estilos para el boton de la card################################################*/
+.boton{
+  background-color: #007BFF; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  transition: background-color 0.3s; /* Transición suave para el hover */
+  position: absolute; /* Posiciona el botón de forma absoluta */
+  bottom: 16px; /* Coloca el botón a 16px del fondo de la tarjeta */
+  left: 50%; /* Centra el botón horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición del botón para centrarlo */
+  }
+  
+  .boton:hover {
+    background-color: #0056b3; /* Color azul más oscuro al pasar el ratón */
+  }
+
+  
+
+/*#################################################################estilos para las secciones de la galería########################################*/
 img {
     border-radius: var(--bs-border-radius) !important;
     width: 100% !important;
+    height: 70px;
     display: block !important;
     object-fit: scale-down;
     padding: 0px;
+  
+}
+
+/*estilo para el corazon*/
+.boton-fav{
+  cursor: pointer;
+  margin-top: 2px;
+  margin-right: 4.5px;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.2s; /* Añade una transición suave */
+  color: red !important;
+  transform: scale(1.1); /* Aumenta el tamaño del corazón al pasar el mouse */
+      
+
+}
+
+
+
+/*css para el modal */
+
+/* Sección del producto */
+/* Estilos de la imagen del producto */
+.imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del encabezado del modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6C5B5B;
+}
+
+/* Botón de cierre */
+.btn-close {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  
+}
+
+/* Cuerpo del modal */
+.modal-body {
+  font-size: 16px;
+  color: #4B4B4B;
+  padding: 10px 0;
+}
+
+.modal-body p {
+  margin: 5px 0;
+}
+
+/* Precio del producto */
+.modal-body p:last-child {
+  font-size: 20px;
+  color: #27AE60;
+  font-weight: bold;
+}
+
+/* Botones del pie del modal */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: none;
+  padding-top: 10px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #BDBDBD;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #A5A5A5;
+}
+
+.modal-footer .btn-primary {
+  background-color: #3498DB;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #2980B9;
 }

@@ -161,6 +161,7 @@
     transition: all 0.3s ease; /* Transición suave */
 }
 
+
 /* Mostrar el menú móvil cuando está activo */
 .mobile-menu.active {
     display: flex; /* Muestra el menú */
@@ -191,3 +192,4 @@
         width: 200px; /* Ajusta el tamaño del logo */
     }
 }
+

@@ -41,14 +41,20 @@
             <button mat-menu-item *ngIf="logueado" routerLink="/inicio-sesion" class="custom-menu-button">Iniciar sesión</button>
         </mat-menu>
 
-        <button class="btn">
-            <mat-icon>shopping_cart</mat-icon>
-        </button>
 
-        <button class="btn">
-            <mat-icon>favorite</mat-icon>
-        </button>
-    </div>
+
+        <!-- Icono del carrito -->
+        <button routerLink="/carrito" mat-icon-button  aria-label="icon-button with buy icon" matBadge="{{servicioCarrito.cantidadProductosCarrito}}" matBadgeOverlap="false" class="btn">
+
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+
+
+
+        <button routerLink="/favorito" mat-icon-button class="favorite-icon" aria-label="icon-button with heart icon">
+            <mat-icon matBadge="{{productoservicio.cantidadProductosFavoritos}}"  matBadgeColor="warn">favorite</mat-icon>
+          </button>
+
 
     <!-- Menú móvil -->
     <div class="mobile-menu" *ngIf="menuOpen">

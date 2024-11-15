@@ -1,2 +1,72 @@
 <!--##############################################carousel de cards###############################################################-->
+<swiper [slidesPerView]="6" [spaceBetween]="20" [navigation]="true" [pagination]="{ clickable: true }">
+
+  <ng-template swiperSlide class="card" *ngFor="let producto of coleccionProductosCarrito">
+
+    <!--boton de favoritos-->
+    <mat-card-actions class="card-botones">
+      <button (click)="subirFavorito(producto)" class="boton-fav" mat-icon-button color="danger">
+        <mat-icon *ngIf="producto.favoritos===true">favorite</mat-icon>
+        <mat-icon *ngIf="producto.favoritos===false">favorite_border</mat-icon>
+      </button>
+    </mat-card-actions>
+
+    <!--imagen del producto-->
+    <img [src]="producto.imagen" alt="" class="imagen" />
+    <!--descripcion del producto-->
+    <div class="descripcion"></div>
+
+    <!--nombre del producto-->
+    <mat-card-title>{{producto.nombre}}</mat-card-title>
+    <div class="texto">
+      {{producto.precio | currency}}
+    </div>
+    <div   (click)="agregarProducto(producto)">
+      <!-- Button trigger modal -->
+    </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    (click)="mostrarProducto(producto)">
+      Ver más
+    </button>
+  </ng-template>
+</swiper>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     <!-- contenido-->
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <!-- contenido con la imagen-->
+           <div class="imagen"> 
+            <img [src]="detalle.imagen" alt="" class="imagen-modal" />
+          </div>
+          </div>
+          <div class="col">
+            <!-- contenido con la información-->
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">{{detalle.nombre}}</h1>
+               <div class="modal-body">
+              <p>{{detalle.descripcion }}</p>
+              <p>{{ detalle.precio | currency }}</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <!-- contenido con el botón-->
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atras</button>
+              <button (click)="agregarProducto(producto)" class="btn btn-primary">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ 
 

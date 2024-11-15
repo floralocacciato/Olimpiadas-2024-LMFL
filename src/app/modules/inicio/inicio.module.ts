@@ -14,6 +14,11 @@ import { MatCardModule } from '@angular/material/card';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 
+//componente de swiper con angular
+import { SwiperModule } from 'swiper/angular';
+
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     CardComponent,
@@ -26,12 +31,17 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     InicioRoutingModule,
     MatButtonModule,
     MatCardModule,
-  
+    //componente de swiper
+    SwiperModule,
+    MatIconModule,
+
   ],
   exports: [
     CardComponent,
     InicioComponent,
-
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
   ]
 })
 export class InicioModule { }

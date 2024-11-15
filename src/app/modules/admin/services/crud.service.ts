@@ -56,10 +56,11 @@ crearProducto(producto: Producto, url: string){
 
 // OBTENER productos
 obtenerProducto(){
-  // snapshotChanges -> toma una captura del estado de los datos
-  // pipe -> funciona como una tubería que retorna el nuevo arreglo de datos
-  // map -> "mapea" o recorre esa nueva información
-  // a -> resguarda la nueva información y la envía
+
+  return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
+}
+
+obtenerProductosCarrito(){
   return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
 }
 
