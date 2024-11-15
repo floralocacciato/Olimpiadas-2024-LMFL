@@ -8,14 +8,21 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* altura del cuerpo de la pàgina mìnima */
+    background-color: #f6f4f3;
 }
 
 main {
     flex: 1; /* permito que el elemento main ocupe el espacio disponible entre el navbar y el footer */
+    background-color: #f6f4f3;
 }
 
 footer {
     text-align: center;
     padding: 1em 0;
     height: 100px;
+
+    margin-top: auto; /* footer siempre posicionado abajo */
+    background-color: #f6f4f3;
+
 }
+

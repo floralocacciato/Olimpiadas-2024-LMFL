@@ -1,71 +1,120 @@
-/* Css del h1 del titulo
-*/
-h1{
-    text-align: center;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
 }
 
-/* Css del contenedor del label
-*/
-.container{
-    display: flex;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;   /* Alinea los elementos verticalmente */
-  
+.titulo {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 60px;
 }
 
-.label{
-
-    margin-bottom: 20px;
-    padding: 10px 20px;
-
-    margin: auto;
-   
- 
-    border-radius: 10px;
-  
-    /* Reduce label size */
-    font-size: 12px;
-    
-    /* Add some padding to make it look nicer */
-    padding: 5px;
-  
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-
-/* Css del boton del label
-*/
-.boton{
-    width: 120px;
-    margin: auto;
+.form-floating {
+  position: relative;
+  width: 500px;
+  margin-bottom: 20px;
 }
-/* Css del link de registrarte
-*/
+
+input {
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid #836c53;
+  font-size: 16px;
+}
+
+label {
+  color: #b09e8a;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  margin-left: 25px;
+}
+
+.boton {
+  background-color: #b09e8a;
+  border-radius: 70px;
+  border: none;
+  color: #f4f3f6;
+  font-size: 20px;
+  width: 200px;
+  margin-top: 40px;
+  height: 40px;
+}
+
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.boton:hover {
+  background-color: #967b68;
+}
+
+.container-pregunta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: normal;
+}
+
 .btn {
-    border: none;
-    background-color: transparent;
-    padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #1893f8;
+  margin-left: 2px;
+  font-size: 18px;
+}
+
+.icon-container {
+  position: absolute;
+  right: 25px; /* Ajustado para acercar el icono un poco más al centro */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .form-floating {
+    width: 90%;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  .boton {
+    width: 150px;
+    font-size: 18px;
+  }
+
+  .icon-container {
+    right: 20px; /* Acercado un poco más al centro en pantallas pequeñas */
+  }
+
+  .btn {
     font-size: 16px;
-    cursor: pointer;
-    color: #1893f8;
-}
-.boton_piola{
-    border-radius: 50px; /* Esto hace que el botón tenga bordes redondeados */
-    padding: 10px 20px;
-    width: 250px;
-    margin: auto;
-    color: white;
-    background-color: #1893f8;
-}
+  }
 
-#Registrarse{
-    margin-top: 2%;
-}
-
-#uno{
-    margin-top: 3%;
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 3%;
 }

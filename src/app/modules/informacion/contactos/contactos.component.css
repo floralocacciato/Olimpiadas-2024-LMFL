@@ -1,13 +1,140 @@
-.mb-3{
-    color: black;
+/* Configura el contenedor principal para centrar el contenido */
+.container-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Ajusta a la altura de la pantalla menos el navbar */
+    padding: 0; /* Elimina cualquier padding adicional */
+    margin: 0;  /* Elimina cualquier margen adicional */
+    overflow: hidden; 
 }
-.form-control{
+
+/* Ajuste opcional en mat-grid-list */
+mat-grid-list {
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo opcional */
+    height: auto; /* Se adapta al contenido */
+    margin: 0;
+}
+
+/* Centrado y espaciado en cada tile */
+mat-grid-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.mb-3 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.form-control {
     background-color: #d1c8c1;
     border-radius: 10px;
-    width: 600px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
-.btn-success{
+
+.btn-success {
     border-radius: 55px;
     width: 150px;
+    padding: 10px;
+    background-color: #b09e8a !important;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
 
+.btn-success:hover {
+    background-color: #836c53 !important;
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas pequeñas (smartphones) */
+@media (max-width: 768px) {
+    .container-principal {
+        flex-direction: column; /* Coloca los tiles en una columna */
+        height: auto; /* Ajusta el alto para que no se recorte contenido */
+    }
+
+    mat-grid-list {
+        grid-template-columns: 1fr; /* Usa una sola columna */
+        width: 100%;
+    }
+
+    mat-grid-tile {
+        padding: 20px; /* Añade más padding a los tiles para mejor visualización */
+    }
+
+    .container {
+        max-width: 100%; /* Deja que ocupe todo el ancho disponible */
+        padding: 15px; /* Ajusta el padding */
+    }
+
+    .btn-success {
+        width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
+        align-self: center; /* Centra el botón */
+    }
+
+    .form-control {
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+    }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    .container-principal {
+        flex-direction: row; /* Mantiene los tiles en una fila */
+    }
+
+    mat-grid-list {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+    }
+
+    .container {
+        max-width: 400px; /* Reduzca el tamaño máximo del formulario */
+        padding: 20px;
+    }
+
+    .btn-success {
+        width: 120px; /* Ajusta el ancho del botón */
+    }
+}
+
+/* Pantallas grandes (desktops y superiores) */
+@media (min-width: 1025px) {
+    .container-principal {
+        flex-direction: row; /* Mantiene los tiles en una fila */
+    }
+
+    mat-grid-list {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+    }
+
+    .container {
+        max-width: 500px; /* Mantiene el ancho máximo del formulario */
+        padding: 20px;
+    }
+
+    .btn-success {
+        width: 150px; /* Mantiene el ancho del botón */
+    }
 }

@@ -1,82 +1,195 @@
-.separator {
-    height: 2px;
-    /* Ajusta el grosor de la línea */
-    background-color: #b09e8a;
-    /* Color de la línea */
-    margin: 20px 0;
-    /* Espaciado superior e inferior */
+.custom-toolbar {
+    background-color: #f6f4f3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre los elementos */
+    padding: 0 20px; /* Espaciado lateral */
+    height: 130px;
+    position: relative;
 }
 
-.custom-toolbar {
-    /*fondo del navbar*/
-    background-color: #f6f4f3;
-    /* Un color cálido como el blanco antiguo */
+/* Secciones del navbar */
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Espaciado entre los botones del lado izquierdo */
+.nav-left {
+    margin-right: auto; /* Empuja el logo al centro */
+}
+
+.mat-icon{
+    color:#b09e8a !important;
+}
+
+::ng-deep .mat-icon:hover {
+    color: #59350c !important; /* Color del texto al pasar el mouse */
+}
+
+.botoncategorias {
+    color: #b09e8a !important; 
+}
+
+::ng-deep .botoncategorias:hover {
+    color: #59350c !important;
+}
+
+.botoninicio {
+    color: #59350c !important;
+}
+
+
+/* Contenedor del menú con bordes redondeados */
+::ng-deep .mat-mdc-menu-panel {
+    background-color: transparent !important; /* Fondo del contenedor del menú */
+     /* Borde redondeado para el contenedor */
+    padding: 5px 0; /* Ajuste de espaciado interno para el contenedor */
+    box-shadow: none !important;
+    margin: 0 !important;
+    overflow: hidden !important; 
+}
+
+::ng-deep .categoriasbotones{
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #d1c8c1; /* Fondo de los botones de categorías */
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Opciones de menú individuales sin borde redondeado */
+.menuitembutton {
+    color: black ;
+    font-size: 15px;
+    background-color: #d1c8c1; /* Fondo transparente para cada opción */
+    transition: background-color 0.3s, color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 80px;
-    /* Espaciado lateral */
-    height: 130px;
+    padding: 8px 16px;
+    box-shadow: none;
+    margin: 0;
 }
 
-.toolbar-button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 1000;
-    text-transform: uppercase;
-    padding: 0 50px;
-    color: #59350c;
-    /* Color cálido para el texto */
-    font-size: 21px;
+/* Cambiar color en hover */
+::ng-deep .menuitembutton:hover {
+    background-color: #d1c8c1!important; /* Color de fondo en hover */
+    color: #8c7563!important; /* Color del texto al pasar el mouse */
+} 
+
+
+
+/* Estilo específico para "VER TODOS LOS PRODUCTOS" */
+.menuitembutton[routerLink="/todos"] {
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    background-color: #59350c;
+    padding: 8px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 50px;
+    margin: 0;
 }
 
+/* Hover específico para "VER TODOS LOS PRODUCTOS" */
+::ng-deep .ver-todos-button:hover {
+    background-color:  #8c7563!important; /* Color de fondo en hover */
+    color: black!important; /* Color del texto al pasar el mouse */
+}
+
+
+.custom-menu-button {
+    color: #836c53; /* Color del texto de cada opción */
+    font-size: 15px;
+    background-color: #f2e9e9; /* Fondo inicial */
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center; /* Alineación central */
+    justify-content: center; /* Centramos el contenido */
+    box-shadow: none; /* Elimina sombra */
+    border: 3px solid #86654b;
+    border-radius: 50px;
+    margin: 5px 0; /* Añade espacio entre las opciones */
+    padding: 8px 16px; /* Espaciado para cada opción */
+}
+
+/* Cambiar color en hover */
+::ng-deep .custom-menu-button:hover {
+    background-color: #59350c!important; /* Color de fondo en hover */
+    color: white !important; /* Color del texto al pasar el mouse */
+}
+
+
+/* Aseguramos que el contenedor del logo ocupe el espacio adecuado */
 .logo-container {
-    flex-grow: 10;
+    flex-grow: 5;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
+/* Ajuste para centrar el logo */
 .logo-image {
-    width: 500px;
-    /* Ajusta el tamaño del logo */
-    height: 110px;
+    width: 300px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la relación de aspecto */
 }
 
-.example-spacer {
-    flex: 1 1 auto;
+/* Sección derecha: Mantiene los íconos alineados */
+.nav-right {
+    display: flex; /* Muestra los íconos en pantallas grandes */
+    margin-left: auto; /* Empuja los íconos a la derecha */
+}
+
+/* Estilos para el botón de menú */
+.buttonmenu {
+    display: none; /* Oculta el botón en pantallas grandes */
+}
+
+/* Menú móvil */
+.mobile-menu {
+    display: none; /* Oculta el menú por defecto */
+    flex-direction: column; /* Apila los elementos */
+    background-color: #f6f4f3; /* Fondo del menú */
+    position: absolute; /* Posiciona respecto al navbar */
+    top: 130px; /* Debajo del navbar */
+    left: 0; /* Alinea a la izquierda */
+    right: 0; /* Alinea a la derecha */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: all 0.3s ease; /* Transición suave */
 }
 
 
-/* Estilos para el botón del menú desplegable */
-.custom-menu-button {
-    background-color: #f2e9e9;
-    /* Fondo coral cálido */
-    font-weight: 2500;
-    color: #86654b;
-    /* Texto crema suave */
-    border-radius: 25px;
-    /* Bordes redondeados */
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    transition: background-color 0.3s, color 0.3s;
-    margin: 8px 0;
-    /* Espaciado vertical entre los botones */
+/* Mostrar el menú móvil cuando está activo */
+.mobile-menu.active {
+    display: flex; /* Muestra el menú */
 }
 
-.btn {
-    border: none;
-    background-color: transparent;
-    font-size: 16px;
-    cursor: pointer;
-    color: #b09e8a;
-    margin-right: 50px;
+/* Ajustes para pantallas grandes */
+@media (max-width: 768px) {
+    .buttonmenu {
+        display: inline-flex; /* Muestra el botón de menú */
+    }
+
+    .nav-left, .nav-right {
+        display: none; /* Oculta los elementos en pantallas pequeñas */
+    }
+
+    .mobile-menu {
+        display: flex; /* Muestra el menú móvil */
+    }
 }
 
-mat-icon{
-    width: 40px;
-    height: 40px;
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .custom-toolbar {
+        padding: 10px; /* Ajusta el espaciado del navbar */
+    }
+
+    .logo-image {
+        width: 200px; /* Ajusta el tamaño del logo */
+    }
 }
-.favorite-icon{
-    color: #b09e8a;
-}
+

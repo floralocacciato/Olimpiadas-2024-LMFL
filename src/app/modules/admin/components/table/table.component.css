@@ -1,4 +1,138 @@
-.modal-footer{
-    text-align: center;
-    justify-content: center;
+
+/* Para pantallas pequeñas */
+
+/* Centramos el botón en su contenedor */
+.btn-outline-primary {
+  display: block;
+  margin: 20px auto;  /* Auto para centrar el botón horizontalmente */
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  width: auto;  /* El ancho se ajustará según el contenido */
 }
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .btn-outline-primary {
+      width: 100%;  /* Hacer que el botón ocupe el 100% del ancho disponible en móviles */
+      font-size: 1rem;  /* Mantener el tamaño de la fuente adecuado */
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+
+  .table thead, .table tbody, .table th, .table td {
+      display: block;
+      text-align: left;
+  }
+
+  .table th, .table td {
+      padding: 8px;
+  }
+
+  /* Estilo de la descripción para que sea responsiva */
+  .table td {
+      word-wrap: break-word; /* Permite que las palabras largas se rompan y ajusten */
+      overflow-wrap: break-word; /* Alternativa para la compatibilidad con más navegadores */
+      white-space: normal; /* Asegura que el texto no se desborde */
+  }
+
+  .table td .descripcion {
+      font-size: 0.9rem; /* Reducimos el tamaño de la fuente para móviles */
+  }
+
+  /* Botones de acción (Editar y Eliminar) */
+  .table td button {
+      margin: 5px 5px; /* Espaciado entre los botones */
+  }
+
+  /* Estilo de los modales */
+  .modal-header h1 {
+      font-size: 1.3rem;
+  }
+
+  .modal-body {
+      padding: 1rem;
+  }
+
+  /* Botón "Agregar un nuevo producto" */
+  .btn-outline-primary {
+      width: 100%;
+      font-size: 1rem;
+  }
+
+  /* Inputs y selects en el modal */
+  .modal-body .form-control,
+  .modal-body .form-select {
+      padding: 8px;
+  }
+
+  /* Alinear los botones de editar y eliminar horizontalmente */
+  .table td .btn-group {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+  }
+
+  .table td .btn-group button {
+      flex: 1;
+      margin: 0 5px; /* Añadir margen entre los botones */
+  }
+}
+
+/* Para pantallas extra pequeñas (celulares en vertical) */
+@media (max-width: 480px) {
+  .table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+
+  .btn-outline-primary {
+      width: 100%;
+      font-size: 0.9rem;
+  }
+
+  /* Ajuste de los inputs y selects dentro de los modales */
+  .modal-body .form-control,
+  .modal-body .form-select {
+      padding: 6px;
+      font-size: 0.9rem;
+  }
+
+  /* Ajuste de los botones */
+  .modal-footer button {
+      padding: 0.5rem 1rem;
+  }
+
+  /* Modificar la cabecera del modal */
+  .modal-header h1 {
+      font-size: 1.2rem;
+  }
+
+  /* Alinear los botones de editar y eliminar horizontalmente */
+  .table td .btn-group {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+  }
+
+  .table td .btn-group button {
+      flex: 1;
+      margin: 0 5px; /* Añadir margen entre los botones */
+  }
+
+  /* Descripción */
+  .table td {
+      font-size: 0.85rem; /* Ajustar tamaño de texto en pantallas muy pequeñas */
+  }
+}
+

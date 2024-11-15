@@ -78,7 +78,7 @@ export class RegistroComponent {
 
       // Accedemos al servicio de rutas -> método navigate
       // método NAVIGATE = permite dirigirnos a diferentes vistas
-      this.servicioRutas.navigate(['/inicio']);
+      this.servicioRutas.navigate(['/inicio-sesion']);
     })
     // El método CATCH toma una falla y la vuelve un ERROR
     .catch(error => {

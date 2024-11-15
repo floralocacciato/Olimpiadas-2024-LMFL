@@ -56,12 +56,14 @@ crearProducto(producto: Producto, url: string){
 
 // OBTENER productos
 obtenerProducto(){
+
   return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
 }
 
 obtenerProductosCarrito(){
   return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
 }
+
 // EDITAR productos
 modificarProducto(idProducto: string, nuevaData: Producto){
   // accedemos a la colección, buscamos por ID y actualizamos información

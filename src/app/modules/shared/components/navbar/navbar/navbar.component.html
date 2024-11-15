@@ -1,20 +1,28 @@
 <mat-toolbar class="custom-toolbar">
-    <!-- Menú de inicio -->
-    <button id="menuInicio" mat-button routerLink="/inicio" class="toolbar-button">Inicio</button>
+    <!-- Botón de menú -->
+    <button class="buttonmenu" (click)="toggleMenu()" aria-label="Toggle menu">
+        <mat-icon>menu</mat-icon>
+    </button>
 
-    <!-- Menú desplegable: SECCIÓN DE PRODUCTOS -->
-    <button id="menuProducto" mat-button [matMenuTriggerFor]="producto" class="toolbar-button">Categorías</button>
-    <mat-menu #producto="matMenu">
-        <button mat-menu-item routerLink="/producto">Kayak</button>
-        <button mat-menu-item routerLink="/indumentaria">Escalada</button>
-        <button mat-menu-item routerLink="/alimentacion">Pesca</button>
-        <button mat-menu-item routerLink="/juguetes">Ciclismo</button>
-        <button mat-menu-item routerLink="/juguetes">Esqui</button>
-        <button mat-menu-item routerLink="/juguetes">Buceo</button>
-        <button mat-menu-item routerLink="/juguetes">Tirolesa</button>
-        <button mat-menu-item routerLink="/juguetes">Paracaidismo</button>
-        <button mat-menu-item routerLink="/juguetes">Alpinismo</button>
-    </mat-menu>
+     <!-- Menú de inicio y categorías -->
+     <div class="nav-left">
+        <button id="menuInicio" class="botoninicio" mat-button routerLink="/inicio">Inicio</button>
+        <button id="menuProducto" class="botoncategorias" mat-button [matMenuTriggerFor]="producto">Categorías</button>
+        <mat-menu class="matmenupanel" #producto="matMenu">
+            <div class="categoriasbotones"> 
+            <button class="menuitembutton" mat-menu-item routerLink="/kayak">Kayak</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/escalada">Escalada</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/pesca">Pesca</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/ciclismo">Ciclismo</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/esqui">Esqui</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/buceo">Buceo</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/tirolesa">Tirolesa</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/paracaidismo">Paracaidismo</button>
+            <button class="menuitembutton" mat-menu-item routerLink="/alpinismo">Alpinismo</button>
+        </div>
+            <button class="menuitembutton ver-todos-button" mat-menu-item routerLink="/todos">VER TODOS LOS PRODUCTOS</button>
+        </mat-menu>
+    </div>
 
     <!-- Logo -->
     <div class="logo-container">
@@ -23,32 +31,53 @@
         </a>
     </div>
 
-    <span class="example-spacer"></span>
-
-    <!-- Botones del navbar -->
-    <div>
-        <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
+    <!-- Sección derecha: íconos -->
+    <div class="nav-right">
         <button class="btn" [matMenuTriggerFor]="usuario">
-            <mat-icon>person</mat-icon> <!-- Icono del user-->
+            <mat-icon>person</mat-icon>
         </button>
-
         <mat-menu #usuario="matMenu">
-            <button mat-menu-item *ngIf="logueado" routerLink="/registro"
-                class="custom-menu-button">Registrarse</button>
-            <button mat-menu-item *ngIf="logueado" routerLink="/inicio-sesion" class="custom-menu-button">Iniciar
-                sesión</button>
+            <button mat-menu-item *ngIf="logueado" routerLink="/registro" class="custom-menu-button">Registrarse</button>
+            <button mat-menu-item *ngIf="logueado" routerLink="/inicio-sesion" class="custom-menu-button">Iniciar sesión</button>
         </mat-menu>
+
 
 
         <!-- Icono del carrito -->
         <button routerLink="/carrito" mat-icon-button  aria-label="icon-button with buy icon" matBadge="{{servicioCarrito.cantidadProductosCarrito}}" matBadgeOverlap="false" class="btn">
+
             <mat-icon>shopping_cart</mat-icon>
           </button>
+
 
 
         <button routerLink="/favorito" mat-icon-button class="favorite-icon" aria-label="icon-button with heart icon">
             <mat-icon matBadge="{{productoservicio.cantidadProductosFavoritos}}"  matBadgeColor="warn">favorite</mat-icon>
           </button>
 
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu" *ngIf="menuOpen">
+        <div class="nav-left-mobile">
+            <button id="menuInicio" mat-button routerLink="/inicio" class="toolbar-button">Inicio</button>
+            <button id="menuProducto" mat-button [matMenuTriggerFor]="producto" class="toolbar-button">Categorías</button>
+        </div>
+        <div class="nav-right-mobile">
+            <button class="btn" [matMenuTriggerFor]="usuario">
+                <mat-icon>person</mat-icon>
+            </button>
+            <button class="btn">
+                <mat-icon>shopping_cart</mat-icon>
+            </button>
+            <button class="btn">
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
     </div>
 </mat-toolbar>
+
+<div class="divider-container">
+<mat-divider class="divisor"></mat-divider>
+
+<mat-divider class="divisor"></mat-divider>
+</div>

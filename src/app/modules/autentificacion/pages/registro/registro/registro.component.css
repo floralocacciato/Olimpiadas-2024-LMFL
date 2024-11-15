@@ -1,76 +1,169 @@
-/* Css del h1 del titulo
-*/
-h1{
-    text-align: center;
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 10px;
 }
 
-input{
-    border-radius: 500px;
+/* Titulo */
+.titulo {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-/* Css del contenedor del label
-*/
-.container{
-    display: flex;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;   /* Alinea los elementos verticalmente */
-
+/* Estilo del formulario */
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  gap: 20px;
+  padding: 15px;
 }
 
-.label{
-
-    margin-bottom: 20px;
-    border-radius: 500px; /* Esto hace que el botón tenga bordes redondeados */
-    padding: 10px 20px;
-
-    margin: auto;
-    color: #f2e9e9;
- 
-    border-radius: 10px;
-  
-    /* Reduce label size */
-    font-size: 12px;
-    
-    /* Add some padding to make it look nicer */
-    padding: 5px;
-  
+/* Estilo de los inputs */
+.form-floating {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-
-/* Css del boton del label
-*/
-.boton{
-    width: 120px;
-    margin: auto;
+/* Estilo de los inputs */
+input {
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid #836c53;
+  font-size: 16px;
+  padding: 12px 20px;
+  padding-left: 35px; /* Reduce el espacio a la izquierda para el icono */
+  box-sizing: border-box;
 }
-/* Css del link de registrarte
-*/
+
+/* Estilo del label */
+label {
+  color: #b09e8a;
+  font-size: 16px;
+  margin-left: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+/* Estilo de los íconos dentro de los campos de texto */
+.icon-container {
+  position: absolute;
+  right: 15px; /* Mueve el icono un poco más a la izquierda */
+  top: 50%;
+  transform: translateY(-50%); /* Alinea el ícono verticalmente */
+  pointer-events: none;
+  font-size: 18px; /* Reduce el tamaño del ícono */
+}
+
+/* Estilo del botón de registrarse */
+.boton {
+  background-color: #b09e8a;
+  border-radius: 70px;
+  border: none;
+  color: #f4f3f6;
+  font-size: 18px;
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.boton:hover {
+  background-color: #836c53;
+}
+
+/* Estilo para la sección de la pregunta de login */
+.container-pregunta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Estilo del enlace a iniciar sesión */
 .btn {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    font-size: 16px;
-    cursor: pointer;
-    color: #1893f8;
-}
-.boton_piola{
-    border-radius: 500px; /* Esto hace que el botón tenga bordes redondeados */
-    padding: 10px 20px;
-    width: 250px;
-    margin: auto;
-    color: white;
-    background-color: #1893f8;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: #1893f8;
+  font-size: 16px;
 }
 
-#Registrarse{
-    margin-top: 2%;
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .titulo {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+  }
+
+  .row {
+      max-width: 90%;
+      gap: 20px;
+  }
+
+  input {
+      font-size: 14px;
+  }
+
+  .boton {
+      width: 100%;
+      font-size: 18px;
+  }
+
+  .icon-container {
+      right: 15px; /* Ajuste del icono para pantallas pequeñas */
+  }
+
+  .btn {
+      font-size: 16px;
+  }
 }
 
-#uno{
-    margin-top: 3%;
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 3%;
+/* Media Query para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .titulo {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+  }
+
+  .row {
+      max-width: 90%;
+      gap: 25px;
+  }
+
+  input {
+      font-size: 13px;
+      padding: 12px 18px;
+  }
+
+  .boton {
+      font-size: 16px;
+      height: 50px;
+      padding: 0 20px;
+  }
+
+  .icon-container {
+      right: 20px; /* Ajuste para el icono a la derecha */
+  }
+
+  .btn {
+      font-size: 14px;
+  }
 }
