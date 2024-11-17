@@ -24,7 +24,6 @@ export class CarritoService {
       categoria:'',
       imagen:'',
       alt:'',
-      favorito:false,
       stock:0
     },
     cantidad:0,
