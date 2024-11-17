@@ -17,6 +17,10 @@
   object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
 }
 
+.logo-image {
+  width: 300px; /* Ajusta el tamaño del logo */
+  height: auto; /* Mantiene la relación de aspecto */
+}
 .container {
   margin-top: 20px;
   text-align: center;

@@ -93,9 +93,7 @@ export class AuthService {
 
 
 
-
   }
-
   // Función para CERRAR SESIÓN
   cerrarSesion() {
     // Devolver una promesa vacía

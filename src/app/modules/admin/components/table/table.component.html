@@ -1,13 +1,9 @@
-<!-- BOTÓN PARA AGREGAR PRODUCTOS -->
-<button type="button" class="btn btn-outline-primary contenedorA " data-bs-toggle="modal" data-bs-target="#agregarProducto">
-    Agregar un nuevo producto
-</button>
 
-<!-- Tabla de productos -->
 <table class="table">
     <thead>
         <tr>
-            <th scope="col"></th>
+            <th scope="col">#</th>
+
             <th scope="col">Imagen</th>
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
@@ -19,19 +15,22 @@
 
     <tbody>
         <tr *ngFor="let producto of coleccionProductos">
-            <th scope="row"></th>
+            <th scope="row">1</th>
+
 
             <td>
                 <img src="{{producto.imagen}}" alt="{{producto.alt}}" width="100px">
             </td>
             <td>{{producto.nombre}}</td>
             <td>{{producto.precio}}</td>
+
             <td class="descripcion">{{producto.descripcion}}</td>
             <td>{{producto.categoria}}</td>
 
             <!-- ACCIONES -->
             <!-- EDITAR-->
             <td>
+
                 <!-- Agrupamos los botones de editar y eliminar en un contenedor -->
                 <div class="btn-group">
                     <!-- EDITAR-->
@@ -48,9 +47,11 @@
                 </div>
             </td>
             
+
         </tr>
     </tbody>
 </table>
+
 
 
 <!-- MODAL PARA AGREGAR PRODUCTOS -->
@@ -68,12 +69,15 @@
                 <div class="mb-3">
                     <label class="form-label">Ingrese el nombre del producto:</label>
                     <input class="form-control" type="text" formControlName="nombre"
+
                         placeholder="Nombre del producto">
+
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese descripción del producto:</label>
                     <input class="form-control" type="text" formControlName="descripcion"
+
                         placeholder="Descripción del producto">
 
                 </div>
@@ -87,6 +91,7 @@
                     <label class="form-label">Seleccione una categoría:</label>
                     <select class="form-control form-select" formControlName="categoria" aria-label="Default select example">
                         <option disabled selected>Elija una opción</option>
+
                         <option value="inicio">inicio</option>
                         <option value="kayak">Kayak</option>
                         <option value="escalada">Escalada</option>
@@ -96,6 +101,7 @@
                         <option value="tirolesa">Tirolesa</option>
                         <option value="paracaidismo">Paracaidismo</option>
                         <option value="alpinismo">Alpinismo</option>
+
 
                     </select>
                 </div>
@@ -165,6 +171,7 @@
                     <label class="form-label">Seleccione una categoría:</label>
                     <select class="form-control form-select" formControlName="categoria" aria-label="Default select example">
                         <option disabled selected>Elija una opción</option>
+
                         <option value="inicio">Inicio</option>
                         <option value="kayak">Kayak</option>
                         <option value="escalada">Escalada</option>
@@ -174,6 +181,7 @@
                         <option value="tirolesa">Tirolesa</option>
                         <option value="paracaidismo">Paracaidismo</option>
                         <option value="alpinismo">Alpinismo</option>
+
                     </select>
                 </div>
 
@@ -199,6 +207,7 @@
         </div>
     </div>
 </div>
+
 
 <!---
 

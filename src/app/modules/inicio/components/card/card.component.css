@@ -168,16 +168,22 @@ img {
 }
 
 .modal-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #6C5B5B;
+    /* Estilos para el contenido de arriba */
+    order: -1; /* Esto mueve la clase-arriba a la parte superior */
+  font-size: 20px; /* Ajusta el tamaño del título según sea necesario */
+  font-weight: bold; /* Asegúrate de que el título destaque */
+  margin-bottom: 5px; /* Espacio entre el título y el texto */
 }
 
 /* Botón de cierre */
 .btn-close {
+  position: absolute;
+  top: 10px; /* Ajusta según sea necesario */
+  right: 10px; /* Ajusta según sea necesario */
   background-color: transparent;
   border: none;
   font-size: 1.5rem;
+  cursor: pointer; /* Añadir cursor pointer para indicar que es clickeable */
   
 }
 
