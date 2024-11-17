@@ -169,6 +169,4 @@ export class InicioSesionComponent {
       email: this.usuarios.email = ''
     }
   }
-
 }
-
