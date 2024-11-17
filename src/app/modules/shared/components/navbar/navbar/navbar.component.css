@@ -132,7 +132,6 @@
 /* Ajuste para centrar el logo */
 .logo-image {
     width: 300px; /* Ajusta el tamaño del logo */
-    height: auto; /* Mantiene la relación de aspecto */
 }
 
 /* Sección derecha: Mantiene los íconos alineados */
