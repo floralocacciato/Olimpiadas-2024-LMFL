@@ -7,5 +7,6 @@ export interface Producto {
     imagen: string;
     alt: string;
     favoritos:boolean;
+    stock: number
     carrito:boolean;
 } 

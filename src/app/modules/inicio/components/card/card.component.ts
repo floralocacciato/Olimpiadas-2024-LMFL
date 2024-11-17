@@ -28,7 +28,8 @@ export class CardComponent {
     imagen: '',
     alt: '',
     favoritos: false,
-    carrito: false
+    carrito: false,
+    stock: 0
   };
 //carrito
   producto: any;

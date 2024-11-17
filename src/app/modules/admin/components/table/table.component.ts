@@ -62,7 +62,8 @@ export class TableComponent {
         imagen: '',
         alt: this.producto.value.alt!,
         favoritos: false,
-        carrito: false
+        carrito: false,
+        stock: 0
       }
 
       // Enviamos nombre y url de la imagen; definimos carpeta de imágenes como "productos"
@@ -166,7 +167,8 @@ export class TableComponent {
       imagen: this.productoSeleccionado.imagen,
       alt: this.producto.value.alt!,
       favoritos: false,
-      carrito: false
+      carrito: false,
+      stock: 0
     }
 
     // Verificamos que el usuario ingrese una nueva imagen o no
