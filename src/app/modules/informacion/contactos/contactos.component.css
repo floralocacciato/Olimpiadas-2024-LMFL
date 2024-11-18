@@ -138,3 +138,80 @@ mat-grid-tile {
         width: 150px; /* Mantiene el ancho del botón */
     }
 }
+
+/* Estilos personalizados para el SweetAlert */
+.custom-popup {
+  border-radius: 15px; /* Bordes redondeados suaves */
+  padding: 40px; /* Espaciado interno generoso */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Sombra más suave para un efecto de profundidad */
+  background-color: transparent; /* Fondo transparente ya que usamos un gradiente */
+  text-align: center;
+}
+
+/* Estilo del título */
+.custom-title {
+  font-size: 2rem;  /* Título grande */
+  font-weight: 600;  /* Negrita para el título */
+  color: #2F4F4F;  /* Color oscuro para contraste */
+  margin-bottom: 20px;  /* Espaciado inferior */
+}
+
+/* Estilo del contenido del texto */
+.custom-content {
+  font-size: 1.2rem;  /* Tamaño de fuente más grande */
+  line-height: 1.6;  /* Mayor altura de línea para facilitar la lectura */
+  color: #2F4F4F;  /* Color de texto */
+  margin-bottom: 20px;  /* Espaciado entre párrafos */
+  text-align: center;
+}
+
+/* Estilo para el logo SVG */
+.custom-logo svg {
+  border-radius: 50%;  /* Forma circular */
+  padding: 15px; /* Espaciado interno */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  animation: logoBounce 1s ease-in-out infinite;  /* Animación de rebote */
+}
+
+/* Animación de rebote para el logo */
+@keyframes logoBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Efecto de rebote */
+  }
+}
+
+/* Estilo del enlace en el footer */
+footer a {
+  text-decoration: none;
+  color: #8FBC8F;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #2F4F4F;  /* Cambio de color en hover */
+}
+
+/* Efecto de sombra para el botón */
+.swal2-confirm {
+  background-color: #8FBC8F;  /* Botón de confirmación en verde */
+  border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: all 0.3s ease;
+}
+
+/* Efecto de hover para el botón */
+.swal2-confirm:hover {
+  background-color: #6a9e6a;  /* Cambia el tono de verde en hover */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
