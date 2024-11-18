@@ -1,7 +1,141 @@
-img{
-    width: 175px;
-    border-radius: 5px;
+/* Estilos generales para las imágenes */
+.img, .img2 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para zoom y sombra */
 }
-.img2{
-    width: 500px;
+
+/* Animación de sacudida */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+/* Pantallas pequeñas (móviles, tablets) */
+@media (max-width: 767px) {
+    .container .row {
+        flex-direction: column; /* Las filas se vuelven columnas en pantallas pequeñas */
+    }
+
+    .col-6 {
+        width: 100%; /* Cada columna ocupará el 100% del ancho en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    /* Hacemos que las imágenes se alineen al lado del texto (usamos flexbox) */
+    .col-6 img {
+        max-width: 50%;  /* Limita el ancho de las imágenes al 50% */
+        margin-right: 10px; /* Espacio entre la imagen y el texto */
+        margin-bottom: 10px;
+    }
+
+    /* Aseguramos que el texto se vea bien */
+    .texto-segundo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Efectos de hover en los textos */
+    h1:hover {
+        animation: shake 0.5s ease; /* Efecto de sacudida en el título */
+        color: #2F4F4F; /* Color de texto al pasar el ratón */
+    }
+
+    p:hover {
+        animation: shake 0.5s ease; /* Efecto de sacudida en el párrafo */
+        transform: translateY(-5px); /* Desplazamiento suave del texto */
+    }
+
+    /* Alineamos las imágenes y el texto en la fila */
+    .container.text-center .row {
+        flex-direction: column;
+    }
+}
+
+/* Pantallas medianas (tablets y dispositivos más grandes) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .col-6 {
+        width: 50%; /* Dos columnas en pantallas medianas */
+    }
+
+    .img {
+        margin-bottom: 10px;
+    }
+
+    /* Efectos de hover en las imágenes */
+    .img:hover {
+        transform: scale(1.05); /* Zoom en la imagen */
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Efectos de hover en el texto */
+    h1:hover {
+        animation: shake 0.5s ease; /* Efecto de sacudida en el título */
+    }
+
+    p:hover {
+        animation: shake 0.5s ease; /* Efecto de sacudida en el párrafo */
+    }
+}
+
+/* Pantallas grandes (desktops) */
+@media (min-width: 1025px) {
+    .col-6 {
+        width: 50%; /* Las columnas ocupan el 50% del ancho en pantallas grandes */
+    }
+
+    .img {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Aquí las imágenes volverán a estar en los costados como en el diseño original */
+    .container .row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .texto-segundo {
+        width: 50%; /* El texto ocupa la mitad del espacio */
+        margin-left: 20px;
+    }
+
+    /* Efectos de hover para las imágenes */
+    .img:hover {
+        transform: scale(1.05); /* Zoom en la imagen */
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    }
+
+    /* Efectos de hover en el texto */
+    h1:hover {
+        animation: shake 0.5s ease; /* Efecto de sacudida en el título */
+        color: #2F4F4F; /* Color de texto al pasar el ratón */
+    }
+
+    p:hover {
+        animation: shake 0.5s ease; /* Efecto de sacudida en el párrafo */
+        transform: translateY(-5px); /* Desplazamiento suave del texto */
+    }
 }

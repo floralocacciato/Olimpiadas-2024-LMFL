@@ -1,5 +1,9 @@
 /* Para pantallas pequeñas */
 
+
+table{
+    background-color: bisque;
+}
 /* Centramos el botón en su contenedor */
 .btn-outline-primary {
     display: block;
