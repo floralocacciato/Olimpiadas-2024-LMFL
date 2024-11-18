@@ -6,6 +6,7 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
 
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,10 +18,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
   imports: [
     CommonModule,
     InformacionRoutingModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
+
   ],
   exports: [
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
   ]
 
 })

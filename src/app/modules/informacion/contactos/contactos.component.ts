@@ -7,71 +7,82 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contactos.component.css']
 })
 export class ContactosComponent {
+  nombre: string = ''; // Nombre del usuario
+      email: string = '';  // Email del usuario
+      tema: string = '';   // Tema del mensaje
+      texto: string = '';  // Contenido del mensaje
+    
 
   EnviarFormulario() {
     // Aquí debería ir el código para enviar el formulario
     console.log('Formulario enviado correctamente');
-
-    // Mostramos el SweetAlert con el mensaje de agradecimiento
-    Swal.fire({
-      width: '600px',  // Ajusta el ancho del popup
-      background: 'linear-gradient(135deg, #8FBC8F, #F5F5DC)',  // Fondo con gradiente suave
-      color: '#2F4F4F',  // Color del texto
-      showClass: {
-        popup: `
-          animate__animated
-          animate__fadeInUp
-          animate__faster
-          animate__backInDown
-        `
-      },
-      hideClass: {
-        popup: `
-          animate__animated
-          animate__fadeOutDown
-          animate__faster
-        `
-      },
-      title: "¡Gracias por tu mensaje!",  // Título de agradecimiento
-      text: "Hemos recibido tu mensaje y será atendido lo antes posible. ¡Nos encanta saber de ti!",  // Texto de confirmación
-      html: `
-        <div class="custom-logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
-    <!-- Solo las líneas blancas de las montañas -->
-
-    <!-- Línea blanca para la montaña izquierda -->
-    <path d="
-        M100,180 
-        L170,110 
-        L200,140" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca izquierda -->
+  
     
-    <!-- Línea blanca para la montaña derecha -->
-    <path d="M180,165 L230,110 L270,150" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca derecha -->
-    <path d="M250,165 L270,145" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca inferior -->
-
-    <!-- Línea blanca abajo de las montañas -->
-    <path d="M100,180 L300,180" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca inferior -->
+     
+        // Validar si todos los campos están completados
+        if (this.nombre.trim() === '' || this.email.trim() === '' || this.tema.trim() === '' || this.texto.trim() === '') {
+          Swal.fire({
+            icon: 'error',  // Ícono de error
+            title: 'Oops...',
+            text: 'Todos los campos son obligatorios. Por favor, complétalos.',
+            background: '#FDEDEC',  // Fondo en tono de error
+            color: '#C0392B',       // Texto en rojo
+            confirmButtonText: 'Cerrar',
+            confirmButtonColor: '#C0392B',
+          });
+        } else {
+          // Si todos los campos están completos, muestra el mensaje de éxito
+          Swal.fire({
+            width: '600px',  // Ajusta el ancho del popup
+            background: 'linear-gradient(135deg, #2B3A42, #34495E)',  // Fondo con un gradiente de azul marino apagado
+            color: '#F5F5DC',  // Texto en beige para contraste
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            },
+            title: "¡Gracias por tu mensaje!",  // Título de agradecimiento
+            html: `
+              <div class="custom-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+                  <!-- Logo o gráficos -->
+<!-- Solo las líneas blancas de las montañas -->
+<path d="M100,180 L170,110 L200,140" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca izquierda -->
+<path d="M180,165 L230,110 L270,150" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca derecha -->
+<path d="M250,165 L270,145" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca inferior -->
+<path d="M97,180 L300,180" fill="none" stroke="#836c53" stroke-width="8"/> <!-- Línea blanca inferior -->
 </svg>
-
-
-        </div>
-        <p style="font-size: 1.1rem; text-align: center; line-height: 1.6;">
-          ¡Gracias por contactarnos! Tu mensaje ha sido enviado correctamente y nuestro equipo lo revisará en breve. 
-          Si tienes alguna otra pregunta o inquietud, no dudes en ponerte en contacto con nosotros nuevamente. 
-          Te responderemos lo más pronto posible.
-        </p>
-        <div style="text-align: center; margin-top: 20px;">
-          <strong>¡Te deseamos grandes aventuras al aire libre!</strong>
-        </div>
-      `,  // Añadimos más información y detalles dentro del modal
-      confirmButtonText: 'Cerrar',  // Botón de confirmación
-      confirmButtonColor: '#8FBC8F',  // Color del botón
-      customClass: {
-        popup: 'custom-popup',  // Clase para aplicar el estilo personalizado
-        image: 'custom-logo',  // Clase para el logo
-        title: 'custom-title',  // Clase para el título
-      },
-      footer: '<a href="https://www.rutasnomadas.com">Visita nuestro sitio para más aventuras</a>',  // Pie de página con enlace
-    });
-  }
-}
+                <p style="
+                  font-size: 1.5rem; 
+                  margin-top: 15px; 
+                  color: #F5F5DC; 
+                  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
+                  font-weight: bold;
+                  letter-spacing: 1.5px;">
+                  <em>Rutas Nómadas lo tendrá en cuenta</em>
+                </p>
+              </div>
+              <p style="font-size: 1.1rem; text-align: center; line-height: 1.6; color: #F5F5DC;">
+                ¡Gracias por contactarnos! Tu mensaje ha sido enviado correctamente y nuestro equipo lo revisará en breve. 
+              </p>
+            `,  
+            confirmButtonText: 'Cerrar',
+            confirmButtonColor: '#5F819D',
+            footer: '<a href="https://www.rutasnomadas.com" style="color: #5F819D;">Visita nuestro sitio para más aventuras</a>',
+          });
+        }
+      }
+    }
+    
+    
+  
+  

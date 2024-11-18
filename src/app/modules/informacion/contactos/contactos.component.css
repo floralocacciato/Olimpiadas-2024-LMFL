@@ -60,7 +60,9 @@ mat-grid-tile {
     cursor: pointer;
     transition: background-color 0.3s;
     align-self: flex-start;
+
 }
+
 
 .btn-success:hover {
     background-color: #836c53 !important;
@@ -186,7 +188,7 @@ mat-grid-tile {
 /* Estilo del enlace en el footer */
 footer a {
   text-decoration: none;
-  color: #8FBC8F;
+  color: #000000;
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s ease;
@@ -198,7 +200,7 @@ footer a:hover {
 
 /* Efecto de sombra para el botón */
 .swal2-confirm {
-  background-color: #8FBC8F;  /* Botón de confirmación en verde */
+  background-color: #000000;  /* Botón de confirmación en verde */
   border: none;
   font-weight: bold;
   font-size: 1.1rem;
@@ -210,8 +212,6 @@ footer a:hover {
 
 /* Efecto de hover para el botón */
 .swal2-confirm:hover {
-  background-color: #6a9e6a;  /* Cambia el tono de verde en hover */
+  background-color: #ff0000;  /* Cambia el tono de verde en hover */
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
-
-
