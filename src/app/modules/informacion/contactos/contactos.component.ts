@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,6 +12,30 @@ export class ContactosComponent {
       tema: string = '';   // Tema del mensaje
       texto: string = '';  // Contenido del mensaje
     
+
+      gridCols = 2;
+
+      @HostListener('window:resize', ['$event'])
+      onResize(event: Event) {
+        this.updateGridCols();
+      }
+    
+      ngOnInit() {
+        this.updateGridCols();
+      }
+    
+      updateGridCols() {
+        const width = window.innerWidth;
+        if (width <= 768) {
+          this.gridCols = 1; // Una columna para pantallas pequeñas
+        } else {
+          this.gridCols = 2; // Dos columnas para pantallas grandes
+        }
+      }
+    
+      getGridCols(): number {
+        return this.gridCols;
+      }
 
   EnviarFormulario() {
     // Aquí debería ir el código para enviar el formulario

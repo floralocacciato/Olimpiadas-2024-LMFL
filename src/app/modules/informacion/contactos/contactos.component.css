@@ -73,6 +73,7 @@ mat-grid-tile {
 /* Pantallas pequeñas (smartphones) */
 @media (max-width: 768px) {
     .container-principal {
+        
         flex-direction: column; /* Coloca los tiles en una columna */
         height: auto; /* Ajusta el alto para que no se recorte contenido */
     }

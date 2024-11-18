@@ -1,12 +1,12 @@
 <div class="container-principal">
-    <mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-list [cols]="getGridCols()" rowHeight="1:1">
         <!-- Primer tile: Contenido de contacto -->
         <mat-grid-tile>
             <div>
                 <h1><b>CONTACTA CON NOSOTROS</b></h1>
                 <p>Si te ha resultado interesante la página y deseas contactarnos, <br>
-                     por favor rellena el formulario del costado y mándanos un <br> mensaje,
-                      y responderemos lo antes posible. <br>
+                    por favor rellena el formulario del costado y mándanos un <br> mensaje,
+                    y responderemos lo antes posible. <br>
                     Gracias por leer.</p>
                 <h2><b>E-mail</b></h2>
                 <p>rutasnomadas&#64;gmail.com</p>
@@ -40,9 +40,8 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1 texto" [(ngModel)]="texto" rows="3"></textarea>
                 </div>
 
-                <button type="button" class="btn btn-success"  (click)="EnviarFormulario()">Enviar</button>
+                <button type="button" class="btn btn-success" (click)="EnviarFormulario()">Enviar</button>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
 </div>
-
