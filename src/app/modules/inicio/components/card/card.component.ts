@@ -44,6 +44,13 @@ export class CardComponent {
   coleccionFavoritos: Producto[] = [];
 
 
+  breakpoints = {
+    320: { slidesPerView: 1 },
+    576: { slidesPerView: 2 },
+    768: { slidesPerView: 3 },
+    1024: { slidesPerView: 4 },
+    1440: { slidesPerView: 6 }
+  };
 
 
   constructor(public productoservicio: ProductoService, public servicioCrud: CrudService, public servicioCarrito:CarritosService) { }

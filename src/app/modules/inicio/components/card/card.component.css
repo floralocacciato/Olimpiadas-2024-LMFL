@@ -21,27 +21,64 @@ body {
 .container {
   padding: 20px 40px;
 }
+/* Estilo para el subtítulo */
+h2 {
+  text-align: center; /* Centra el texto */
+  font-size: 1.8rem; /* Ajusta el tamaño del subtítulo */
+  font-weight: bold; /* Hace que el texto sea más destacado */
+  color: #2F4F4F; /* Verde Oscuro de tu paleta */
+  margin: 20px 0; /* Espaciado superior e inferior */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  letter-spacing: 2px; /* Añade espaciado entre letras para elegancia */
+}
 
 /* Estilo para el carousel */
+/* Ajuste para los puntos debajo de las tarjetas */
 .swiper {
   margin: 20px auto;
   padding: 20px;
+  position: relative; /* Aseguramos que los puntos queden en relación al Swiper */
 }
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  position: absolute; /* Los puntos se posicionan en relación al contenedor Swiper */
+  bottom: 1px; /* Espaciado desde la parte inferior del Swiper */
+  left: 0;
+  width: 100%; /* Extiende los puntos horizontalmente */
+  text-align: center; /* Centra los puntos */
+  z-index: 1; /* Asegura que estén visibles encima del fondo */
+}
+
+.swiper-pagination-bullet {
+  background-color: #000000; /* Color base de los puntos */
+  opacity: 1; /* Aseguramos visibilidad */
+  margin: 0 8px; /* Espaciado entre los puntos */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Animación suave */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3498DB; /* Verde Musgo de tu paleta */
+  transform: scale(1.2); /* Tamaño mayor para destacar el punto activo */
+}
+
 
 /* Tarjetas */
 .card {
   width: 220px;
   height: auto;
-  border: 2px solid #b09e8a;
-  border-radius: 8px;
+  border: 5px solid #b09e8a;
+  border-radius: 18px;
   padding: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 10px; /* Espaciado entre elementos */
-  background-color: #fff;
+  background-color: #f8f0e8;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -87,8 +124,7 @@ body {
 }
 
 /* Botón "Ver más" */
-.btn {
-  background-color: #8FBC8F;
+.btn1 {
   color: white;
   border: none;
   border-radius: 5px;
@@ -98,7 +134,6 @@ body {
 }
 
 .btn:hover {
-  background-color: #2F4F4F;
   transform: scale(1.05);
 }
 
@@ -164,4 +199,74 @@ body {
 
 .modal-footer .btn-primary:hover {
   background-color: #2980B9;
+}
+/* Responsividad general */
+@media (max-width: 1024px) {
+  .swiper {
+    padding: 10px; /* Reduce el espacio interno */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del subtítulo */
+  }
+
+  .card {
+    width: 180px; /* Ajusta el ancho de las tarjetas */
+    border: 3px solid #b09e8a;
+    gap: 8px; /* Reduce el espacio interno */
+  }
+
+  .card img {
+    height: 160px; /* Reduce la altura de las imágenes */
+  }
+
+  .mat-card-title {
+    font-size: 1rem; /* Reduce el tamaño del título */
+  }
+
+  .texto {
+    font-size: 0.9rem; /* Ajusta el tamaño del texto */
+  }
+
+  .btn1 {
+    padding: 8px 12px; /* Reduce el tamaño de los botones */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 150px; /* Ajusta aún más el ancho de las tarjetas */
+    border: 2px solid #b09e8a;
+  }
+
+  .card img {
+    height: 120px; /* Ajusta la altura de las imágenes */
+  }
+
+  .btn1 {
+    font-size: 0.8rem; /* Reduce el tamaño de fuente de los botones */
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets {
+    bottom: -10px; /* Ajusta la posición de los puntos */
+  }
+}
+
+@media (max-width: 576px) {
+  .swiper {
+    padding: 5px; /* Ajusta el padding para móviles */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Reduce el tamaño del subtítulo */
+  }
+
+  .card {
+    width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+    max-width: 250px; /* Limita el ancho máximo */
+  }
+
+  .card img {
+    height: 100px; /* Ajusta la altura de las imágenes */
+  }
 }

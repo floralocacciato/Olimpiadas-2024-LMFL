@@ -1,35 +1,48 @@
 <!--##############################################carousel de cards###############################################################-->
-<swiper [slidesPerView]="6" [spaceBetween]="20" [navigation]="true" [pagination]="{ clickable: true }">
 
+
+<h2>elementos destacados:</h2>
+<swiper 
+  [spaceBetween]="25" 
+  [navigation]="true" 
+  [pagination]="{ clickable: true }" 
+  [breakpoints]="breakpoints">
   <ng-template swiperSlide class="card" *ngFor="let producto of coleccionProductosCarrito">
-
-    <!--boton de favoritos-->
+    <!-- Botón de favoritos -->
     <mat-card-actions class="card-botones">
-      <button (click)="subirFavorito(producto)" class="boton-fav" mat-icon-button color="danger">
-        <mat-icon *ngIf="producto.favoritos===true">favorite</mat-icon>
-        <mat-icon *ngIf="producto.favoritos===false">favorite_border</mat-icon>
+      <button 
+        (click)="subirFavorito(producto)" 
+        class="boton-fav" 
+        mat-icon-button 
+        color="danger">
+        <mat-icon *ngIf="producto.favoritos">favorite</mat-icon>
+        <mat-icon *ngIf="!producto.favoritos">favorite_border</mat-icon>
       </button>
     </mat-card-actions>
 
-    <!--imagen del producto-->
-    <img [src]="producto.imagen" alt="" class="imagen" />
-    <!--descripcion del producto-->
-    <div class="descripcion"></div>
+    <!-- Imagen del producto -->
+    <img [src]="producto.imagen" alt="Imagen del producto" class="imagen" />
 
-    <!--nombre del producto-->
+    <!-- Nombre del producto -->
     <mat-card-title>{{producto.nombre}}</mat-card-title>
+
+    <!-- Precio del producto -->
     <div class="texto">
       {{producto.precio | currency}}
     </div>
-    <div  >
-      <!-- Button trigger modal -->
-    </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-   >
+
+    <!-- Botón "Ver más" -->
+    <button 
+      type="button" 
+      class="btn1 btn-primary" 
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal">
       Ver más
     </button>
   </ng-template>
 </swiper>
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
