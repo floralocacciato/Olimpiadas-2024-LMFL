@@ -41,7 +41,7 @@
             <button mat-menu-item *ngIf="logueado" routerLink="/inicio-sesion" class="custom-menu-button">Iniciar sesión</button>
         </mat-menu>
 
-        <button class="btn">
+        <button class="btn" routerLink="/carrito" >
             <mat-icon>shopping_cart</mat-icon>
         </button>
 
@@ -60,7 +60,7 @@
             <button class="btn" [matMenuTriggerFor]="usuario">
                 <mat-icon>person</mat-icon>
             </button>
-            <button class="btn">
+            <button class="btn" routerLink="/carrito">
                 <mat-icon>shopping_cart</mat-icon>
             </button>
             <button class="btn">
