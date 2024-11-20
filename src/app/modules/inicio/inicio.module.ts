@@ -18,13 +18,17 @@ import { InformacionComponent } from './components/informacion/informacion.compo
 import { SwiperModule } from 'swiper/angular';
 
 import {MatIconModule} from '@angular/material/icon';
+import { CardInicioComponent } from './components/card-inicio/card-inicio.component';
+import { CardOfertasComponent } from './components/card-ofertas/card-ofertas.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     InicioComponent,
     CarouselComponent,
-    InformacionComponent
+    InformacionComponent,
+    CardInicioComponent,
+    CardOfertasComponent
   ],
   imports: [
     CommonModule,

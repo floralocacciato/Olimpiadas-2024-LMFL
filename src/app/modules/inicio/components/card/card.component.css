@@ -78,7 +78,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   gap: 10px; /* Espaciado entre elementos */
-  background-color: #f8f0e8;
+  background-color: #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -137,6 +137,20 @@ h2 {
   transform: scale(1.05);
 }
 
+
+/* Botón de cierre */
+.btn-close {
+  position: absolute;
+  top: 10px; /* Ajusta según sea necesario */
+  right: 10px; /* Ajusta según sea necesario */
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer; /* Añadir cursor pointer para indicar que es clickeable */
+
+}
+
+
 /* Modal */
 .modal-content {
   padding: 20px;
@@ -152,8 +166,14 @@ h2 {
 }
 
 .modal-title {
-  font-size: 1.5rem;
-  font-weight: bold;
+ /* Estilos para el contenido de arriba */
+ order: -1; /* Esto mueve la clase-arriba a la parte superior */
+ font-size: 20px; /* Ajusta el tamaño del título según sea necesario */
+ font-weight: bold; /* Asegúrate de que el título destaque */
+ margin-bottom: 5px; /* Espacio entre el título y el texto */
+ font-size: 1.5rem;
+
+
 }
 
 .modal-body {

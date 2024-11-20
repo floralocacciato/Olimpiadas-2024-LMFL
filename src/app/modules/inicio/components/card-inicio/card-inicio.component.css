@@ -1,0 +1,130 @@
+.container{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.contenido{
+    width: 15rem;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+
+    display: inline-block;
+}
+
+.example-card{
+    justify-content: space-around;
+}
+
+mat-card-header{
+    justify-content: center;
+}
+
+.img-card{
+    width: 10rem;
+    height: 10rem;
+    margin: 0.5rem;
+
+    /* Alineación vertical */
+    align-self: center; 
+
+    /* Imagen adaptada a su contenido */
+    object-fit: cover;
+}
+
+mat-card-content{
+    text-align: start;
+    justify-content: space-around;
+}
+
+/* Tarjetas */
+.card {
+    width: 220px;
+    height: auto;
+    border: 5px solid #b09e8a;
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Espaciado entre elementos */
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botón de favoritos */
+  .boton-fav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .boton-fav:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Texto de las tarjetas */
+  .mat-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center; /* Centra el texto */
+    font-size: 1.8rem; /* Ajusta el tamaño del subtítulo */
+    font-weight: bold; /* Hace que el texto sea más destacado */
+    color: #2F4F4F; /* Verde Oscuro de tu paleta */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Añade espaciado entre letras para elegancia */
+  }
+  
+  /* Botón "Ver más" */
+  .btn1 {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  /* Botón de cierre */
+  .btn-close {
+    position: absolute;
+    top: 10px; /* Ajusta según sea necesario */
+    right: 10px; /* Ajusta según sea necesario */
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer; /* Añadir cursor pointer para indicar que es clickeable */
+  
+  }
+  

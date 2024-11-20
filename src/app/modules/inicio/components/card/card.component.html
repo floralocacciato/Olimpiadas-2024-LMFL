@@ -1,7 +1,7 @@
 <!--##############################################carousel de cards###############################################################-->
 
 
-<h2>elementos destacados:</h2>
+<h2>Por si te interesa:</h2>
 <swiper 
   [spaceBetween]="25" 
   [navigation]="true" 
@@ -60,8 +60,8 @@
             <!-- contenido con la información-->
             <div class="modal-header">
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              <h1 class="modal-title fs-5" id="exampleModalLabel">{{detalle.nombre}}</h1>
                <div class="modal-body">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{detalle.nombre}}</h1>
               <p>{{detalle.descripcion }}</p>
               <p>{{ detalle.precio | currency }}</p>
               </div>
