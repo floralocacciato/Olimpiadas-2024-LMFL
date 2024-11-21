@@ -7,6 +7,7 @@
     margin: auto; /* Centra horizontalmente en la página */
     padding: 60px;
 }
+
 /* Establecer un tamaño específico para las imágenes */
 .carousel-item img {
     width: 100%; /* Ajusta para que ocupe el ancho del contenedor */
@@ -14,6 +15,7 @@
     max-height: 600px; /* Ajusta la altura máxima según sea necesario */
     object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
 }
+
 .container {
     margin-top: 20px;
     text-align: center;
@@ -21,4 +23,3 @@
     margin: auto; /* Centra horizontalmente en la página */
     
   
-  }
