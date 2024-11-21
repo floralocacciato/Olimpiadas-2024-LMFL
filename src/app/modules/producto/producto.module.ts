@@ -20,6 +20,7 @@ import { ParacaidismoComponent } from './pages/paracaidismo/paracaidismo.compone
 import { PescaComponent } from './pages/pesca/pesca.component';
 import { TirolesaComponent } from './pages/tirolesa/tirolesa.component';
 import { TodosComponent } from './pages/todos/todos.component';
+import { CarruselComponent } from './components/carrusel/carrusel.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { TodosComponent } from './pages/todos/todos.component';
     ParacaidismoComponent,
     PescaComponent,
     TirolesaComponent,
-    TodosComponent
+    TodosComponent,
+    CarruselComponent
   ],
   imports: [
     CommonModule,

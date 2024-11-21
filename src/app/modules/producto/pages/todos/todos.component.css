@@ -1,0 +1,10 @@
+.row {
+    display: flex;
+    flex-direction: column; /* Opcional: Asegura que los elementos estén en columna */
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center; /* Asegura el centrado del texto si hay más contenido en la fila */
+}
