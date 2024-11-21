@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { CrudService } from '../../admin/services/crud.service';
 import { AuthService } from '../../autentificacion/sevices/auth.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Pedido } from 'src/app/models/pedido';
 import { Producto } from 'src/app/models/producto';
 import { map } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Pedido } from 'src/app/models/pedido';
 
 
 @Injectable({
