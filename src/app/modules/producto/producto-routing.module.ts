@@ -9,6 +9,7 @@ import { PescaComponent } from './pages/pesca/pesca.component';
 import { TirolesaComponent } from './pages/tirolesa/tirolesa.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { BuceoComponent } from './pages/buceo/buceo.component';
+import { AlpinismoComponent } from './pages/alpinismo/alpinismo.component';
 const routes: Routes = [
   {
     path:"kayak",component: KayakComponent
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   {
     path:"tirolesa",component: TirolesaComponent
+  },
+  {
+    path:"alpinismo",component: AlpinismoComponent
   },
   {
     path:"todos",component: TodosComponent

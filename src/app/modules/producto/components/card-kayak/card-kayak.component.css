@@ -1,33 +1,42 @@
-/* src/app/components/product-list/product-list.component.css */
+/* Contenedor principal para las tarjetas */
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .card img {
-    height: 300px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .modal-body img {
-    display: block;
-    margin: 0 auto 10px;
-  }
+  display: flex; /* Activa el uso de flexbox */
+  flex-wrap: wrap; /* Permite que las tarjetas pasen a la siguiente fila si no caben */
+  gap: 20px; /* Espacio entre tarjetas */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  padding: 20px; /* Espaciado interno para el contenedor */
+  margin-left: 50px;
+}
 
-  .btn-ver-mas {
-    display: inline-block;
-    margin: 10px auto 0; 
-  }
-  
+/* Cada tarjeta */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el contenido que sobrepasa el tamaño de la tarjeta */
+  margin: 0; /* Elimina el margen lateral */
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+  width: 100%; /* La imagen ocupa el ancho completo de la tarjeta */
+  height: 300px; /* Altura fija para mantener la proporción */
+  object-fit: cover; /* Ajusta la imagen para que siempre se vea bien */
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  padding: 10px;
+  text-align: center; /* Centra el contenido del texto dentro de la tarjeta */
+}
+
+/* Imagen en el modal */
+.modal-body img {
+  display: block; /* Hace que la imagen sea un bloque */
+  margin: 0 auto 15px; /* Centra la imagen en el modal */
+}
+
+/* Botón "Ver más" */
+.btn-ver-mas {
+  display: inline-block;
+  margin: 10px auto 0; /* Centra el botón dentro de la tarjeta */
+}

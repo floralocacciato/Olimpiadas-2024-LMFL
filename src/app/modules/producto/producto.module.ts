@@ -21,6 +21,8 @@ import { PescaComponent } from './pages/pesca/pesca.component';
 import { TirolesaComponent } from './pages/tirolesa/tirolesa.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
+import { CardAlpinismoComponent } from './components/card-alpinismo/card-alpinismo.component';
+import { AlpinismoComponent } from './pages/alpinismo/alpinismo.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
     PescaComponent,
     TirolesaComponent,
     TodosComponent,
-    CarruselComponent
+    CarruselComponent,
+    CardAlpinismoComponent,
+    AlpinismoComponent
   ],
   imports: [
     CommonModule,
