@@ -1,7 +1,6 @@
-.container{
-    display: flex;
-    padding: 10px;
-    justify-content: center;
+/* Contenedor principal */
+.container {
+  padding: 10px;
 }
 
 .contenido{
@@ -139,17 +138,17 @@ mat-card-content{
 
 /* Tarjetas */
 .card {
-    width: 220px;
+    width: 300px;
     height: auto;
     border: 5px solid #b09e8a;
     border-radius: 18px;
-    padding: 16px;
+    padding: 10px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10px; /* Espaciado entre elementos */
+    gap: 40px; /* Espaciado entre elementos */
     background-color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -162,7 +161,7 @@ mat-card-content{
   }
   
   .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
@@ -200,20 +199,36 @@ mat-card-content{
     letter-spacing: 2px; /* Añade espaciado entre letras para elegancia */
   }
   
-  /* Botón "Ver más" */
-  .btn1 {
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
+/* Botón "Ver más" */
+.btn1 {
+  background-color: #0069d9; /* Azul vibrante */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  padding: 12px 20px; /* Tamaño cómodo */
+  font-size: 1rem; /* Tamaño de texto ajustado */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+}
   
-  .btn:hover {
-    transform: scale(1.05);
-  }
+ 
+.btn1:hover {
+  background-color: #166397; /* Azul más oscuro al pasar el mouse */
+  transform: translateY(-3px); /* Efecto de elevación */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
   
+.btn1:active {
+  transform: translateY(0); /* Vuelve a su posición original al hacer clic */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+}
+
+.btn1:focus {
+  outline: 2px solid #85c1e9; /* Resalta el botón al enfocarlo */
+  outline-offset: 2px;
+}
   
   /* Botón de cierre */
   .btn-close {

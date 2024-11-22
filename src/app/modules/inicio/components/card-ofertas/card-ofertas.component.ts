@@ -87,7 +87,7 @@ mostrarProducto(producto:Producto){
        idProducto: '',
        precio: 0,
        descripcion: '',
-       categoria: '',
+       categoria: 'escalada',
        favoritos: false,
        stock: 0,
        carrito: false

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Producto } from 'src/app/models/producto';
 
 
 
@@ -6,21 +8,34 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductoService {
-  productos: any[] = []; 
+ private productos: any[] = []; 
+
+ private favoritosSubject = new BehaviorSubject<Producto[]>([]); // Emisor de favoritos
+  favoritos$ = this.favoritosSubject.asObservable(); // Observable para componentes
+
   constructor( ) { }
 // Metodo para contar productos favoritos
 productosFavoritos: any[] = [];
 
-getProductosFavoritos() {
-  this.productosFavoritos = this.productos.filter(producto => producto.favoritos === true);
 
+
+
+setProductos(productos: Producto[]) {
+  this.productos = productos;
+  this.actualizarFavoritos(); // Inicializar lista de favoritos
 }
 
-// Metodo para contar productos fvoritos
-cantidadProductosFavoritos: number = 0;
-contarProductosFavoritos() {
-  this.cantidadProductosFavoritos = this.productos.filter(producto => producto.favoritos === true).length;
-  // this.cantidadProductosFavoritos= this.cursosFavoritos.length
+
+
+
+subirFavorito(producto: Producto) {
+  producto.favoritos = !producto.favoritos; // Cambiar estado de favorito
+  this.actualizarFavoritos(); // Emitir cambios en la lista de favoritos
+}
+
+private actualizarFavoritos() {
+  const favoritos = this.productos.filter(producto => producto.favoritos);
+  this.favoritosSubject.next(favoritos); // Actualizar observable
 }
 
 

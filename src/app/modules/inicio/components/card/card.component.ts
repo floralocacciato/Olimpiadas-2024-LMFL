@@ -32,7 +32,7 @@ export class CardComponent {
     stock: 0
   };
 //carrito
-  producto: any;
+productos: Producto[] = [];
   coleccionProductosCarrito: Carrito[] = [];
   contadorCarrito: number = 0;
 
@@ -57,23 +57,28 @@ export class CardComponent {
 
 
 
-  subirFavorito(producto: any) {
-    producto.favoritos = !producto.favoritos
-
-    this.productoservicio.getProductosFavoritos()
-    this.productoservicio.contarProductosFavoritos()
+  subirFavorito(producto: Producto) {
+    this.productoservicio.subirFavorito(producto); // Actualiza en el servicio de favoritos
   }
 
   agregarProducto(producto:Producto) {
   this.servicioCarrito.getProductosCarrito(producto)
     
   }
+
+
+
+
+
+
+  
  ngOnInit(): void {
     // subscribe -> notifica constantemente los cambios actuales del sistema
     this.servicioCrud.obtenerProducto().subscribe(producto => {
 
       // guarda la información recibida como un nuevo "producto" a la colección
       this.coleccionFavoritos = producto;
+      
 
     })
      // subscribe -> notifica constantemente los cambios actuales del sistema
@@ -84,6 +89,12 @@ export class CardComponent {
     
 
   })
+
+      // Obtener los productos desde el servicio CRUD
+    this.servicioCrud.obtenerProducto().subscribe(productos => {
+      this.productos = productos; // Guardar productos locales
+      this.productoservicio.setProductos(this.productos); // Actualizar en el servicio global
+    });
   }
 
   mostrarProducto(producto:Producto){

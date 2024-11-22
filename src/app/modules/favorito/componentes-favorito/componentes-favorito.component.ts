@@ -15,10 +15,9 @@ export class ComponentesFavoritoComponent implements OnInit {
   constructor(public productoservicio: ProductoService, public servicioCrud: CrudService) {}
 
   ngOnInit(): void {
-    // Suscribirse para obtener la lista de productos
-    this.servicioCrud.obtenerProducto().subscribe(producto => {
-      this.productos = producto; // Almacena los productos
-      this.filtrarFavoritos(); // Filtra los favoritos
+     // Suscribirse a los cambios en los favoritos
+     this.productoservicio.favoritos$.subscribe(favoritos => {
+      this.coleccionFavoritos = favoritos;
     });
   }
 

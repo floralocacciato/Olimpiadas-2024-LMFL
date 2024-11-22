@@ -1,21 +1,27 @@
 /* Configura el contenedor principal para centrar el contenido */
+/* Estilo del contenedor principal */
 .container-principal {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 60px); /* Ajusta a la altura de la pantalla menos el navbar */
-    padding: 0; /* Elimina cualquier padding adicional */
-    margin: 0;  /* Elimina cualquier margen adicional */
-    overflow: hidden; 
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en múltiples filas si es necesario */
+    height: calc(100vh - 60px);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
 }
-
 /* Ajuste opcional en mat-grid-list */
 mat-grid-list {
     width: 100%;
-    max-width: 1200px; /* Ancho máximo opcional */
+    max-width: 1500px; /* Ancho máximo opcional */
     height: auto; /* Se adapta al contenido */
     margin: 0;
 }
+
+
+
+
+
 
 /* Centrado y espaciado en cada tile */
 mat-grid-tile {
@@ -91,7 +97,14 @@ mat-grid-tile {
         max-width: 100%; /* Deja que ocupe todo el ancho disponible */
         padding: 15px; /* Ajusta el padding */
     }
+    .map-container {
+        width: 100%;
+        padding: 15px;
+    }
 
+    .map {
+        height: 250px;
+    }
     .btn-success {
         width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
         align-self: center; /* Centra el botón */
@@ -116,7 +129,9 @@ mat-grid-tile {
         max-width: 400px; /* Reduzca el tamaño máximo del formulario */
         padding: 20px;
     }
-
+    .map-container {
+        max-width: 600px;
+    }
     .btn-success {
         width: 120px; /* Ajusta el ancho del botón */
     }
@@ -136,7 +151,13 @@ mat-grid-tile {
         max-width: 500px; /* Mantiene el ancho máximo del formulario */
         padding: 20px;
     }
+    .map-container {
+        max-width: 800px;
+    }
 
+    .map {
+        height: 400px;
+    }
     .btn-success {
         width: 150px; /* Mantiene el ancho del botón */
     }

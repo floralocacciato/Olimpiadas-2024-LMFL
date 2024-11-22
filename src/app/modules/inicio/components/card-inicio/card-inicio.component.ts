@@ -38,13 +38,13 @@ mostrarProducto(producto:Producto){
  constructor(){
    this.info = [
      {
-       nombre: "mochila",
+       nombre: "silla neo",
        imagen: "https://firebasestorage.googleapis.com/v0/b/olimpiadas--2024.appspot.com/o/productos%2Fsilla1.jfif?alt=media&token=b1a70a88-8f0c-4944-83d1-f31abf0ba791",
        alt: "Un chanchito",
        idProducto: '',
        precio: 0,
        descripcion: '',
-       categoria: '',
+       categoria: 'paracaidismo',
        favoritos: false,
        stock: 0,
        carrito: false
@@ -56,7 +56,7 @@ mostrarProducto(producto:Producto){
        idProducto: '',
        precio: 0,
        descripcion: '',
-       categoria: '',
+       categoria: 'kayak',
        favoritos: false,
        stock: 0,
        carrito: false
@@ -68,7 +68,7 @@ mostrarProducto(producto:Producto){
        idProducto: '',
        precio: 0,
        descripcion: '',
-       categoria: '',
+       categoria: 'ciclismo',
        favoritos: false,
        stock: 0,
        carrito: false
@@ -80,7 +80,7 @@ mostrarProducto(producto:Producto){
        idProducto: '',
        precio: 0,
        descripcion: '',
-       categoria: '',
+       categoria: 'pesca',
        favoritos: false,
        stock: 0,
        carrito: false
@@ -92,7 +92,7 @@ mostrarProducto(producto:Producto){
        idProducto: '',
        precio: 0,
        descripcion: '',
-       categoria: '',
+       categoria: 'tirolesa',
        favoritos: false,
        stock: 0,
        carrito: false
